@@ -13,5 +13,6 @@ return [
         'extensions'    => '扩展',
         'scaffold'      => '代码生成器',
         'icons'         => '图标',
+        'system_item'   => '系统项目',
     ],
 ];

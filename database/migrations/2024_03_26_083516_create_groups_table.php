@@ -17,7 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('pid');
+
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->useCurrent();
+
         });
+
     }
 
     /**

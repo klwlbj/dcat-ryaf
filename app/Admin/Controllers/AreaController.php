@@ -2,13 +2,13 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Repositories\Area;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
-use App\Admin\Repositories\Group;
 use Dcat\Admin\Http\Controllers\AdminController;
 
-class GroupController extends AdminController
+class AreaController extends AdminController
 {
     /**
      * Make a grid builder.
@@ -17,17 +17,15 @@ class GroupController extends AdminController
      */
     protected function grid()
     {
-        return Grid::make(new Group(), function (Grid $grid) {
+        return Grid::make(new Area(), function (Grid $grid) {
             $grid->column('id')->sortable();
             $grid->column('name');
-            $grid->column('pid');
-            // 禁用详情按钮
-            $grid->disableViewButton();
-            // 默认为每页20条
-            $grid->paginate(15);
+            $grid->column('created_at');
+            $grid->column('updated_at')->sortable();
 
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
+
             });
         });
     }
@@ -41,10 +39,11 @@ class GroupController extends AdminController
      */
     protected function detail($id)
     {
-        return Show::make($id, new Group(), function (Show $show) {
+        return Show::make($id, new Area(), function (Show $show) {
             $show->field('id');
             $show->field('name');
-            $show->field('pid');
+            $show->field('created_at');
+            $show->field('updated_at');
         });
     }
 
@@ -55,16 +54,18 @@ class GroupController extends AdminController
      */
     protected function form()
     {
-        return Form::make(new Group(), function (Form $form) {
+        return Form::make(new Area(), function (Form $form) {
             // $form->display('id');
-            $form->text('name');
-
-            // 查询
-            $groups = \App\Models\Group::all()->pluck('name', 'id')->toArray();
-            $pids   = array_merge($groups, [
-                0 => '最高级',
+            $form->text('name')->rules(function (Form $form) {
+                // 如果不是编辑状态，则添加字段唯一验证
+                if (!$id = $form->model()->id) {
+                    return 'unique:areas,name';
+                }
+                return '';
+            }, [
+                // rule
+                'unique' => '区域已存在',
             ]);
-            $form->select('pid', '父级')->options($pids);
         });
     }
 }
