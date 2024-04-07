@@ -5,18 +5,58 @@ namespace App\Admin\Controllers;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
+use Dcat\Admin\Tree;
+use Dcat\Admin\Layout\Row;
+use Dcat\Admin\Tree\Actions;
 use Dcat\Admin\Widgets\Card;
 use Dcat\Admin\Layout\Content;
 use App\Admin\Repositories\CheckItem;
 use App\Admin\Actions\AddChildCheckContent;
+use App\Admin\Actions\Tree\SetCheckQuestion;
 use Dcat\Admin\Http\Controllers\AdminController;
 
 class CheckItemController extends AdminController
 {
-    /*public function index(Content $content)
+    public function index(Content $content)
     {
-        return $content->body(AddChildCheckContent::make());
-    }*/
+        return $content->header('树状模型')
+            ->body(function (Row $row) {
+                $tree = new Tree(\App\Models\CheckItem::with(['checkQuestions']));
+
+                $row->column(12, $tree);
+
+                $tree->branch(function ($branch) {
+                    // return "<span class='label'  style='background-color: #0e4d32'>{$branch['title']}</span>";
+                    switch ($branch['type']) {
+                        case 1:
+                            $button = "<span class='label' style='background-color: #009587'>检查项目</span><span class='label' style='background-color: #009587'>总分：{$branch['total_score']}分</span><br>{$branch['title']}";
+                            break;
+                        case 2:
+                            $button = "<span class='label' style='background-color: #1e9efe'>检查内容</span><br>{$branch['title']}";
+                            break;
+                        case 3:
+                            $button = "<span class='label' style='background-color: #fdb701'>检查标准</span><span class='label' style='background-color: #fdb701'>扣{$branch['total_score']}分</span><br>{$branch['title']}";
+                            break;
+                        case 4:
+                        default:
+                            $button = "<span class='label' style='background-color: #fd5722'>检查问题</span><br>{$branch['title']}";
+                            break;
+                    }
+                    return $button;
+                });
+                $tree->actions(function (Actions $actions) {
+                    if ($actions->row->type == 3) {
+                        $actions->append(new SetCheckQuestion());
+                    }
+                });
+
+                // $tree->actions(new SetCheckQuestion());
+
+                $tree->maxDepth(4);
+                $tree->disableSaveButton();
+                $tree->expand();
+            });
+    }
 
     /**
      * Make a grid builder.
@@ -27,8 +67,8 @@ class CheckItemController extends AdminController
     {
         return Grid::make(new CheckItem(), function (Grid $grid) {
             // $grid->column('type');
-            $grid->id('ID', '编号')->bold()->sortable();
-            $grid->column('title', '检查项目')->tree(true); // 开启树状表格功能，一页加载所有树
+            $grid->id('ID', '编号')->sortable();
+            $grid->column('title', '检查项目');
             $grid->column('check_type')->using(\App\Models\Firm::$formatCheckTypeMaps, '未知');
             $grid->column('total_score');
             $grid->column('order_by', '排序（双击修改）')->editable(true);
@@ -87,10 +127,27 @@ class CheckItemController extends AdminController
 
             $form->select('check_type', '检查类型（必需和上级一样）')->options(\App\Models\Firm::$formatCheckTypeMaps)->required();
             $form->number('total_score')->required();
+            $form->hidden('type')->value(0);
             $form->number('order_by')->required();
 
             $form->display('created_at');
             $form->display('updated_at');
+
+            $form->saving(function (Form $form) {
+                $parentId = $form->input('parent_id') ?? 0;
+                if ($parentId != 0) {
+                    $parent = \App\Models\CheckItem::select(['id', 'type'])->find($parentId);
+                    if ($parent->type > 2) {
+                        // 中断后续逻辑
+                        return $form->response()->error('该层级下无法再添加');
+                    }
+                    $form->input('type', $parent->type + 1);
+                    $form->input('check_type', $parent->check_type);
+                } else {
+                    $form->input('type', 1);
+                }
+                return;
+            });
         });
     }
 

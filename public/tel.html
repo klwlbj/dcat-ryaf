@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>合力亿捷云客服-在线软电话条</title>
+
+    <script type="text/javascript" src="https://a6.7x24cc.com/softPhone/javascripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="https://a6.7x24cc.com/softPhone/javascripts/md5.min.js"></script>
+    <script type="text/javascript" src="https://a6.7x24cc.com/softPhone/javascripts/phone.min.js"></script>
+    <script type="text/javascript" src="https://a6.7x24cc.com/softPhone/javascripts/aes.js"></script>
+    <script type="text/javascript" src="https://a6.7x24cc.com/softPhone/javascripts/sip.js"></script>
+<!--    //注：当使用clientType: "webRtc"时，才需要引入此项-->
+    <link rel="stylesheet" type="text/css" href="https://a6.7x24cc.com/softPhone/stylesheets/global.css">
+</head>
+<body>
+<div id="softphone-bar" class="inline-block clearFix">
+    <div id="phone_bar" class="clearFix">
+        <div class="btn-group f-l">
+            <button id="HoldEnable" type="button" class="btn btn-primary margin-r5" style="display:none;" onclick="holly.hold();"> 保持 </button >
+            <button id="HoldGetEnable" type="button" class="btn btn-primary margin-r5" onclick="holly.unHold();" style="display:none";> 恢复 </button>
+            <button id="TransferEnable" type="button" class="btn btn-primary margin-r5" style="display:none" onclick="holly.openTransferOrConsult('softphone_transfer');"> 转接 </button>
+            <button id="ConsultTransferEnable" type="button" class="btn btn-primary margin-r5" style="display:none" onclick="holly.transfer('9123456', 'number');"> 转接 </button>
+            <button id="ConsultEnable" type="button" class="btn btn-primary margin-r5" style="display:none" onclick="holly.openTransferOrConsult('softphone_consult');"> 咨询 </button>
+            <button id="InvestigateEnable" type="button" class="btn btn-primary margin-r5" style="display:none" onclick="holly.investigate();"> 邀评 </button>
+            <button id="ValidateEnable" type="button" class="btn btn-primary margin-r5" style="display:none" onclick="holly.validate();"> 转验证 </button>
+            <button id="ThreeWayCallEnable" class="btn btn-primary margin-r5" style="display:none"> 三方 </button>
+            <button id="ConsultThreeWayCallEnable" type="button" class="btn btn-primary margin-r5" style="display: none" onclick="holly.threeWayCall('9123456');"> 三方 </button>
+            <button id="StopConsultEnable" type="button" class="btn btn-danger margin-r5" style="display:none" onclick="holly.stopConsult();"> 结束咨询 </button>
+            <button id="HangupEnable" type="button" class="btn btn-danger margin-r5" onclick="holly.hangup();" style="display:none;"> 挂机 </button>
+        </div>
+        <div class="f-l">
+            <input id="dialout_input" class="span2" type="text" value="" placeholder="请输入电话号码" style="display: none;" onkeydown="if(event.keyCode==13){holly.dialout($('#dialout_input').val());}">
+            <button id="DialEnable" class="btn btn-primary margin-r5" type="button" onclick="holly.dialout($('#dialout_input').val());" style="display:none"> 呼叫 </button>
+        </div>
+        <div class="state_group f-l clearFix">
+            <div id="softphone_phonestate" class="f-l state">未签入</div>
+            <div id="softphone_dropdown" class="f-l state_dropdown"><b id="softphone_dropdown_caret" class="caret"></b> </div>
+            <div id="softphone_timer" class="f-l state_time">00:00:00</div>
+            <div id="softphone_otherstate" class="customer_db"></div>
+        </div>
+        <div class="f-l">
+            <button id="softPhoneBarKick" type="button" class="btn btn-primary margin-r5" style="display:none;"> 签出 </button>
+            <button id="softPhoneBarPick" type="button" class="btn btn-primary margin-r5" style="display:none;"> 签入 </button>
+        </div>
+        <div class="f-l margin-t5" id="softWaitCountTotalDiv" style="display:none;">
+            排队数：<span id="softWaitCountTotal">0 </span>
+        </div>
+        <!--以下代码仅使用webrtc时，需要引入-->
+        <div id="AcceptBellingEnable" style="display:none;" onclick="holly.webRtc.processWebRTCButton('accept')">
+            <img src="http://a6.7x24cc.com/softPhone/img/webrtc-incoming.png" alt="" style="width: 13px;vertical-align: -2px;background: #0066cc">
+        </div>
+        <div id="RefuseBellingEnable" style="display:none;margin-left: 5px" onclick="holly.webRtc.processWebRTCButton('reject')">
+            <img src="http://a6.7x24cc.com/softPhone/img/hangup.png" alt="" style="vertical-align: -2px">
+        </div>
+        <!--webrtc拨号盘，可选>
+        <div class="btn-group-dial" id="DialPlateBtnEnable" style="margin-top: 2px; display:none;">
+        <button id="" type="button" class="btn btn-primary" onclick="holly.webRtc.showNum()">拨号盘</button>-->
+        <!--拨号盘-->
+        <div class="dial-wrap" id="dial_plate" style="display:none;">
+            <div class="dial-phone-num">
+                <span class="pushed1" onclick="holly.webRtc.processWebRTCButton('dtmf', 1)">1</span>
+                <span class="pushed2" onclick="holly.webRtc.processWebRTCButton('dtmf', 2)">2</span>
+                <span class="pushed3" onclick="holly.webRtc.processWebRTCButton('dtmf', 3)">3</span>
+                <span class="pushed4" onclick="holly.webRtc.processWebRTCButton('dtmf', 4)">4</span>
+                <span class="pushed5" onclick="holly.webRtc.processWebRTCButton('dtmf', 5)">5</span>
+                <span class="pushed6" onclick="holly.webRtc.processWebRTCButton('dtmf', 6)">6</span>
+                <span class="pushed7" onclick="holly.webRtc.processWebRTCButton('dtmf', 7)">7</span>
+                <span class="pushed8" onclick="holly.webRtc.processWebRTCButton('dtmf', 8)">8</span>
+                <span class="pushed9" onclick="holly.webRtc.processWebRTCButton('dtmf', 9)">9</span>
+                <span class="" onclick="holly.webRtc.processWebRTCButton('dtmf', '*')">*</span>
+                <span class="pushed0" onclick="holly.webRtc.processWebRTCButton('dtmf', 0)">0</span>
+                <span class="" onclick="holly.webRtc.processWebRTCButton('dtmf', '#')">#</span>
+            </div>
+        </div>
+    </div>
+    <!--拨号盘结束-->
+    <!--webrtc结束-->
+</div>
+<div id="softphone-bar-bgdiv" class="softphone-transfer-bg-div"></div>
+<div id="softphone_consult" class="softphone-transfer-div"></div>
+<div id="softphone_transfer" class="softphone-transfer-div"></div>
+<div id="icc_event"></div>
+</div>
+</body>
+
+<script>
+    var hollyglobal = {
+        loginSuccessCallback: function (peer) { // 软电话条登录成功回调函数
+            console.log(peer);
+        },
+        loginFailureCallback: function (peer) { // 软电话条登录失败回调函数
+            console.log(peer);
+        },
+        ringEvent: function (peer) { // 响铃回调函数，可用于实现弹屏。参数请参考“软电话条-》事件API-》坐席振铃事件”
+            console.log(peer);
+        },
+        talkingEvent: function (peer) { // 接通事件回调函数。参数请参考“软电话条-》事件API-》坐席接通事件”
+            console.log(peer);
+        },
+        hangupEvent: function (peer) { // 挂机事件回调函数。参数请参考“软电话条-》事件API-》坐席挂断事件”
+            console.log(peer);
+        },
+        queueWaitCountEvent: function (peer) { // 技能组排队数事件回调函数。参数请参考“软电话条-》事件API-》技能组排队数事件”
+            console.dir(peer);
+        },
+        setBusyEvent: function (peer) { // 坐席切换状态回调
+        },
+        queueInfo: function (peer) { // 技能组发生变化回调
+        },
+        registered: function (peer) { // 电话条注册成功、通话功能可正常使用回调
+        },
+        isDisplayInvestigate: false, // 是否开启转满意功能
+        isDisplayConsult: false, // 是否开启咨询功能
+        isDisplayTransfer: false, // 是否开启转接
+        isDisplayValidate: true, // 是否开启转验证
+        isHiddenNumber: false, // 是否开启隐藏号码功能
+        listenSelfEvent: 2,
+        monitor: 0, //是否开启监控权限，1表示开启、不配置或者其他值表示不开启，开启后将会收到所有的坐席事件并处理
+        loginBusyType: "0", //坐席登录后状态。0是空闲，1是忙碌，2是小休，注：该参数不传的情况下，默认为0
+    };
+
+    holly.loginPhoneBar("8010@liangzq","1234abcd@","sip");
+</script>
+</html>

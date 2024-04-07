@@ -10,8 +10,18 @@ class CheckItem extends Model
 {
     use ModelTree;
     use HasDateTimeFormatter;
-    protected $table = 'check_items';
 
+    protected $fillable = [
+        'title',
+        'parent_id',
+        'rectify_content',
+        'check_method',
+        'order_by',
+        'type',
+        'check_type',
+        'total_score',
+    ];
+    protected $table       = 'check_items';
     protected $orderColumn = 'order_by';
     protected $depthColumn = 'type';
 
@@ -39,6 +49,16 @@ class CheckItem extends Model
         self::CHECK_TYPE_ELECTRICAL_CHECK => '电气线路用气消防安全隐患排查及检测',
         self::CHECK_TYPE_GAS_CHECK        => '用气安全隐患排查及检测',
         self::CHECK_TYPE_FIRE_CHECK       => '消防安全隐患排查及检测',
+    ];
+
+    public const DIFFICULTY_EASY   = 1;
+    public const DIFFICULTY_MEDIUM = 2;
+    public const DIFFICULTY_HARD   = 3;
+
+    public static array $formatDifficultyMaps = [
+        self::DIFFICULTY_EASY   => '容易',
+        self::DIFFICULTY_MEDIUM => '中等',
+        self::DIFFICULTY_HARD   => '困难',
     ];
 
     public function parent()
