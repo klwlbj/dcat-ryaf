@@ -50,8 +50,6 @@ class CheckItemController extends AdminController
                     }
                 });
 
-                // $tree->actions(new SetCheckQuestion());
-
                 $tree->maxDepth(4);
                 $tree->disableSaveButton();
                 $tree->expand();

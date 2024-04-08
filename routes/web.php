@@ -21,3 +21,5 @@ Route::get('/web/index', [\App\Http\Controllers\Web\HomeController::class, 'inde
 Route::get('/web/enterprise', [\App\Http\Controllers\Web\HomeController::class, 'enterprise']);
 Route::get('/web/user', [\App\Http\Controllers\Web\HomeController::class, 'user']);
 Route::get('/web/baseInfo', [\App\Http\Controllers\Web\HomeController::class, 'baseInfo']);
+Route::get('/web/checkStandard', [\App\Http\Controllers\Web\HomeController::class, 'checkStandard']);
+Route::get('/web/checkStandardTable', [\App\Http\Controllers\Web\HomeController::class, 'checkStandardTable']);
