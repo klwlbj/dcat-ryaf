@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
+use App\Models\Group;
 use App\Admin\Repositories\User;
 use Dcat\Admin\Http\Controllers\AdminController;
 
@@ -26,10 +27,7 @@ class UserController extends AdminController
             $grid->column('group_id');
             $grid->column('status');
             $grid->column('job_info');
-            $grid->column('password');
-            $grid->column('remember_token');
             $grid->column('created_at');
-            $grid->column('updated_at')->sortable();
 
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
@@ -55,10 +53,6 @@ class UserController extends AdminController
             $show->field('group_id');
             $show->field('status');
             $show->field('job_info');
-            $show->field('password');
-            $show->field('remember_token');
-            $show->field('created_at');
-            $show->field('updated_at');
         });
     }
 
@@ -73,24 +67,28 @@ class UserController extends AdminController
             $form->display('id');
             $form->text('name');
             $form->email('email', '邮箱');
-            $form->mobile('phone', '手机号')->options(['mask' => '999 9999 9999']);
+            $form->mobile('phone', '手机号')->options(['mask' => '99999999999']);
 
             // 枚举值
             $types = [
                 1 => 'xx',
                 2 => 'yy',
             ];
-            $form->select('type', '类型')->options($types);
-            $form->text('group_id');
-
-            // 枚举值
-            $statuses = [
-                1 => '正常',
-                2 => '停用',
-            ];
-            $form->select('status', '状态')->options($statuses);
+            $form->select('type', '类型')->options(\App\Models\User::$formatTypeMaps)->required();
+            $form->select('group_id', '分组')->options(Group::all()->pluck('name', 'id'))->required();
+            $form->select('status', '状态')->options(\App\Models\User::$formatStatusMaps);
             $form->text('job_info');
             $form->password('password');
+
+            $form->saving(function (Form $form) {
+                if ($form->password && $form->model()->password != $form->password) {
+                    $form->password = bcrypt($form->password);
+                }
+
+                if (!$form->password) {
+                    $form->deleteInput('password');
+                }
+            });
         });
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Dcat\Admin\Traits\HasDateTimeFormatter;
-
 use Illuminate\Database\Eloquent\Model;
+use Dcat\Admin\Traits\HasDateTimeFormatter;
 
 class Area extends Model
 {
-	use HasDateTimeFormatter;    }
+    use HasDateTimeFormatter;
+}

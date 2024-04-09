@@ -3,10 +3,9 @@
 namespace App\Models;
 
 use Dcat\Admin\Traits\ModelTree;
-use Illuminate\Database\Eloquent\Model;
 use Dcat\Admin\Traits\HasDateTimeFormatter;
 
-class CheckItem extends Model
+class CheckItem extends BaseModel
 {
     use ModelTree;
     use HasDateTimeFormatter;
@@ -24,32 +23,6 @@ class CheckItem extends Model
     protected $table       = 'check_items';
     protected $orderColumn = 'order_by';
     protected $depthColumn = 'type';
-
-    public const CHECK_TYPE_THREE_SMALL      = 1;
-    public const CHECK_TYPE_RENTAL_HOUSE     = 2;
-    public const CHECK_TYPE_PUBLIC_PLACE     = 3;
-    public const CHECK_TYPE_INDUSTRIAL       = 4;
-    public const CHECK_TYPE_SYNTHESIS        = 5;
-    public const CHECK_TYPE_RESIDENTIAL      = 6;
-    public const CHECK_TYPE_ELECTRIC_VEHICLE = 7;
-    public const CHECK_TYPE_UNIT_CHECK       = 8;
-    public const CHECK_TYPE_ELECTRICAL_CHECK = 9;
-    public const CHECK_TYPE_GAS_CHECK        = 10;
-    public const CHECK_TYPE_FIRE_CHECK       = 11;
-
-    public static array $formatCheckTypeMaps = [
-        self::CHECK_TYPE_THREE_SMALL      => '三小场所',
-        self::CHECK_TYPE_RENTAL_HOUSE     => '出租屋',
-        self::CHECK_TYPE_PUBLIC_PLACE     => '公共建筑',
-        self::CHECK_TYPE_INDUSTRIAL       => '工业建筑',
-        self::CHECK_TYPE_SYNTHESIS        => '综合体',
-        self::CHECK_TYPE_RESIDENTIAL      => '民宿',
-        self::CHECK_TYPE_ELECTRIC_VEHICLE => '电动自行车停放充电场所建设',
-        self::CHECK_TYPE_UNIT_CHECK       => '单位安全生产排查',
-        self::CHECK_TYPE_ELECTRICAL_CHECK => '电气线路用气消防安全隐患排查及检测',
-        self::CHECK_TYPE_GAS_CHECK        => '用气安全隐患排查及检测',
-        self::CHECK_TYPE_FIRE_CHECK       => '消防安全隐患排查及检测',
-    ];
 
     public const DIFFICULTY_EASY   = 1;
     public const DIFFICULTY_MEDIUM = 2;

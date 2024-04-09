@@ -105,7 +105,7 @@ class FirmController extends AdminController
                 ]);
             $form->select('system_item_id')->options(SystemItem::all()->pluck('name', 'id'));
             $form->text('head_man')->required();
-            $form->mobile('phone', '手机号')->options(['mask' => '999 9999 9999'])->required();
+            $form->mobile('phone', '手机号')->options(['mask' => '99999999999'])->required();
             $form->text('community_name')->required();
             $form->select('check_type')->options(\App\Models\Firm::$formatCheckTypeMaps)->required();
             $form->select('status')->options(\App\Models\Firm::$formatStatusMaps);

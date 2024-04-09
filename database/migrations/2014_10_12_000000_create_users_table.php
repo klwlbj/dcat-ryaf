@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('group_id');
             $table->tinyInteger("status");
             $table->string('job_info');
-            $table->string('password',32);
+            $table->string('password',80);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Firm;
 use App\Models\CheckItem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,16 +15,7 @@ class CheckStandardController extends Controller
         $action = $request->query('act');
         switch ($action) {
             case 'list':
-                $data = [];
-                $list = CheckItem::$formatCheckTypeMaps;
-                foreach ($list as $id => $info) {
-                    $data[] = [
-                        'id'         => $id,
-                        'name'       => $info,
-                        'totalScore' => 100,
-                    ];
-                }
-
+                $data = self::getCheckType();
                 break;
 
             case 'info':
@@ -76,4 +68,43 @@ class CheckStandardController extends Controller
         return response()->json(['list' => $data]);
     }
 
+    public function getCheckTypeEnterpriseList(Request $request)
+    {
+        $list       = CheckItem::$formatCheckTypeMaps;
+        $checkTypeEnterpriseNum = Firm::whereIn('check_type', array_flip($list))
+            ->selectRaw('count(id) as num, check_type')
+            ->groupBy('check_type')
+            ->pluck('num', 'check_type');
+        $data = [];
+
+        foreach ($list as $id => $info) {
+            $data[] = [
+                'id'         => $id,
+                'name'       => $info,
+                'num' => $checkTypeEnterpriseNum[$id] ?? 0,
+            ];
+        }
+
+        return response()->json($data);
+    }
+
+    public static function getCheckType(){
+        $list       = CheckItem::$formatCheckTypeMaps;
+        $totalScore = CheckItem::whereIn('check_type', array_flip($list))
+            ->where('type', 1)
+            ->selectRaw('SUM(total_score) as total_score, check_type')
+            ->groupBy('check_type')
+            ->pluck('total_score', 'check_type');
+        $data = [];
+
+        foreach ($list as $id => $info) {
+            $data[] = [
+                'id'         => $id,
+                'name'       => $info,
+                'totalScore' => $totalScore[$id] ?? 0,
+            ];
+        }
+
+        return $data;
+    }
 }

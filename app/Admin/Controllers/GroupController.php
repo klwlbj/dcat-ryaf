@@ -20,14 +20,13 @@ class GroupController extends AdminController
         return Grid::make(new Group(), function (Grid $grid) {
             $grid->column('id')->sortable();
             $grid->column('name');
-            $grid->column('pid');
             // 禁用详情按钮
             $grid->disableViewButton();
             // 默认为每页20条
             $grid->paginate(15);
 
             $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
+                $filter->like('name');
             });
         });
     }
@@ -44,7 +43,6 @@ class GroupController extends AdminController
         return Show::make($id, new Group(), function (Show $show) {
             $show->field('id');
             $show->field('name');
-            $show->field('pid');
         });
     }
 
@@ -58,13 +56,6 @@ class GroupController extends AdminController
         return Form::make(new Group(), function (Form $form) {
             // $form->display('id');
             $form->text('name');
-
-            // 查询
-            $groups = \App\Models\Group::all()->pluck('name', 'id')->toArray();
-            $pids   = array_merge($groups, [
-                0 => '最高级',
-            ]);
-            $form->select('pid', '父级')->options($pids);
         });
     }
 }

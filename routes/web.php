@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,14 @@ Route::get('/', function () {
 
 Route::get('/web/index', [\App\Http\Controllers\Web\HomeController::class, 'index']);
 Route::get('/web/enterprise', [\App\Http\Controllers\Web\HomeController::class, 'enterprise']);
+Route::get('/web/enterpriseList', [\App\Http\Controllers\Web\HomeController::class, 'enterpriseList']);
+Route::get('/web/enterpriseInfo', [\App\Http\Controllers\Web\HomeController::class, 'enterpriseInfo']);
 Route::get('/web/user', [\App\Http\Controllers\Web\HomeController::class, 'user']);
 Route::get('/web/baseInfo', [\App\Http\Controllers\Web\HomeController::class, 'baseInfo']);
 Route::get('/web/checkStandard', [\App\Http\Controllers\Web\HomeController::class, 'checkStandard']);
 Route::get('/web/checkStandardTable', [\App\Http\Controllers\Web\HomeController::class, 'checkStandardTable']);
+Route::get('/web/login', [\App\Http\Controllers\Web\HomeController::class, 'login']);
+
+
+Route::post('login', [UserController::class, 'login'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);;
+

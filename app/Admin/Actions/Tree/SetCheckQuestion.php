@@ -2,15 +2,8 @@
 
 namespace App\Admin\Actions\Tree;
 
-use Dcat\Admin\Admin;
 use Dcat\Admin\Widgets\Modal;
-use Illuminate\Http\Request;
-use Dcat\Admin\Widgets\Table;
 use Dcat\Admin\Tree\RowAction;
-use Dcat\Admin\Actions\Response;
-use Dcat\Admin\Traits\HasPermissions;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticatable;
 
 class SetCheckQuestion extends RowAction
 {

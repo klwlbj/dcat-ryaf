@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +14,7 @@
                 </div>
                 <div class="weui-cells dis" id="weui-cells">
                     @{{# layui.each(d, function(index, item){ }}
-                    <a class="weui-cell weui-cell_access" href="list?typeId=@{{ item.id }}&typeName=@{{ item.name }}">
+                    <a class="weui-cell weui-cell_access" href="/web/enterpriseList?typeId=@{{ item.id }}&typeName=@{{ item.name }}">
                         <div class="weui-cell__bd"><p>@{{ item.name }}</p></div>
                         <div class="weui-cell__ft">@{{ item.num }}家</div>
                     </a>
@@ -29,6 +27,12 @@
         </div>
     </div>
 </div>
-<script>layui.use('laytpl',function(){var json =ajaxGet("getCheckTypeEnterpriseList",{},false,"post");var tpl =$("#weui-cells").html();layui.laytpl(tpl).render(json,function(html){$("#weui-cells").html(html).show();});});</script>
+<script>layui.use('laytpl', function () {
+        var json = ajaxGet("/api/getCheckTypeEnterpriseList", {}, false, "post");
+        var tpl = $("#weui-cells").html();
+        layui.laytpl(tpl).render(json, function (html) {
+            $("#weui-cells").html(html).show();
+        });
+    });</script>
 </body>
 </html>
