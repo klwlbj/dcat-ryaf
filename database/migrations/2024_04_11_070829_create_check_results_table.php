@@ -15,8 +15,7 @@ return new class () extends Migration {
         Schema::create('check_results', function (Blueprint $table) {
             $table->id();
             $table->uuid('report_code')->unique()->comment('检查报告唯一识别码');
-            $table->tinyInteger('status')->comment('企业状态')->default(0);
-            $table->tinyInteger('check_result')->comment('检查结果')->default(0);
+            $table->tinyInteger('status')->comment('检查状态')->default(0);
             $table->integer('total_point')->comment('总分')->default(0);
             $table->integer('deduction_point')->comment('扣分')->default(0);
             $table->string('firm_id', 36)->comment('企业id');

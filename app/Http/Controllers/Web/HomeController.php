@@ -31,7 +31,8 @@ class HomeController extends Controller
         // 查询最近一条检查记录
 
         $reportCode = CheckResult::where('firm_id', $uuid)->orderBy('id', 'desc')->value('report_code') ?? '';
-        return view('web/enterpriseInfo', ['uuid' => $uuid, 'reportCode' => $reportCode]);
+        $isCheck    = !empty($reportCode) ? 1 : 0;
+        return view('web/enterpriseInfo', ['uuid' => $uuid, 'reportCode' => $reportCode, 'isCheck' => $isCheck]);
     }
 
     public function user()
@@ -68,7 +69,15 @@ class HomeController extends Controller
     public function checkDetail(Request $request)
     {
         $uuid       = $request->get('uuid');
-        $reportCode = $request->get('reportCode', 'new');
+        $reportCode = $request->get('reportCode');
+        if (empty($reportCode)) {
+            $reportCode = CheckResult::where('firm_id', $uuid)
+                ->where('status', CheckResult::STATUS_UNSAVED)
+                ->value('report_code');
+            if (empty($reportCode)) {
+                $reportCode = 'new';
+            }
+        }
         return view('web/checkDetail', ['uuid' => $uuid, 'reportCode' => $reportCode]);
     }
 }

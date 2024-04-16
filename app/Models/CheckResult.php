@@ -27,4 +27,9 @@ class CheckResult extends Model
         self::STATUS_BAD     => '不合格',
         self::STATUS_UNSAVED => '未保存',
     ];
+
+    public function firm()
+    {
+        return $this->belongsTo(Firm::class, 'firm_id','uuid');
+    }
 }

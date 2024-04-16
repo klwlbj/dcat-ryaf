@@ -18,4 +18,5 @@ Route::group([
     $router->resource('check_items', 'CheckItemController');
     $router->resource('areas', 'AreaController');
     $router->resource('system_items', 'SystemItemController');
+    $router->resource('check_results', 'CheckResultController');
 });

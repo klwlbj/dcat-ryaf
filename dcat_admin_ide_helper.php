@@ -39,12 +39,24 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection check_type
      * @property Grid\Column|Collection total_score
      * @property Grid\Column|Collection order_by
-     * @property Grid\Column|Collection content
+     * @property Grid\Column|Collection difficulty
      * @property Grid\Column|Collection rectify_content
      * @property Grid\Column|Collection check_method
-     * @property Grid\Column|Collection check_items_id
-     * @property Grid\Column|Collection difficulty
+     * @property Grid\Column|Collection check_result_uuid
+     * @property Grid\Column|Collection question
+     * @property Grid\Column|Collection rectify
+     * @property Grid\Column|Collection check_standard_id
+     * @property Grid\Column|Collection check_question_id
+     * @property Grid\Column|Collection firm_id
+     * @property Grid\Column|Collection report_code
+     * @property Grid\Column|Collection status
+     * @property Grid\Column|Collection check_result
+     * @property Grid\Column|Collection total_point
+     * @property Grid\Column|Collection deduction_point
      * @property Grid\Column|Collection uuid
+     * @property Grid\Column|Collection file_name
+     * @property Grid\Column|Collection file_path
+     * @property Grid\Column|Collection file_extension
      * @property Grid\Column|Collection connection
      * @property Grid\Column|Collection queue
      * @property Grid\Column|Collection payload
@@ -54,15 +66,12 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection community_name
      * @property Grid\Column|Collection custom_number
      * @property Grid\Column|Collection head_man
-     * @property Grid\Column|Collection status
-     * @property Grid\Column|Collection check_result
      * @property Grid\Column|Collection phone
      * @property Grid\Column|Collection address
      * @property Grid\Column|Collection floor
      * @property Grid\Column|Collection area_quantity
      * @property Grid\Column|Collection remark
      * @property Grid\Column|Collection pictures
-     * @property Grid\Column|Collection pid
      * @property Grid\Column|Collection email
      * @property Grid\Column|Collection token
      * @property Grid\Column|Collection tokenable_type
@@ -104,12 +113,24 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection check_type(string $label = null)
      * @method Grid\Column|Collection total_score(string $label = null)
      * @method Grid\Column|Collection order_by(string $label = null)
-     * @method Grid\Column|Collection content(string $label = null)
+     * @method Grid\Column|Collection difficulty(string $label = null)
      * @method Grid\Column|Collection rectify_content(string $label = null)
      * @method Grid\Column|Collection check_method(string $label = null)
-     * @method Grid\Column|Collection check_items_id(string $label = null)
-     * @method Grid\Column|Collection difficulty(string $label = null)
+     * @method Grid\Column|Collection check_result_uuid(string $label = null)
+     * @method Grid\Column|Collection question(string $label = null)
+     * @method Grid\Column|Collection rectify(string $label = null)
+     * @method Grid\Column|Collection check_standard_id(string $label = null)
+     * @method Grid\Column|Collection check_question_id(string $label = null)
+     * @method Grid\Column|Collection firm_id(string $label = null)
+     * @method Grid\Column|Collection report_code(string $label = null)
+     * @method Grid\Column|Collection status(string $label = null)
+     * @method Grid\Column|Collection check_result(string $label = null)
+     * @method Grid\Column|Collection total_point(string $label = null)
+     * @method Grid\Column|Collection deduction_point(string $label = null)
      * @method Grid\Column|Collection uuid(string $label = null)
+     * @method Grid\Column|Collection file_name(string $label = null)
+     * @method Grid\Column|Collection file_path(string $label = null)
+     * @method Grid\Column|Collection file_extension(string $label = null)
      * @method Grid\Column|Collection connection(string $label = null)
      * @method Grid\Column|Collection queue(string $label = null)
      * @method Grid\Column|Collection payload(string $label = null)
@@ -119,15 +140,12 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection community_name(string $label = null)
      * @method Grid\Column|Collection custom_number(string $label = null)
      * @method Grid\Column|Collection head_man(string $label = null)
-     * @method Grid\Column|Collection status(string $label = null)
-     * @method Grid\Column|Collection check_result(string $label = null)
      * @method Grid\Column|Collection phone(string $label = null)
      * @method Grid\Column|Collection address(string $label = null)
      * @method Grid\Column|Collection floor(string $label = null)
      * @method Grid\Column|Collection area_quantity(string $label = null)
      * @method Grid\Column|Collection remark(string $label = null)
      * @method Grid\Column|Collection pictures(string $label = null)
-     * @method Grid\Column|Collection pid(string $label = null)
      * @method Grid\Column|Collection email(string $label = null)
      * @method Grid\Column|Collection token(string $label = null)
      * @method Grid\Column|Collection tokenable_type(string $label = null)
@@ -174,12 +192,24 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection check_type
      * @property Show\Field|Collection total_score
      * @property Show\Field|Collection order_by
-     * @property Show\Field|Collection content
+     * @property Show\Field|Collection difficulty
      * @property Show\Field|Collection rectify_content
      * @property Show\Field|Collection check_method
-     * @property Show\Field|Collection check_items_id
-     * @property Show\Field|Collection difficulty
+     * @property Show\Field|Collection check_result_uuid
+     * @property Show\Field|Collection question
+     * @property Show\Field|Collection rectify
+     * @property Show\Field|Collection check_standard_id
+     * @property Show\Field|Collection check_question_id
+     * @property Show\Field|Collection firm_id
+     * @property Show\Field|Collection report_code
+     * @property Show\Field|Collection status
+     * @property Show\Field|Collection check_result
+     * @property Show\Field|Collection total_point
+     * @property Show\Field|Collection deduction_point
      * @property Show\Field|Collection uuid
+     * @property Show\Field|Collection file_name
+     * @property Show\Field|Collection file_path
+     * @property Show\Field|Collection file_extension
      * @property Show\Field|Collection connection
      * @property Show\Field|Collection queue
      * @property Show\Field|Collection payload
@@ -189,15 +219,12 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection community_name
      * @property Show\Field|Collection custom_number
      * @property Show\Field|Collection head_man
-     * @property Show\Field|Collection status
-     * @property Show\Field|Collection check_result
      * @property Show\Field|Collection phone
      * @property Show\Field|Collection address
      * @property Show\Field|Collection floor
      * @property Show\Field|Collection area_quantity
      * @property Show\Field|Collection remark
      * @property Show\Field|Collection pictures
-     * @property Show\Field|Collection pid
      * @property Show\Field|Collection email
      * @property Show\Field|Collection token
      * @property Show\Field|Collection tokenable_type
@@ -239,12 +266,24 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection check_type(string $label = null)
      * @method Show\Field|Collection total_score(string $label = null)
      * @method Show\Field|Collection order_by(string $label = null)
-     * @method Show\Field|Collection content(string $label = null)
+     * @method Show\Field|Collection difficulty(string $label = null)
      * @method Show\Field|Collection rectify_content(string $label = null)
      * @method Show\Field|Collection check_method(string $label = null)
-     * @method Show\Field|Collection check_items_id(string $label = null)
-     * @method Show\Field|Collection difficulty(string $label = null)
+     * @method Show\Field|Collection check_result_uuid(string $label = null)
+     * @method Show\Field|Collection question(string $label = null)
+     * @method Show\Field|Collection rectify(string $label = null)
+     * @method Show\Field|Collection check_standard_id(string $label = null)
+     * @method Show\Field|Collection check_question_id(string $label = null)
+     * @method Show\Field|Collection firm_id(string $label = null)
+     * @method Show\Field|Collection report_code(string $label = null)
+     * @method Show\Field|Collection status(string $label = null)
+     * @method Show\Field|Collection check_result(string $label = null)
+     * @method Show\Field|Collection total_point(string $label = null)
+     * @method Show\Field|Collection deduction_point(string $label = null)
      * @method Show\Field|Collection uuid(string $label = null)
+     * @method Show\Field|Collection file_name(string $label = null)
+     * @method Show\Field|Collection file_path(string $label = null)
+     * @method Show\Field|Collection file_extension(string $label = null)
      * @method Show\Field|Collection connection(string $label = null)
      * @method Show\Field|Collection queue(string $label = null)
      * @method Show\Field|Collection payload(string $label = null)
@@ -254,15 +293,12 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection community_name(string $label = null)
      * @method Show\Field|Collection custom_number(string $label = null)
      * @method Show\Field|Collection head_man(string $label = null)
-     * @method Show\Field|Collection status(string $label = null)
-     * @method Show\Field|Collection check_result(string $label = null)
      * @method Show\Field|Collection phone(string $label = null)
      * @method Show\Field|Collection address(string $label = null)
      * @method Show\Field|Collection floor(string $label = null)
      * @method Show\Field|Collection area_quantity(string $label = null)
      * @method Show\Field|Collection remark(string $label = null)
      * @method Show\Field|Collection pictures(string $label = null)
-     * @method Show\Field|Collection pid(string $label = null)
      * @method Show\Field|Collection email(string $label = null)
      * @method Show\Field|Collection token(string $label = null)
      * @method Show\Field|Collection tokenable_type(string $label = null)
