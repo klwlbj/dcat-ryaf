@@ -113,7 +113,7 @@ class FirmController extends AdminController
             $form->number('area_quantity');
             $form->number('floor');
             $form->text('address');
-            $form->text('remark');
+            $form->text('remark')->default('');
             // $form->text('pictures');
             // $form->display('created_at');
             // $form->display('updated_at');

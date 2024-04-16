@@ -12,7 +12,7 @@
 <script src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script>
 <script src="https://cdn.qiping.cn/fcms/lib/tips/jquery.tips.js"></script>
 <script src="https://cdn.qiping.cn/fcms/admin/lib/layui/layui.js" charset="utf-8"></script>
-<script src="https://cdn.qiping.cn/fcms/lib/js/qiping-fcms.min.js" charset="utf-8"></script>
-<script src="https://cdn.qiping.cn/fcms/mobile/js/fcms-mobile.min.js" charset="utf-8"></script>
+<script src="{{ asset('js/qiping-fcms.js') }}" charset="utf-8"></script>
+<script src="{{ asset('js/fcms-mobile.js') }}" charset="utf-8"></script>
 <script>var WEB_ROOT = '/xf2201/';
     var ADMIN_ROOT = '/xf2201/qp-admin/';</script>

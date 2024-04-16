@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\FirmController;
-use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\FirmController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\ImageController;
+use App\Http\Controllers\Api\checkResultController;
 use App\Http\Controllers\Api\CheckStandardController;
 
 /*
@@ -26,4 +28,15 @@ Route::post('getCheckTypeEnterpriseList', [CheckStandardController::class, 'getC
 Route::post('getEnterpriseList', [FirmController::class, 'getEnterpriseList']);
 Route::post('getCheckStatusList', [FirmController::class, 'getCheckStatusList']);
 Route::post('getEnterprise', [FirmController::class, 'getEnterprise']);
+Route::post('saveEnterprise', [FirmController::class, 'saveEnterprise']);
 Route::post('login', [UserController::class, 'login']);
+
+Route::post('getCollectInfoList', [ImageController::class, 'getCollectInfoList']);
+Route::post('getCollectImgList', [ImageController::class, 'getCollectImgList']);
+Route::post('getCheckDetailList', [checkResultController::class, 'getCheckDetailList']);
+Route::post('getCheckBaseInfo', [checkResultController::class, 'getCheckBaseInfo']);
+Route::post('saveCheckResult', [checkResultController::class, 'saveCheckResult']);
+Route::post('createReport', [checkResultController::class, 'createReport']);
+
+Route::post('/uploadImage', [ImageController::class, 'uploadImage']);
+Route::post('/deleteImage', [ImageController::class, 'deleteImage']);

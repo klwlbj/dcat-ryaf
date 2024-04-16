@@ -15,6 +15,7 @@ return new class () extends Migration {
         // 企业档案表
         Schema::create('firms', function (Blueprint $table) {
             $table->id();
+            $table->uuid()->unique();
             $table->string('name')->comment('单位名称');
             $table->integer('system_item_id')->default(0)->comment('归属项目');
             $table->string('community_name')->comment('社区名称')->default('');

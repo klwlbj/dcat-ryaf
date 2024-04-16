@@ -1,12 +1,12 @@
 var checkTypeID = 0;
 var laytpl;
-const enterpriseJson = ajaxGet("/api/getEnterprise", {number: number}, false, "post");
+const enterpriseJson = ajaxGet("/api/getEnterprise", {uuid: uuid}, false, "post");
 $(function () {
     $(document).on("click", "#newCheckBtn", function () {
-        window.location.href = "../checkDetail/check?number=" + number
+        window.location.href = "/web/checkDetail/check?uuid=" + uuid
     });
     $(document).on("click", "#reCheckBtn", function () {
-        window.location.href = "../checkDetail/reCheck?number=" + number + "&reportCode=" + reportCode
+        window.location.href = "/web/checkDetail/check?uuid=" + uuid + "&reportCode=" + reportCode
     });
     if (enterpriseJson.enterprise.stopCheck === 1) {
         stopCheck(1)
@@ -25,10 +25,10 @@ $(function () {
         submitLoad("保存中...", ".edit-icon");
         weui.form.validate("#form", function (c) {
             if (!c) {
-                var b = "../../enterprise/save?isCheck=" + isCheck;
+                var b = "/api/saveEnterprise?isCheck=" + isCheck;
                 var d = decodeURIComponent($("#form").serialize(), true);
                 var e = ajaxPostAsync(b, d);
-                if (e.stauts === 200) {
+                if (e.status === 200) {
                     qpOk("保存成功");
                     cancelEdit()
                 } else {
@@ -49,7 +49,7 @@ $(function () {
                     var a = $(this).attr("refName");
                     var c = $(this).attr("orderBy");
                     var b = c == 0 ? 0 : 1;
-                    ajaxPost("stopCheck", {number: number, id: d, stop: b}, false);
+                    ajaxPost("stopCheck", {uuid: uuid, id: d, stop: b}, false);
                     $("#checkStatusID").val(d);
                     if (b == 1) {
                         stopCheck(1)
@@ -134,7 +134,7 @@ function stopCheck(a) {
 
 function checkStatus() {
     var a = $("#checkStatusID").val();
-    if (a != 3 && a != 4 && a != 5) {
+    if (a != 1 && a != 2 && a != 3) {
         stopCheck(1)
     } else {
         stopCheck(0)

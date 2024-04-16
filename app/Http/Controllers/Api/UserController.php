@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-
     public function login(Request $request)
     {
+        // 验证 todo
         $credentials = $request->validate([
-            'phone' => ['required'],
+            'phone'    => ['required'],
             'password' => ['required'],
         ]);
 
@@ -23,8 +23,7 @@ class UserController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'phone' => '手机号有误',
         ]);
     }
-
 }

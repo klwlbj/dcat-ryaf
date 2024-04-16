@@ -11,9 +11,9 @@
                 <div class="header font-weight weui-flex">
                     <div class="back-icon back-page"><i class="weui-icon-back weui-icon_msg color-white"></i></div>
                     <div class="weui-flex__item">基础信息</div>
-                    <button type="button" class="weui-btn weui-btn_mini weui-btn_warn edit-icon open-popup-full"
+                    {{--<button type="button" class="weui-btn weui-btn_mini weui-btn_warn edit-icon open-popup-full"
                             title="新增单位信息(*号为必填)" data-target="enterprise-add">新增
-                    </button>
+                    </button>--}}
                 </div>
                 <div class="weui-search-bar" id="searchBar">
                     <form id="search" aria-haspopup="true" aria-expanded="false" aria-owns="searchResult"
@@ -133,7 +133,7 @@
                 </div>
                 <div class="weui-cell">
                     <div class="weui-cell__hd"><span class="weui-label font-weight">备注</span></div>
-                    <div class="weui-cell__bd">@{{ d.remake }}</div>
+                    <div class="weui-cell__bd">@{{ d.remark }}</div>
                 </div>
             </div>
         </div>
@@ -272,7 +272,7 @@
                     <div class="weui-cell">
                         <div class="weui-cell__hd"><span class="weui-label">备注</span></div>
                         <div class="weui-cell__bd">
-                            <input type="text" class="weui-input fms-input fms-border" maxlength="255" name="remake"
+                            <input type="text" class="weui-input fms-input fms-border" maxlength="255" name="remark"
                                    placeholder="输入其它说明">
                         </div>
                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Models\CheckResult;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,15 +18,20 @@ class HomeController extends Controller
         return view('web/enterprise');
     }
 
-    public function enterpriseList()
+    public function enterpriseList(Request $request)
     {
-        return view('web/enterpriseList');
+        $typeId = $request->get('typeId');
+
+        return view('web/enterpriseList', ['typeId' => $typeId]);
     }
 
     public function enterpriseInfo(Request $request)
     {
-        $number = $request->get('number');
-        return view('web/enterpriseInfo', ['number' => $number]);
+        $uuid = $request->get('uuid');
+        // 查询最近一条检查记录
+
+        $reportCode = CheckResult::where('firm_id', $uuid)->orderBy('id', 'desc')->value('report_code') ?? '';
+        return view('web/enterpriseInfo', ['uuid' => $uuid, 'reportCode' => $reportCode]);
     }
 
     public function user()
@@ -52,5 +58,17 @@ class HomeController extends Controller
     public function login()
     {
         return view('web/login');
+    }
+
+    public function collectInfo()
+    {
+        return view('web/collectInfo');
+    }
+
+    public function checkDetail(Request $request)
+    {
+        $uuid       = $request->get('uuid');
+        $reportCode = $request->get('reportCode', 'new');
+        return view('web/checkDetail', ['uuid' => $uuid, 'reportCode' => $reportCode]);
     }
 }

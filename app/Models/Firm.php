@@ -2,11 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Dcat\Admin\Traits\HasDateTimeFormatter;
 
 class Firm extends BaseModel
 {
     use HasDateTimeFormatter;
+
+    protected $fillable = [
+        'name',
+        'status',
+        'head_man',
+        'phone',
+        'floor',
+        'area_quantity',
+        'address',
+        'remark',
+    ];
 
     public const STATUS_WAIT            = 1;
     public const STATUS_CHECKED         = 2;
@@ -47,4 +59,12 @@ class Firm extends BaseModel
         self::CHECK_RESULT_PASS     => '合格',
         self::CHECK_RESULT_NOT_PASS => '不合格',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            $model->uuid = (string) Str::uuid();
+        });
+    }
 }

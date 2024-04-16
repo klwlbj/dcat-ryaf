@@ -11,9 +11,9 @@
                 <div class="header font-weight weui-flex">
                     <div class="back-icon back-page"><i class="weui-icon-back weui-icon_msg color-white"></i></div>
                     <div class="weui-flex__item">出租屋-消防检查</div>
-                    <button type="button" class="weui-btn weui-btn_mini weui-btn_warn edit-icon open-popup"
-                            title="新增单位信息(*号为必填)" data-target="enterprise-add">新增
-                    </button>
+{{--                    <button type="button" class="weui-btn weui-btn_mini weui-btn_warn edit-icon open-popup"--}}
+{{--                            title="新增单位信息(*号为必填)" data-target="enterprise-add">新增--}}
+{{--                    </button>--}}
                 </div>
                 <div class="weui-search-bar" id="searchBar">
                     <form id="search" aria-haspopup="true" aria-expanded="false" aria-owns="searchResult"
@@ -36,7 +36,7 @@
                 <div class="weui-tab__panel">
                     <div class="weui-cells dis" id="enterpriseListTpl">
                         @{{# layui.each(d, function(index, item){ }}
-                        <a class="weui-cell weui-cell_access" href="/web/enterpriseInfo?number=@{{ item.number }}">
+                        <a class="weui-cell weui-cell_access" href="/web/enterpriseInfo?uuid=@{{ item.uuid }}">
 <span class="weui-cell__bd">
 <span>@{{ item.enterpriseName }}</span>
 <div class="weui-cell__desc">@{{ item.address }}</div>
@@ -153,7 +153,7 @@
                     <div class="weui-cell">
                         <div class="weui-cell__hd"><span class="weui-label">备注</span></div>
                         <div class="weui-cell__bd">
-                            <input type="text" class="weui-input fms-input fms-border" maxlength="255" name="remake"
+                            <input type="text" class="weui-input fms-input fms-border" maxlength="255" name="remark"
                                    placeholder="输入其它说明">
                         </div>
                     </div>
@@ -171,7 +171,7 @@
     </div>
 </div>
 <!--end-->
-<script>const typeId = '3';</script>
+<script>const typeId = '{{$typeId}}';</script>
 <script src="{{ asset('js/enterpriseList.js') }}" charset="utf-8"></script>
 <script src="{{ asset('js/addEnterprise.js') }}" charset="utf-8"></script>
 </body>

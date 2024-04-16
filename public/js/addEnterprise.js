@@ -29,11 +29,11 @@ $(function () {
                     $(".weui-form__tips").text($("#checkTypeID").attr("placeholder"));
                     return false
                 }
-                var c = "../../enterprise/save";
+                var c = "/api/saveEnterprise";
                 var b = decodeURIComponent($("#form").serialize(), true);
                 submitLoad("提交中...", "#save");
                 var e = ajaxPostAsync(c, b);
-                if (e.stauts === 200) {
+                if (e.status === 200) {
                     qpOk("新增成功");
                     layer.close(layer.index);
                     if (typeof typeId == "undefined") {

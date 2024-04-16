@@ -17,7 +17,7 @@
                     <div class="weui-form__control-area mtop5">
                         <div class="weui-cells__group weui-cells__group_form">
                             <form id="form" aria-haspopup="true" aria-expanded="false">
-{{--                                <input type="hidden" name="uuid" value="@{{ d.enterprise.uuid }}">--}}
+                                <input type="hidden" name="uuid" value="@{{ d.enterprise.uuid }}">
                                 <div class="weui-cells">
                                     <div class="weui-cell">
                                         <div class="weui-cell__hd"><span class="weui-label">编号</span></div>
@@ -131,9 +131,9 @@
                                     <div class="weui-cell">
                                         <div class="weui-cell__hd"><span class="weui-label">备注说明</span></div>
                                         <div class="weui-cell__bd">
-                                            <input type="text" class="weui-input fms-input" name="remake"
+                                            <input type="text" class="weui-input fms-input" name="remark"
                                                    placeholder="输入其它说明" disabled
-                                                   value="@{{ d.enterprise.remake }}">
+                                                   value="@{{ d.enterprise.remark }}">
                                         </div>
                                     </div>
                                     <div class="weui-cell">
@@ -141,7 +141,7 @@
                                         <div class="weui-cell__bd">
                                             <img src="https://cdn.qiping.cn/fcms/mobile/images/camera.png" width="35"
                                                  height="30" class="open-popup-iframe"
-                                                 data-target="collectInfor?number=@{{ d.enterprise.number }}&checkTypeID=@{{ d.enterprise.checkTypeID }}"
+                                                 data-target="/web/collectInfo?uuid=@{{ d.enterprise.uuid }}&checkTypeID=@{{ d.enterprise.checkTypeID }}"
                                                  title="采集信息"/>
                                         </div>
                                     </div>
@@ -151,8 +151,7 @@
                     </div>
                     <div class="weui-btn-area mbottom20">
                         <button type="button" class="weui-btn weui-btn_primary" id="newCheckBtn">全新检查</button>
-                        <button type="button" class="weui-btn weui-btn_primary fms-bg-blue weui-btn_disabled" disabled
-                                id="reCheckBtn">复 检
+                        <button type="button" class="weui-btn weui-btn_primary fms-bg-blue" id="reCheckBtn">复 检
                         </button>
                         <button type="button" class="weui-btn weui-btn_warn open-popup" title="中止检查原因"
                                 data-target="#stopCheck">中止检查
@@ -192,9 +191,10 @@
         <br><br><br>
     </div>
 </div>
-<script>const number = "{{$number}}";
-    const reportCode = "RIYxGXt8ct";
-    const isCheck = "true";</script>
+<script>const uuid = "{{$uuid}}";
+    const reportCode = "{{$reportCode}}";
+    const isCheck = "true";
+</script>
 <script src="{{ asset('js/enterprise.js') }}" charset="utf-8"></script>
 </body>
 </html>

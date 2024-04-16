@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\UserController;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Web\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,16 +22,37 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/web/index', [\App\Http\Controllers\Web\HomeController::class, 'index']);
-Route::get('/web/enterprise', [\App\Http\Controllers\Web\HomeController::class, 'enterprise']);
-Route::get('/web/enterpriseList', [\App\Http\Controllers\Web\HomeController::class, 'enterpriseList']);
-Route::get('/web/enterpriseInfo', [\App\Http\Controllers\Web\HomeController::class, 'enterpriseInfo']);
-Route::get('/web/user', [\App\Http\Controllers\Web\HomeController::class, 'user']);
-Route::get('/web/baseInfo', [\App\Http\Controllers\Web\HomeController::class, 'baseInfo']);
-Route::get('/web/checkStandard', [\App\Http\Controllers\Web\HomeController::class, 'checkStandard']);
-Route::get('/web/checkStandardTable', [\App\Http\Controllers\Web\HomeController::class, 'checkStandardTable']);
-Route::get('/web/login', [\App\Http\Controllers\Web\HomeController::class, 'login']);
+Route::get('/web/index', [HomeController::class, 'index']);
+Route::get('/web/enterprise', [HomeController::class, 'enterprise']);
+Route::get('/web/enterpriseList', [HomeController::class, 'enterpriseList']);
+Route::get('/web/enterpriseInfo', [HomeController::class, 'enterpriseInfo']);
+Route::get('/web/user', [HomeController::class, 'user']);
+Route::get('/web/baseInfo', [HomeController::class, 'baseInfo']);
+Route::get('/web/checkStandard', [HomeController::class, 'checkStandard']);
+Route::get('/web/checkStandardTable', [HomeController::class, 'checkStandardTable']);
+Route::get('/web/collectInfo', [HomeController::class, 'collectInfo']);
+Route::get('/web/login', [HomeController::class, 'login']);
+Route::get('/web/checkDetail/check', [HomeController::class, 'checkDetail']);
 
+Route::post('login', [UserController::class, 'login'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
 
-Route::post('login', [UserController::class, 'login'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);;
+Route::get('/public/xf/upload/{year}/{month}/{filename}', function ($year, $month, $filename) {
+    // $path = public_path($directory . '/' . $filename);
 
+    $path = Storage::disk('public')->path('xf/upload/' . $year . '/' . $month . '/' . $filename);
+    // 检查文件是否存在
+    if (file_exists($path)) {
+        $file = File::get($path);
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
+    }
+    abort(404);
+    //24041207406-4c24-b3a0-82eb71987266.jpg
+    //2404120740118e4f080c-c096-4c24-b3a0-82eb71987266.jpg
+
+    //2404120740118e4f080c-c096-4c24-b3a0-82eb71987266.jpg
+});

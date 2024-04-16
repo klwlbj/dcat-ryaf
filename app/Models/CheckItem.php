@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Dcat\Admin\Traits\ModelTree;
 use Dcat\Admin\Traits\HasDateTimeFormatter;
 
@@ -33,6 +34,8 @@ class CheckItem extends BaseModel
         self::DIFFICULTY_MEDIUM => '中等',
         self::DIFFICULTY_HARD   => '困难',
     ];
+
+
 
     public function parent()
     {
