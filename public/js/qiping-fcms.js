@@ -220,7 +220,7 @@ function getCheckTypeList(e, f, d) {
 }
 
 function getProjectList(e, f, d) {
-    var a = ADMIN_ROOT + "api/getProjectList";
+    var a = "/api/getProjectList";
     var c = ajaxGet(a, {}, false, "post");
     var b = "";
     if (d != null) {
@@ -228,7 +228,7 @@ function getProjectList(e, f, d) {
     }
     $.each(c, function (g, i) {
         var h = i.id == f ? "selected" : "";
-        b += '<option value="' + i.id + '" ' + h + ">" + i.proName + "</option>"
+        b += '<option value="' + i.id + '" ' + h + ">" + i.name + "</option>"
     });
     $(e).html(b)
 }

@@ -18,8 +18,15 @@ class UserController extends Controller
 
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
+            // $user = Auth::guard('web')->user();
+            // Auth::guard('web')->login($user);
+            //
+            // $token = $user->createToken('111')->accessToken;
 
-            return ['status' => 200];
+            return [
+                'status' => 200,
+                // 'token'  => Auth::guard('web')->token,
+            ];
         }
 
         return back()->withErrors([

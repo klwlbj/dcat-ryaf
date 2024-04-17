@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Firm;
+use App\Models\Group;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
@@ -134,4 +135,11 @@ class FirmController extends Controller
         }
         return response()->json($data);
     }
+
+    public function getProjectList(){
+        $data = Group::select('name','id')->get();
+        return response()->json($data);
+
+    }
+
 }

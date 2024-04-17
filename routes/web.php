@@ -34,7 +34,7 @@ Route::get('/web/collectInfo', [HomeController::class, 'collectInfo']);
 Route::get('/web/login', [HomeController::class, 'login']);
 Route::get('/web/checkDetail/check', [HomeController::class, 'checkDetail']);
 
-Route::post('login', [UserController::class, 'login'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
+// Route::post('login', [UserController::class, 'login'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
 
 Route::get('/public/xf/upload/{year}/{month}/{filename}', function ($year, $month, $filename) {
     // $path = public_path($directory . '/' . $filename);

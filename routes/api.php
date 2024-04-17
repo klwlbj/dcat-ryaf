@@ -23,21 +23,26 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('getCheckStandard', [CheckStandardController::class, 'getCheckStandard']);
-Route::post('getCheckTypeEnterpriseList', [CheckStandardController::class, 'getCheckTypeEnterpriseList']);
-Route::post('getEnterpriseList', [FirmController::class, 'getEnterpriseList']);
-Route::post('getCheckStatusList', [FirmController::class, 'getCheckStatusList']);
-Route::post('getEnterprise', [FirmController::class, 'getEnterprise']);
-Route::post('saveEnterprise', [FirmController::class, 'saveEnterprise']);
-Route::post('login', [UserController::class, 'login']);
+// Route::group(['middleware' => 'auth'], function () {
+    Route::post('getCheckStandard', [CheckStandardController::class, 'getCheckStandard']);
+    Route::post('getCheckTypeEnterpriseList', [CheckStandardController::class, 'getCheckTypeEnterpriseList']);
+    Route::post('getEnterpriseList', [FirmController::class, 'getEnterpriseList']);
+    Route::post('getCheckStatusList', [FirmController::class, 'getCheckStatusList']);
+    Route::post('getEnterprise', [FirmController::class, 'getEnterprise']);
+    Route::post('saveEnterprise', [FirmController::class, 'saveEnterprise']);
 
-Route::post('getCollectInfoList', [ImageController::class, 'getCollectInfoList']);
-Route::post('getCollectImgList', [ImageController::class, 'getCollectImgList']);
-Route::post('getCheckDetailList', [checkResultController::class, 'getCheckDetailList']);
-Route::post('getCheckBaseInfo', [checkResultController::class, 'getCheckBaseInfo']);
-Route::post('saveCheckResult', [checkResultController::class, 'saveCheckResult']);
-Route::post('createReport', [checkResultController::class, 'createReport']);
-Route::post('stopCheck', [checkResultController::class, 'stopCheck']);
+    Route::post('getCollectInfoList', [ImageController::class, 'getCollectInfoList']);
+    Route::post('getCollectImgList', [ImageController::class, 'getCollectImgList']);
+    Route::post('getCheckDetailList', [checkResultController::class, 'getCheckDetailList']);
+    Route::post('getCheckBaseInfo', [checkResultController::class, 'getCheckBaseInfo']);
+    Route::post('saveCheckResult', [checkResultController::class, 'saveCheckResult']);
+    Route::post('createReport', [checkResultController::class, 'createReport']);
+    Route::post('stopCheck', [checkResultController::class, 'stopCheck']);
 
-Route::post('/uploadImage', [ImageController::class, 'uploadImage']);
-Route::post('/deleteImage', [ImageController::class, 'deleteImage']);
+    Route::post('/uploadImage', [ImageController::class, 'uploadImage']);
+    Route::post('/deleteImage', [ImageController::class, 'deleteImage']);
+// });
+
+Route::post('/getProjectList', [FirmController::class, 'getProjectList']);
+
+Route::post('/login', [UserController::class, 'login'])->middleware('web')->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
