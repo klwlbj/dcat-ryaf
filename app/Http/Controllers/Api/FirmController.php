@@ -86,7 +86,10 @@ class FirmController extends Controller
             ->first();
         $firm->checkStatusName = Firm::$formatStatusMaps[$firm->checkStatusID];
         $firm->checkTypeName   = Firm::$formatCheckTypeMaps[$firm->checkTypeID];
-        // $firm->stopCheck = 1;
+        $firm->stopCheck       = 1;
+        if (in_array($firm->checkStatusID, [Firm::STATUS_WAIT, Firm::STATUS_CHECKED, Firm::STATUS_REVIEWED])) {
+            $firm->stopCheck = 0;
+        }
 
         return response()->json([
             'enterprise' => $firm,

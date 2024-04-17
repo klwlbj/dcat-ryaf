@@ -57,6 +57,7 @@
 </div>
 <script>
     const uuid = "27cd995d1159480fb0e87705c822ce42";
+    const reportCode = "";
     const checkTypeID = "1";
     // var collectInforID = 0;
     const checkStandardID = 0;

@@ -177,7 +177,7 @@
             @{{# layui.each(d, function(index, item){ }}
             <label class="weui-cell weui-check__label" for="s@{{ item.id }}">
                 <div class="weui-cell__bd">
-                    <p>@{{ item.name }} @{{# if(item.orderBy == 0) { }}<span
+                    <p>@{{ item.name }} @{{# if(item.id == 1) { }}<span
                             class="color-red mlet10 fsize12">选择此项可取消中止</span>@{{# }}}</p>
                 </div>
                 <div class="weui-cell__ft">
@@ -193,7 +193,8 @@
 </div>
 <script>const uuid = "{{$uuid}}";
     const reportCode = "{{$reportCode}}";
-    const isCheck = "true";
+    const isCheck = "{{$isCheck}}";
+    console.log(isCheck)
 </script>
 <script src="{{ asset('js/enterprise.js') }}" charset="utf-8"></script>
 </body>

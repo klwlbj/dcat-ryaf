@@ -65,6 +65,7 @@ function ajaxUplaod(b, d) {
     a += "?uuid=" + uuid;
     a += "&collectInforID=" + collectInforID;
     a += "&checkStandardID=" + checkStandardID;
+    a += "&reportCode=" + reportCode;
     if (uuid == "" || (collectInforID == 0 && checkStandardID == 0)) {
         qpError("上传参数丢失，请重新刷新页面");
         return 500

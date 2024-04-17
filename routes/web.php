@@ -51,8 +51,4 @@ Route::get('/public/xf/upload/{year}/{month}/{filename}', function ($year, $mont
         return $response;
     }
     abort(404);
-    //24041207406-4c24-b3a0-82eb71987266.jpg
-    //2404120740118e4f080c-c096-4c24-b3a0-82eb71987266.jpg
-
-    //2404120740118e4f080c-c096-4c24-b3a0-82eb71987266.jpg
 });

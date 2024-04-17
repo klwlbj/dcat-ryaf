@@ -5,10 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Models\Firm;
 use App\Models\CheckItem;
 use App\Models\CheckResult;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
+use App\Models\CollectImage;
 use Illuminate\Http\Request;
 use App\Models\CheckQuestion;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 
 class checkResultController extends Controller
@@ -34,7 +35,7 @@ class checkResultController extends Controller
                 'parentIdType3'  => $checkQuestion->check_standard_id,
                 'parentIdType4'  => $checkQuestion->check_question_id,
                 'question'       => $checkQuestion->question,
-                'rectify'        => $checkQuestion->recitify,
+                'rectify'        => $checkQuestion->recitify ?? '',
                 'zgnd'           => CheckQuestion::$formatDifficultyMaps[$checkQuestion->difficulty],
             ];
         }
@@ -81,9 +82,15 @@ class checkResultController extends Controller
 
         $new = false;
         if ($reportCode === 'new') {
-            // 生成新uuid
-            $reportCode = (string) Str::uuid();
-            $new        = true;
+            // 生从数据库中，查找最新的检查中的记录的report_code
+            $reportCode = CheckResult::where('firm_id', $uuid)
+                ->where('status', CheckResult::STATUS_UNSAVED)
+                ->value('report_code');
+            if (empty($reportCode)) {
+                // 生成新uuid
+                $reportCode = (string) Str::uuid();
+                $new        = true;
+            }
         }
 
         $difficulty = array_flip(CheckQuestion::$formatDifficultyMaps);
@@ -106,11 +113,15 @@ class checkResultController extends Controller
                 'status'      => CheckResult::STATUS_UNSAVED,
                 'firm_id'     => $uuid,
             ]);
-
+            // 更新图片的report_code
+            CollectImage::where('firm_id', $uuid)
+                ->where('report_code', 'new')
+                ->update(['report_code' => $reportCode]);
         } else {
             CheckQuestion::where('check_result_uuid', $reportCode)
                 ->where('firm_id', $uuid)
                 ->delete();
+            // 清除旧的图片 todo
         }
         CheckQuestion::insert($saveCheckQuestionList);
 
@@ -129,12 +140,29 @@ class checkResultController extends Controller
     {
         $uuid = $request->input('enterpriseUuid');
         // 计算该单位最新的检查记录的得分
-        $checkResult                  = CheckResult::where('firm_id', $uuid)->orderBy('id', 'desc')->first();
-        $checkResult->status          = CheckResult::STATUS_BAD;// 合格or不合格
+        $checkResult         = CheckResult::where('firm_id', $uuid)->orderBy('id', 'desc')->first();
+        $checkResult->status = CheckResult::STATUS_BAD;// 合格or不合格
         // todo 后端计算分数
         $checkResult->total_point     = 100;
         $checkResult->deduction_point = 10;
         $checkResult->save();
         return response()->json(['status' => 200]);
+    }
+
+    /**
+     * 中止检查
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function stopCheck(Request $request)
+    {
+        $uuid   = $request->input('uuid');
+        $status = $request->input('status');
+
+        $firm = Firm::where('uuid', $uuid)->first();
+
+        $firm->status = $status;
+        $firm->save();
+        return response()->json(['status' => 200, 'msg' => '操作成功']);
     }
 }

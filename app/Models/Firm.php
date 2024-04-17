@@ -67,4 +67,9 @@ class Firm extends BaseModel
             $model->uuid = (string) Str::uuid();
         });
     }
+
+    public function checkResults()
+    {
+        return $this->hasMany(CheckResult::class, 'uuid', 'firm_id');
+    }
 }

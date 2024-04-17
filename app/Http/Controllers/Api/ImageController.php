@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
 use App\Models\CollectImage;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
@@ -34,7 +34,7 @@ class ImageController extends Controller
         $firmId = $request->input('uuid');
 
         $images = CollectImage::where('firm_id', $firmId)
-            ->select('file_name', 'uuid', 'firm_id', 'file_path')
+            ->select('file_name', 'uuid', 'firm_id', 'file_path', 'check_question_id')
             ->get();
         $data = [];
         foreach ($images as $image) {
@@ -43,6 +43,7 @@ class ImageController extends Controller
                 'uuid'           => $image->uuid,
                 'enterpriseUuid' => $image->firm_id,
                 'imgUrl'         => url($image->file_path),
+                'checkStandardID' => $image->check_question_id,
             ];
         }
         return response()->json($data);
@@ -79,9 +80,11 @@ class ImageController extends Controller
      */
     public function uploadImage(Request $request)
     {
-        $firmId = $request->input('uuid');
-        $file   = $request->file('files');
-        $date =date('ymdHis');
+        $firmId          = $request->input('uuid');
+        $reportCode      = $request->input('reportCode') ?? '';
+        $checkQuestionId = $request->input('checkStandardID') ?? '';
+        $file            = $request->file('files');
+        $date            = date('ymdHis');
         // $fileName      = $file->getClientOriginalName();
         $fileExtension = $file->getClientOriginalExtension();
         $imageUuid     = Str::uuid(); // 生成唯一标识符
@@ -97,12 +100,14 @@ class ImageController extends Controller
         }
 
         // 创建新的图片记录
-        $image                 = new CollectImage();
-        $image->file_name      = $date . $imageUuid . '.jpg';
-        $image->uuid           = $imageUuid;
-        $image->file_path      = $directory;
-        $image->file_extension = $fileExtension; // 假设文件扩展名为jpg
-        $image->firm_id        = $firmId;
+        $image                    = new CollectImage();
+        $image->file_name         = $date . $imageUuid . '.jpg';
+        $image->uuid              = $imageUuid;
+        $image->file_path         = $directory;
+        $image->file_extension    = $fileExtension; // 假设文件扩展名为jpg
+        $image->firm_id           = $firmId;
+        $image->report_code       = $reportCode;
+        $image->check_question_id = $checkQuestionId;
         $image->save();
 
         // 返回接口格式数据

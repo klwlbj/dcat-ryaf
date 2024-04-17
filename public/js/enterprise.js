@@ -45,11 +45,15 @@ $(function () {
         $(".weui-cells_radio").each(function () {
             $(this).find("input[type='radio']").each(function () {
                 if ($(this).is(":checked")) {
+                    var statusList= ['1', '2', '3'];
                     var d = $(this).val();
                     var a = $(this).attr("refName");
-                    var c = $(this).attr("orderBy");
-                    var b = c == 0 ? 0 : 1;
-                    ajaxPost("stopCheck", {uuid: uuid, id: d, stop: b}, false);
+                    var c = $(this).attr("value");
+                    console.log(c)
+                    var b = statusList.includes(c) ? 0 : 1;
+                    console.log('stop:'+b)
+                    console.log(statusList.includes(c));
+                    ajaxPost("/api/stopCheck", {uuid: uuid, status: d, stop: b}, false);
                     $("#checkStatusID").val(d);
                     if (b == 1) {
                         stopCheck(1)
@@ -103,9 +107,9 @@ function fms_border(a) {
         $("form input").attr("disabled", false).addClass("fms-border");
         $("form select").attr("disabled", false).addClass("fms-border");
         $("form textarea").attr("disabled", false).addClass("fms-border");
-        if (isCheck == "true") {
+        // if (isCheck == 1) {
             $("#checkTypeID").attr("disabled", true).removeClass("fms-border")
-        }
+        // }
     } else {
         $("form input").attr("disabled", true).removeClass("fms-border");
         $("form select").attr("disabled", true).removeClass("fms-border");
@@ -126,9 +130,9 @@ function stopCheck(a) {
         $("#reCheckBtn").addClass("weui-btn_disabled").attr("disabled", true)
     } else {
         $("#newCheckBtn").removeClass("weui-btn_disabled").attr("disabled", false);
-        if (isCheck == "true") {
+        // if (isCheck == 1) {
             $("#reCheckBtn").removeClass("weui-btn_disabled").attr("disabled", false)
-        }
+        // }
     }
 }
 

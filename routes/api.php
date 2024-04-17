@@ -37,6 +37,7 @@ Route::post('getCheckDetailList', [checkResultController::class, 'getCheckDetail
 Route::post('getCheckBaseInfo', [checkResultController::class, 'getCheckBaseInfo']);
 Route::post('saveCheckResult', [checkResultController::class, 'saveCheckResult']);
 Route::post('createReport', [checkResultController::class, 'createReport']);
+Route::post('stopCheck', [checkResultController::class, 'stopCheck']);
 
 Route::post('/uploadImage', [ImageController::class, 'uploadImage']);
 Route::post('/deleteImage', [ImageController::class, 'deleteImage']);
