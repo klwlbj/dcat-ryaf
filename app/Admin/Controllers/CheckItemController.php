@@ -2,6 +2,8 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Tree\CheckItemAction;
+use Dcat\Admin\Admin;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
@@ -14,16 +16,25 @@ use App\Admin\Repositories\CheckItem;
 use App\Admin\Actions\AddChildCheckContent;
 use App\Admin\Actions\Tree\SetCheckQuestion;
 use Dcat\Admin\Http\Controllers\AdminController;
+use Dcat\Admin\Widgets\Dropdown;
 
 class CheckItemController extends AdminController
 {
     public function index(Content $content)
     {
+        Admin::js('/js/checkItem.js');
+        $checkType = request()->query('check_type');
         return $content->header('树状模型')
-            ->body(function (Row $row) {
+            ->body(function (Row $row) use ($checkType) {
                 $tree = new Tree(\App\Models\CheckItem::with(['checkQuestions']));
 
                 $row->column(12, $tree);
+                if(!empty($checkType)){
+                    $tree->query(function ($model) use ($checkType) {
+                        return $model->where('check_type', $checkType);
+                    });
+                }
+
 
                 $tree->branch(function ($branch) {
                     // return "<span class='label'  style='background-color: #0e4d32'>{$branch['title']}</span>";
@@ -50,6 +61,9 @@ class CheckItemController extends AdminController
                     }
                 });
 
+                $tree->tools(function (Tree\Tools $tools) {
+                    $tools->add(new CheckItemAction());
+                });
                 $tree->maxDepth(4);
                 $tree->disableSaveButton();
                 $tree->expand();
@@ -80,6 +94,8 @@ class CheckItemController extends AdminController
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('check_type')->select(\App\Models\CheckItem::$formatCheckTypeMaps);
             });
+
+            $grid->toolsWithOutline(false);
         });
     }
 

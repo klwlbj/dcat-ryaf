@@ -62,7 +62,7 @@ class CheckReportWordLogic extends BaseWordLogic
         #第二行
         $table->addRow();
         $table->addCell(2300, array_merge($cellCenter, ['gridSpan' => 5]))->addText("类型", $cellStyle, $center);
-        $table->addCell(2000, array_merge($cellCenter, ['gridSpan' => 4]))->addText($data['info']['type_name'], $cellStyle, $center);
+        $table->addCell(2000, array_merge($cellCenter, ['gridSpan' => 4]))->addText($data['info']['check_type_name'], $cellStyle, $center);
         $table->addCell(1000, array_merge($cellCenter, ['gridSpan' => 1]))->addText("单位", $cellStyle, $center);
         $table->addCell(4500, array_merge($cellCenter, ['gridSpan' => 7]))->addText($data['info']['company_name'], $cellStyle, $center);
 
@@ -158,7 +158,7 @@ class CheckReportWordLogic extends BaseWordLogic
         $info = [
             'id' => 1,
             'company_name'        => '华糖社区华糖街49',
-            'type_name'           => '出租屋',
+            'check_type_name'           => '出租屋',
             'community'           => '华糖社区',
             'number'              => 'XF24042013',
             'check_status'        => '已检查',
