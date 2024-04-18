@@ -76,7 +76,7 @@ class CheckReportLogic extends BaseLogic
             ],
         ];
         if(isset($params['is_qr']) && !empty($params['is_qr'])){
-            $qrCodeUrl = QrCodeLogic::getInstance()->createQrCodeByUrl('http://'. request()->getHost().'/admin/report/qr_view?id='.$params['id'],'check_report_'.$params['id'].'.png');
+            $qrCodeUrl = QrCodeLogic::getInstance()->createQrCodeByUrl('http://'. request()->getHost().'/admin/check_report/qr_view?id='.$params['id'],'check_report_'.$params['id'].'.png');
             $info['qrcode_url'] = $qrCodeUrl;
         }else{
             $info['qrcode_url'] = '';

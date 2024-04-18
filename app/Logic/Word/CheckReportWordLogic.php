@@ -139,7 +139,7 @@ class CheckReportWordLogic extends BaseWordLogic
 
         $section->addText(date('Y年m月d日',strtotime($data['info']['check_date'])),['name' => '仿宋_GB2312', 'size' => 16,],['alignment' => 'right']);
 
-        $qrCodeUrl = QrCodeLogic::getInstance()->createQrCodeByUrl('http://'. request()->getHost().'/admin/report/qr_view?id='.$data['info']['id'],'check_report_'.$data['info']['id'].'.png');
+        $qrCodeUrl = QrCodeLogic::getInstance()->createQrCodeByUrl('http://'. request()->getHost().'/admin/check_report/qr_view?id='.$data['info']['id'],'check_report_'.$data['info']['id'].'.png');
 
         $section->addImage( 'http://'. request()->getHost().$qrCodeUrl, ['width'=>120, 'height'=>120, 'align'=>'right'] );
 

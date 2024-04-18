@@ -54,7 +54,7 @@
                     label="检查报告"
                     width="180">
                     <template slot-scope="scope">
-                        <el-link :href="'/admin/report/detail?id='+scope.row.id" target="_blank">报告详情</el-link>
+                        <el-link :href="'/admin/check_report/detail?id='+scope.row.id" target="_blank">报告详情</el-link>
                     </template>
                 </el-table-column>
                 <el-table-column
