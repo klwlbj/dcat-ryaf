@@ -158,7 +158,7 @@
                 axios({
                     // 默认请求方式为get
                     method: 'post',
-                    url: '/admin/report/info',
+                    url: '/admin/check_report/info',
                     // 传递参数
                     data: {
                         id:this.id,

@@ -6,7 +6,7 @@ use App\Logic\BaseLogic;
 use App\Logic\QrCodeLogic;
 use App\Logic\ResponseLogic;
 
-class ReportLogic extends BaseLogic
+class CheckReportLogic extends BaseLogic
 {
     public function getList($params)
     {

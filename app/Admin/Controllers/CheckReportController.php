@@ -2,22 +2,23 @@
 
 namespace App\Admin\Controllers;
 
+use App\Logic\Excel\HiddenTroubleExcelLogic;
 use App\Logic\ResponseLogic;
 use App\Logic\Word\CheckReportWordLogic;
 use Illuminate\Http\Request;
 use Dcat\Admin\Layout\Content;
-use App\Logic\Admin\ReportLogic;
+use App\Logic\Admin\CheckReportLogic;
 use Illuminate\Support\Facades\Validator;
 use Dcat\Admin\Http\Controllers\AdminController;
 
-class ReportController extends AdminController
+class CheckReportController extends AdminController
 {
     public function index(Content $content): Content
     {
         return $content->header('检查报告')->body(admin_view('admin.checkReport.index'));
     }
 
-    public function detailView(Request $request,Content $content): Content
+    public function detailView(Content $content): Content
     {
         return $content->header('报告详情')->body(admin_view('admin.checkReport.detail'));
     }
@@ -26,7 +27,7 @@ class ReportController extends AdminController
     {
         $params = $request->all();
 
-        return ReportLogic::getInstance()->getList($params);
+        return CheckReportLogic::getInstance()->getList($params);
     }
 
     public function info(Request $request): \Illuminate\Http\JsonResponse
@@ -43,7 +44,7 @@ class ReportController extends AdminController
             return ResponseLogic::apiErrorResult($validate->errors()->first());
         }
 
-        return ReportLogic::getInstance()->getDetail($params);
+        return CheckReportLogic::getInstance()->getDetail($params);
     }
 
     public function qrView(Request $request){
@@ -51,6 +52,12 @@ class ReportController extends AdminController
     }
 
     public function createWord(Request $request){
-        return CheckReportWordLogic::getInstance()->createWord([]);
+        $params = $request->all();
+        return CheckReportWordLogic::getInstance()->createWord($params);
+    }
+
+    public function createHiddenTroubleExcel(Request $request){
+        $params = $request->all();
+        return HiddenTroubleExcelLogic::getInstance()->createExcel($params);
     }
 }

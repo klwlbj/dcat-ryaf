@@ -128,7 +128,7 @@
 
             },
             rectifyBook(row){
-                window.location.href = '/admin/report/create_word?id=' + row.id;
+                window.location.href = '/admin/check_report/create_rectify_word?id=' + row.id;
             },
             getList(){
 
@@ -137,7 +137,7 @@
                 axios({
                     // 默认请求方式为get
                     method: 'post',
-                    url: '/admin/report/lists',
+                    url: '/admin/check_report/lists',
                     // 传递参数
                     data: {
 
