@@ -16,7 +16,7 @@ $(function () {
         }
         qpLoad("登录中...");
         $.ajax({
-            url: "/login/",
+            url: "/api/login/",
             type: "post",
             data: {phone: c, password: a, projectId: b},
             dataType: "json",

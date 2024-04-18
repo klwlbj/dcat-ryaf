@@ -10,7 +10,7 @@ class SetCheckQuestion extends RowAction
     /**
      * @return string
      */
-    protected $title = '添加标准问题';
+    protected $title = 'add';
 
     /**
      * @var string
@@ -19,11 +19,12 @@ class SetCheckQuestion extends RowAction
 
     public function render()
     {
+        $row = $this->getRow();
         // 实例化表单类并传递自定义参数
         return Modal::make()
             ->lg()
             ->title($this->title)
-            ->body(\App\Admin\Forms\SetCheckQuestion::make()->payload(['parent_id' => $this->getKey()]))
+            ->body(\App\Admin\Forms\SetCheckQuestion::make()->payload(['parent_id' => $this->getKey(), 'type' => $row->type]))
             ->button($this->title);
     }
 }
