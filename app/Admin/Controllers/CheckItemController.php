@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Tree\CheckItemAction;
 use App\Models\Firm;
 use Dcat\Admin\Form;
 use Dcat\Admin\Show;
@@ -53,6 +54,9 @@ class CheckItemController extends AdminController
                     if ($actions->row->type !== 4) {
                         $actions->append(new SetCheckQuestion());
                     }
+                });
+                $tree->tools(function (Tree\Tools $tools) {
+                    $tools->add(new CheckItemAction());
                 });
                 $tree->maxDepth(4);
                 $tree->disableSaveButton();
