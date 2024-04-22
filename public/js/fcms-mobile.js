@@ -3,7 +3,7 @@ $(function () {
         window.history.back()
     });
     $(document).on("click", ".loginOut", function () {
-        window.location.href = "../../../qp-admin/loginOut/"
+        window.location.href = "/web/logout"
     });
     $(document).on("click", "#savepw", function () {
         var b = $.trim($("#oldPassword").val());
@@ -116,7 +116,7 @@ function closeDialog(a) {
 
 function changeProjectId(c) {
     var a = {projectId: c};
-    var b = ajaxPostAsync("changeProjectId", a);
+    var b = ajaxPostAsync("/api/changeSystemItemId", a);
     if (b.status === 200) {
         qpOk("切换项目成功")
     } else {

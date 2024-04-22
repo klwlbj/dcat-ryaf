@@ -131,7 +131,7 @@ class CheckItemController extends AdminController
                 $parentId = $form->input('parent_id') ?? 0;
                 if ($parentId != 0) {
                     $parent = \App\Models\CheckItem::select(['id', 'type'])->find($parentId);
-                    if ($parent->type > 2) {
+                    if ($parent->type >= 3) {
                         // 中断后续逻辑
                         return $form->response()->error('该层级下无法再添加');
                     }

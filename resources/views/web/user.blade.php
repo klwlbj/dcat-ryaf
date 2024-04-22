@@ -21,31 +21,31 @@
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><span class="weui-label font-weight">用户名</span></div>
                                     <div class="weui-cell__bd">
-                                        18024592219
+                                        {{$user->phone}}
                                     </div>
                                 </div>
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><span class="weui-label font-weight">姓名</span></div>
                                     <div class="weui-cell__bd">
-                                        李工
+                                        {{$user->name}}
                                     </div>
                                 </div>
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><span class="weui-label font-weight">联系方式</span></div>
                                     <div class="weui-cell__bd">
-                                        <a href="tel:18024592219">18024592219</a>
+                                        <a href="tel:{{$user->phone}}">{{$user->phone}}</a>
                                     </div>
                                 </div>
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><span class="weui-label font-weight">岗位信息</span></div>
                                     <div class="weui-cell__bd">
-                                        监督
+                                        {{$user->job_info}}
                                     </div>
                                 </div>
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><span class="weui-label font-weight">用户类型</span></div>
                                     <div class="weui-cell__bd">
-                                        督导组
+                                        {{$user->group->name}}
                                     </div>
                                 </div>
                                 <div class="weui-cell">
@@ -60,17 +60,17 @@
                                         检查员
                                     </div>
                                 </div>
-                                <div class="weui-cell">
+                                {{--<div class="weui-cell">
                                     <div class="weui-cell__hd"><span class="weui-label font-weight">修改密码</span></div>
                                     <div class="weui-cell__bd">
                                         <button class="weui-btn weui-btn_default weui-vcode-btn open-popup" title="修改密码" data-target="user-passWord">修改密码</button>
                                     </div>
-                                </div>
+                                </div>--}}
                                 <div class="weui-cell weui-cell_select">
                                     <div class="weui-cell__hd"><span class="weui-label font-weight">切换项目</span></div>
                                     <div class="weui-cell__bd">
                                         <select class="weui-select" style="width: auto" id="projectId" onchange="changeProjectId(this.value)"></select>
-                                        <script>getProjectList("#projectId","5","默认项目");</script>
+                                        <script>getProjectList("#projectId","{{$systemItemId}}","");</script>
                                     </div>
                                 </div>
                             </div>

@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
     Route::post('getCheckStandard', [CheckStandardController::class, 'getCheckStandard']);
     Route::post('getCheckTypeEnterpriseList', [CheckStandardController::class, 'getCheckTypeEnterpriseList']);
     Route::post('getEnterpriseList', [FirmController::class, 'getEnterpriseList']);
@@ -41,7 +41,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
     Route::post('/uploadImage', [ImageController::class, 'uploadImage']);
     Route::post('/deleteImage', [ImageController::class, 'deleteImage']);
-// });
+    Route::post('changeSystemItemId', [UserController::class, 'changeSystemItemId']);
+});
 
 Route::post('/getProjectList', [FirmController::class, 'getProjectList']);
 

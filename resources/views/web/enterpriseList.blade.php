@@ -51,15 +51,7 @@
                 </div>
             </div>
             <div class="weui-tabbar fcms-footer">
-                <a href="../index/" class="weui-tabbar__item weui-bar__item_on">
-                    <img src="https://cdn.qiping.cn/fcms/mobile/images/ico-home.png" class="weui-tabbar__icon">
-                </a>
-                <a href="../enterprise/index" class="weui-tabbar__item">
-                    <img src="https://cdn.qiping.cn/fcms/mobile/images/ico-work.png" class="weui-tabbar__icon">
-                </a>
-                <a href="../index/user" class="weui-tabbar__item">
-                    <img src="https://cdn.qiping.cn/fcms/mobile/images/ico-user.png" class="weui-tabbar__icon">
-                </a>
+                @include('..include/footer')
             </div>
         </div>
     </div>

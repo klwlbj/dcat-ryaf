@@ -223,7 +223,7 @@ function getProjectList(e, f, d) {
     var a = "/api/getProjectList";
     var c = ajaxGet(a, {}, false, "post");
     var b = "";
-    if (d != null) {
+    if (d != '') {
         b += '<option value="0">' + d + "</option>"
     }
     $.each(c, function (g, i) {

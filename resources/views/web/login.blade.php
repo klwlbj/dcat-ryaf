@@ -42,15 +42,5 @@
 </div>
 <script src="https://cdn.qiping.cn/fcms/mobile/js/swiper.min.js"></script>
 <script src="{{ asset('js/login.js') }}"></script>
-<div style="display: none">
-    {{--<script>var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?faaf27bdad2056c7c50c56cec5f7ef5e";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>--}}
-</div>
 </body>
 </html>

@@ -22,4 +22,9 @@ class User extends Authenticatable
         self::STATUS_NORMAL => '正常',
         self::STATUS_STOP   => '停用',
     ];
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class, 'group_id','id');
+    }
 }

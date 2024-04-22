@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Models\User;
 use App\Models\CheckResult;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
@@ -37,7 +41,11 @@ class HomeController extends Controller
 
     public function user()
     {
-        return view('web/user');
+        $userId = app('user_id') ?? '';
+        $systemItemId = app('system_item_id') ?? '';
+        $user   = User::with('group')->find($userId);
+
+        return view('web/user', ['user' => $user, 'systemItemId' => $systemItemId]);
     }
 
     public function baseInfo()
@@ -59,6 +67,24 @@ class HomeController extends Controller
     public function login()
     {
         return view('web/login');
+    }
+
+    /**
+     * 用户退出登录
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        $token = Cookie::get('auth_token', '');
+        Redis::del('auth_token:' . $token);
+
+        return redirect('/web/login');
     }
 
     public function collectInfo()

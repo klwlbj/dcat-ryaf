@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
-	use HasDateTimeFormatter;    
+	use HasDateTimeFormatter;
     public $timestamps = false;
 
+    public function users()
+    {
+        return $this->hasMany(User::class, 'id', 'group_id');
+    }
 }

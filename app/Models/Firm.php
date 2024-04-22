@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use App\Models\Scope\SelfSystemItem;
 use Dcat\Admin\Traits\HasDateTimeFormatter;
 
 class Firm extends BaseModel
 {
+    // use SelfProject;
     use HasDateTimeFormatter;
 
     protected $fillable = [
@@ -59,6 +61,16 @@ class Firm extends BaseModel
         self::CHECK_RESULT_PASS     => '合格',
         self::CHECK_RESULT_NOT_PASS => '不合格',
     ];
+
+    /**
+     * 模型的「引导」方法。
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::addGlobalScope(new SelfSystemItem());
+    }
 
     protected static function boot()
     {

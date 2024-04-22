@@ -2,10 +2,10 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\SystemItem;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
+use App\Models\SystemItem;
 use App\Admin\Repositories\Firm;
 use Dcat\Admin\Http\Controllers\AdminController;
 
@@ -23,7 +23,7 @@ class FirmController extends AdminController
             $grid->column('status')->using(\App\Models\Firm::$formatStatusMaps, '未知');
             $grid->column('check_result')->using(\App\Models\Firm::$formatCheckResultMaps, '未检查');
             $grid->column('name');
-            $grid->column('system_item_id')->using(SystemItem::all()->pluck('name', 'id')->toArray(), '未知项目');;
+            $grid->column('system_item_id')->using(SystemItem::all()->pluck('name', 'id')->toArray(), '未知项目');
             $grid->column('head_man');
             $grid->column('custom_number');
             $grid->column('phone');
@@ -103,20 +103,22 @@ class FirmController extends AdminController
                     // rule
                     'unique' => '自定义编号已存在',
                 ]);
-            $form->select('system_item_id')->options(SystemItem::all()->pluck('name', 'id'));
+            $form->select('system_item_id')->options(SystemItem::all()->pluck('name', 'id'))->required();
             $form->text('head_man')->required();
             $form->mobile('phone', '手机号')->options(['mask' => '99999999999'])->required();
             $form->text('community_name')->required();
             $form->select('check_type')->options(\App\Models\Firm::$formatCheckTypeMaps)->required();
-            $form->select('status')->options(\App\Models\Firm::$formatStatusMaps);
-            $form->select('check_result')->options(\App\Models\Firm::$formatCheckResultMaps);
+            $form->select('status')->options(\App\Models\Firm::$formatStatusMaps)->required();
+            $form->select('check_result')->options(\App\Models\Firm::$formatCheckResultMaps)->required();
             $form->number('area_quantity');
-            $form->number('floor');
-            $form->text('address');
-            $form->text('remark')->default('');
-            // $form->text('pictures');
-            // $form->display('created_at');
-            // $form->display('updated_at');
+            $form->number('floor')->default(1);
+            $form->text('address')->default('', true);
+            $form->text('remark')->default('', true);
+            $form->submitted(function (Form $form) {
+                // 接收表单参数,post时存在bug，空值会转成null 先这样处理，之后再优化 todo
+                $form->address = $form->address ?? '';
+                $form->remark  = $form->remark ?? '';
+            });
         });
     }
 }
