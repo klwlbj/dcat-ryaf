@@ -16,7 +16,14 @@
             <el-descriptions-item label="隐患数" :span="2">@{{ info.hidden_danger_count }}</el-descriptions-item>
             <el-descriptions-item label="地址" :span="2">@{{ info.address }}</el-descriptions-item>
             <el-descriptions-item label="采集图片" :span="2">
-                <div></div>
+                <div v-if="info.image_list">
+                    <el-image
+                        v-for="item in info.image_list"
+                        v-on:click="imagePreview([item])"
+                        style="width: 100px; height: 100px"
+                        :src="item"
+                        fit="contain"></el-image>
+                </div>
             </el-descriptions-item>
             <el-descriptions-item label="二维码" :span="2">
                 <div v-if="info.qrcode_url">
