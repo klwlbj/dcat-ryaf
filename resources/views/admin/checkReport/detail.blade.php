@@ -77,24 +77,33 @@
                     prop="standard_problem"
                     label="标准问题"
                     width="180">
+
+                    <template slot-scope="scope">
+                        <div v-for="item in scope.row.standard_problem">
+                            @{{ item }}
+                        </div>
+                    </template>
                 </el-table-column>
 
                 <el-table-column
-                    prop="measure"
+                    prop="measure_list"
                     label="整改措施"
                     width="180">
 
                     <template slot-scope="scope">
-                        <div>
-                            @{{scope.row.measure}}
-                        </div>
-                        <div v-if="scope.row.difficulty != ''">
-                            <el-tag size="small" style="background-color: #FF5722!important;color: white">整改:@{{ scope.row.difficulty }}</el-tag>
+                        <div v-for="item in scope.row.measure_list">
+                            <div>
+                                @{{item.measure}}
+                            </div>
+                            <div v-if="item.difficulty != ''">
+                                <el-tag size="small" style="background-color: #FF5722!important;color: white">整改:@{{ item.difficulty }}</el-tag>
+                            </div>
+
+                            <div v-if="item.imageList.length > 0">
+                                <el-button size="small" style="background-color: #FFB800 !important;color: white" v-on:click="imagePreview(item.imageList)">查看隐患图</el-button>
+                            </div>
                         </div>
 
-                        <div v-if="scope.row.imageList.length > 0">
-                            <el-button size="small" style="background-color: #FFB800 !important;color: white" v-on:click="imagePreview(scope.row.imageList)">查看隐患图</el-button>
-                        </div>
 
 
                     </template>
