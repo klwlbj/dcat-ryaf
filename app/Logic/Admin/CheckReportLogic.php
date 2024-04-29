@@ -2,9 +2,14 @@
 
 namespace App\Logic\Admin;
 
+use App\Models\Firm;
 use App\Logic\BaseLogic;
+use App\Models\CheckItem;
 use App\Logic\QrCodeLogic;
+use App\Models\CheckResult;
 use App\Logic\ResponseLogic;
+use App\Models\CollectImage;
+use App\Models\CheckQuestion;
 
 class CheckReportLogic extends BaseLogic
 {
@@ -26,77 +31,79 @@ class CheckReportLogic extends BaseLogic
 
     public function getDetail($params)
     {
-        $info = [
-            'company_name'        => '华糖社区华糖街49',
-            'number'              => '	XF24042013',
-            'check_status'        => '已检查',
-            'result'              => '不合格',
-            'check_user_name'     => '管理员',
-            'check_date'          => '2024-04-11 20:06',
-            'check_score'         => '25',
-            'deduction'           => '75',
-            'hidden_danger_count' => '10',
-            'address'             => '华糖社区华糖街49',
-            'image_list'          => [
-                "https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg",
-                "https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg",
-            ],
-        ];
+        $id          = $params['id'];
+        $checkResult = CheckResult::where('id', $id)->first();
 
-        $list = [
-            [
-                'project_name'     => '一、平面布置最高扣10分',
-                'standard'         => '1、出租屋与生产、储存、经营易燃易爆危险品的场所设置在同一建筑物内，扣100分（一票否决项）。',
-                'is_rectify'       => 1,
-                'deduction'        => '10',
-                'standard_problem' => [
-                    '◉ 建筑高度大于21m（含），不大于30m的出租屋建筑，疏散楼梯间不能直通屋顶平台或未能直通屋顶平台，且在每层居室通向楼梯间的出入口处未设乙级防火门分隔。',
-                ],
-                'measure_list'     => [
-                    'measure'    => '◉ 方案一：进行建筑改造，将疏散楼梯延伸到屋顶平台；方案二：每层居室通向楼梯间的出入口处设乙级防火门分隔。',
-                    'difficulty' => '难',
-                    'imageList'  => [],
-                ],
-            ],
-            [
-                'project_name'     => '↳',
-                'standard'         => '2、既有出租屋的建筑之间或与其他耐火等级建筑之间的防火间距应符合下列要求之一，扣10分。',
-                'is_rectify'       => 0,
-                'deduction'        => 0,
-                'standard_problem' => [],
-                'measure_list'     => [],
-            ],
-            [
-                'project_name'     => '↳',
-                'standard'         => '3、建筑高度不大于15m的出租屋建筑密集区防火间距不满足要求时，未采取以下措施，扣10分。',
-                'is_rectify'       => 1,
-                'deduction'        => '5',
-                'standard_problem' => [
-                    '◉ 未设有两部不同方向的疏散楼梯的建筑高度小于27m的出租屋建筑，外窗、阳台上的防盗网未设置紧急逃生口或未在公共区域外设置逃生软梯、逃生缓降器、消防逃生梯或辅助爬梯等辅助疏散逃生设施。',
-                    '◉ 未设有两部不同方向的疏散楼梯的建筑高度小于27m的出租屋建筑，外窗、阳台上的防盗网未设置紧急逃生口或未在公共区域外设置逃生软梯、逃生缓降器、消防逃生梯或辅助爬梯等辅助疏散逃生设施。',
-                ],
-                'measure_list'     => [
-                    [
-                        'measure'    => '◉ 方案一：增设疏散楼梯，使其满足有两部不同方向的疏散楼梯的要求；方案二：在外窗、阳台上的防盗网设置紧急逃生口且或在公共区域外设置逃生软梯、逃生缓降器、消防逃生梯或辅助爬梯等辅助疏散逃生设施。',
-                        'difficulty' => '容易',
-                        'imageList'  => [
-                            "https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg",
-                            "https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg",
-                        ],
-                    ],
-                    [
-                        'measure'    => '◉ 方案一：增设疏散楼梯，使其满足有两部不同方向的疏散楼梯的要求；方案二：在外窗、阳台上的防盗网设置紧急逃生口且或在公共区域外设置逃生软梯、逃生缓降器、消防逃生梯或辅助爬梯等辅助疏散逃生设施。',
-                        'difficulty' => '容易',
-                        'imageList'  => [
-                            "https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg",
-                            "https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg",
-                        ],
-                    ],
-                ],
-            ],
+        $firm = Firm::where('uuid', $checkResult->firm_id)->first();
+
+        $images    = CollectImage::where('firm_id', $checkResult->firm_id)->where('report_code', '')->get();
+        $imageList = [];
+        foreach ($images as $image) {
+            $imageList[] = url($image->file_path) . '/' . $image->file_name;
+        }
+
+        $info = [
+            'company_name'        => $firm->name,
+            'number'              => $firm->custom_number,
+            'check_status'        => Firm::$formatStatusMaps[$firm->status],
+            'result'              => Firm::$formatCheckResultMaps[$firm->check_result],
+            'check_user_name'     => $checkResult->user->name,
+            'check_date'          => $checkResult->updated_at,
+            'check_score'         => $checkResult->total_point,
+            'deduction'           => $checkResult->deduction_point,
+            'hidden_danger_count' => $checkResult->rectify_number, // 隐患数
+            'address'             => '华糖社区华糖街49',
+            'image_list'          => $imageList,
         ];
-        if(isset($params['is_qr']) && !empty($params['is_qr'])) {
-            $qrCodeUrl          = QrCodeLogic::getInstance()->createQrCodeByUrl('http://' . request()->getHost() . '/admin/check_report/qr_view?id=' . $params['id'], 'check_report_' . $params['id'] . '.png');
+        $reportImages = CollectImage::where('firm_id', $checkResult->firm_id)->where('report_code', $checkResult->report_code)->get();
+
+        // $reportImageList = [];
+        foreach ($reportImages as &$reportImage) {
+            $reportImage['url'] = url($reportImage->file_path) . '/' . $reportImage->file_name;
+        }
+
+        $reportImages   = $reportImages->groupBy('check_question_id');
+        $checkQuestions = CheckQuestion::where('firm_id', $checkResult->firm_id)->where('check_result_uuid', $checkResult->report_code)->get();
+
+        $standardProblem = [];
+        $measureList     = [];
+        foreach ($checkQuestions as $checkStandardId => $checkQuestion) {
+            $standardProblem[$checkQuestion['check_standard_id']][] = $checkQuestion['question'];
+            $imageList                                              = $reportImages[$checkQuestion['check_question_id']] ?? collect([]);
+            $measureList[$checkQuestion['check_standard_id']][]     = [
+                'measure'    => $checkQuestion['question'],
+                'difficulty' => CheckItem::$formatDifficultyMaps[$checkQuestion['difficulty']] ?? '',
+                'imageList'  => $imageList->pluck('url'),
+            ];
+        }
+
+        $checkItems = collect(json_decode($checkResult->history_check_item, JSON_OBJECT_AS_ARRAY));
+
+        $list = [];
+        // 处理check_type为1和3的节点
+        $l1CheckItems = $checkItems->where('type', 1)->keyBy('id');
+        $l3CheckItems = $checkItems->where('type', 3)->keyBy('id')->sortByDesc('parent_parent_id');
+
+        foreach ($l3CheckItems as $id => $checkItem) {
+            $parentParent = $l1CheckItems[$checkItem['parent_parent_id']] ?? [];
+            if ($parentParent) {
+                $projectName = $parentParent['title'];
+            }
+            $isRectify = isset($standardProblem[$id]) ? 1 : 0;
+            $list[]    = [
+                'project_name'     => $projectName ?? '',
+                'standard'         => $checkItem['title'],
+                'is_rectify'       => $isRectify,
+                'deduction'        => $checkItem['total_score'],
+                'standard_problem' => $standardProblem[$id] ?? [],
+                'measure_list'     => $measureList[$id] ?? [],
+                // 'measure'          => '◉ 方案一：进行建筑改造，将疏散楼梯延伸到屋顶平台；方案二：每层居室通向楼梯间的出入口处设乙级防火门分隔。',
+            ];
+        }
+
+
+        if (isset($params['is_qr']) && !empty($params['is_qr'])) {
+            $qrCodeUrl          = QrCodeLogic::getInstance()->createQrCodeByUrl('http://' . request()->getHost() . '/admin/report/qr_view?id=' . $params['id'], 'check_report_' . $params['id'] . '.png');
             $info['qrcode_url'] = $qrCodeUrl;
         } else {
             $info['qrcode_url'] = '';

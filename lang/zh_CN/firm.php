@@ -8,6 +8,7 @@ return [
     'fields'  => [
         'name'           => '单位名称',
         'community_name' => '社区名称',
+        'community'      => '社区',
         'system_item_id' => '归属项目',
         'custom_number'  => '自定义编号',
         'head_man'       => '负责人',

@@ -92,7 +92,7 @@ $(function () {
             if (e.status == 200) {
                 qpOk(e.msg);
                 setTimeout(function () {
-                    window.location.href = "../enterprise/list?typeId=" + bsJson.checkTypeID + "&typeName=" + bsJson.ctName
+                    window.location.href = "../enterpriseList?typeId=" + bsJson.checkTypeID + "&typeName=" + bsJson.ctName
                 }, 500)
             } else {
                 qpWarn(e.msg)

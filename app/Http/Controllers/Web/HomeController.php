@@ -41,9 +41,9 @@ class HomeController extends Controller
 
     public function user()
     {
-        $userId = app('user_id') ?? '';
+        $userId       = app('user_id') ?? '';
         $systemItemId = app('system_item_id') ?? '';
-        $user   = User::with('group')->find($userId);
+        $user         = User::with('group')->find($userId);
 
         return view('web/user', ['user' => $user, 'systemItemId' => $systemItemId]);
     }
@@ -87,9 +87,10 @@ class HomeController extends Controller
         return redirect('/web/login');
     }
 
-    public function collectInfo()
+    public function collectInfo(Request $request)
     {
-        return view('web/collectInfo');
+        $uuid = $request->input('uuid');
+        return view('web/collectInfo', ['uuid' => $uuid]);
     }
 
     public function checkDetail(Request $request)
@@ -97,12 +98,13 @@ class HomeController extends Controller
         $uuid       = $request->get('uuid');
         $reportCode = $request->get('reportCode');
         if (empty($reportCode)) {
+            $reportCode = 'new';
+        } else {
+            // 重新找reportCode，不以前端传来为准
             $reportCode = CheckResult::where('firm_id', $uuid)
-                ->where('status', CheckResult::STATUS_UNSAVED)
+                // ->where('status', CheckResult::STATUS_UNSAVED)
+                ->orderBy('created_at', 'desc')
                 ->value('report_code');
-            if (empty($reportCode)) {
-                $reportCode = 'new';
-            }
         }
         return view('web/checkDetail', ['uuid' => $uuid, 'reportCode' => $reportCode]);
     }

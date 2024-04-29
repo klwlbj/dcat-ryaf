@@ -15,7 +15,12 @@ class CheckResult extends Model
         'check_result',
         'total_point',
         'deduction_point',
+        'rectify_number',
         'firm_id',
+    ];
+
+    protected $casts = [
+        'history_check_item' => 'json',
     ];
 
     public const STATUS_NORMAL  = 1;
@@ -30,6 +35,11 @@ class CheckResult extends Model
 
     public function firm()
     {
-        return $this->belongsTo(Firm::class, 'firm_id','uuid');
+        return $this->belongsTo(Firm::class, 'firm_id', 'uuid');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'check_user_id', 'id');
     }
 }

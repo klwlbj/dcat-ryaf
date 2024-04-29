@@ -18,7 +18,7 @@ return new class () extends Migration {
             $table->uuid()->unique();
             $table->string('name')->comment('单位名称');
             $table->integer('system_item_id')->default(0)->comment('归属项目');
-            $table->string('community_name')->comment('社区名称')->default('');
+            $table->integer('community')->comment('社区名称')->default(0);
             $table->string('custom_number')->comment('自定义编号')->default('');
             $table->string('head_man')->comment('负责人')->default('');
             $table->tinyInteger('status')->comment('企业状态')->default(0);

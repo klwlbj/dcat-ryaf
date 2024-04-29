@@ -103,13 +103,13 @@ class FirmController extends AdminController
                     // rule
                     'unique' => '自定义编号已存在',
                 ]);
-            $form->select('system_item_id')->options(SystemItem::all()->pluck('name', 'id'))->required();
+            $form->select('system_item_id')->options(SystemItem::all()->pluck('name', 'id'))->load('community', '/api/community')->required();
+            $form->select('community')->required();
             $form->text('head_man')->required();
             $form->mobile('phone', '手机号')->options(['mask' => '99999999999'])->required();
-            $form->text('community_name')->required();
             $form->select('check_type')->options(\App\Models\Firm::$formatCheckTypeMaps)->required();
-            $form->select('status')->options(\App\Models\Firm::$formatStatusMaps)->required();
-            $form->select('check_result')->options(\App\Models\Firm::$formatCheckResultMaps)->required();
+            $form->select('status')->default(\App\Models\Firm::STATUS_WAIT)->options(\App\Models\Firm::$formatStatusMaps)->required();
+            $form->select('check_result')->default(\App\Models\Firm::CHECK_RESULT_DEFAULT)->options(\App\Models\Firm::$formatCheckResultMaps)->required();
             $form->number('area_quantity');
             $form->number('floor')->default(1);
             $form->text('address')->default('', true);

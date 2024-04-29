@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Firm;
-use App\Models\Group;
+use App\Models\Community;
 use App\Models\SystemItem;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
@@ -83,12 +84,16 @@ class FirmController extends Controller
                 'floor as floorNum',
                 'head_man as manager',
                 'remark',
-                'phone as phoneFull'
+                'phone as phoneFull',
+                'community',
+                'check_result as checkResult',
             )
             ->first();
         $firm->checkStatusName = Firm::$formatStatusMaps[$firm->checkStatusID];
         $firm->checkTypeName   = Firm::$formatCheckTypeMaps[$firm->checkTypeID];
         $firm->stopCheck       = 1;
+        $firm->community       = Community::where('id', $firm->community)->value('name');
+        // $firm->checkResult     = Firm::$formatCheckResultMaps[$firm->check_result];
         if (in_array($firm->checkStatusID, [Firm::STATUS_WAIT, Firm::STATUS_CHECKED, Firm::STATUS_REVIEWED])) {
             $firm->stopCheck = 0;
         }
@@ -97,6 +102,7 @@ class FirmController extends Controller
             'enterprise' => $firm,
             'ctList'     => CheckStandardController::getCheckType(),
             'csList'     => $this->getCheckStatus(),
+            'coList'     => $this->getCommunity(),
         ]);
     }
 
@@ -110,23 +116,47 @@ class FirmController extends Controller
         $uuid = $request->input('uuid', '');
         // $isCheck = $request->input('isCheck', false);
 
+        $systemItemId = app('system_item_id') ?? 0;
+
         // todo 参数验证
+        $community = $request->input('community', '');
+
+        // 查询 name 是否存在
+        $record = Community::where('name', $community)
+            ->where('system_item_id', $systemItemId)
+            ->first();
+        if ($record) {
+            $communityId = $record->id;
+        } else {
+            // 查询社区表中是否存在，不存在则插入
+            $newRecord                 = new Community();
+            $newRecord->name           = $community;
+            $newRecord->system_item_id = $systemItemId;
+            $newRecord->save();
+
+            $communityId = $newRecord->id;
+        }
 
         $saveData = [
-            'name'          => $request->input('enterpriseName'),
-            'status'        => $request->input('checkStatusID'),
-            'head_man'      => $request->input('manager'),
-            'phone'         => $request->input('phone'),
-            'floor'         => $request->input('floorNum'),
-            'area_quantity' => $request->input('businessArea'),
-            'address'       => $request->input('address'),
-            'remark'        => $request->input('remark', '') ?? '',
+            'name'           => $request->input('enterpriseName'),
+            'status'         => $request->input('checkStatusID'),
+            'head_man'       => $request->input('manager'),
+            'check_result'   => $request->input('checkResult'),
+            'phone'          => $request->input('phone'),
+            'floor'          => $request->input('floorNum') ?? 0,
+            'area_quantity'  => $request->input('businessArea') ?? 0,
+            'address'        => $request->input('address'),
+            'remark'         => $request->input('remark', '') ?? '',
+            'system_item_id' => $systemItemId,
+            'community'      => $communityId,
         ];
         if (!empty($uuid)) {
             $save = Firm::where('uuid', $uuid)
                 ->update($saveData);
         } else {
-            $save = Firm::create($saveData);
+            $saveData['check_type']    = $request->input('checkTypeID');
+            $saveData['custom_number'] = Str::random(4) . time();
+            $save                      = Firm::create($saveData);
         }
 
         if ($save) {
@@ -141,5 +171,16 @@ class FirmController extends Controller
     {
         $data = SystemItem::select('name', 'id')->get();
         return response()->json($data);
+    }
+
+    public function getCommunityList()
+    {
+        return response()->json($this->getCommunity());
+    }
+
+    public function getCommunity()
+    {
+        $systemItemId = app('system_item_id') ?? '';
+        return Community::where('system_item_id', $systemItemId)->pluck('name');
     }
 }

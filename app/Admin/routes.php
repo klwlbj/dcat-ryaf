@@ -1,5 +1,6 @@
 <?php
 
+use App\Admin\Controllers\CommunityController;
 use Dcat\Admin\Admin;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
@@ -24,15 +25,16 @@ Route::group([
     Route::any("check_report/detail", "CheckReportController@detailView");
     Route::any("check_report/lists", "CheckReportController@getList");
 
+    $router->get('api/community', [CommunityController::class, 'getList']);
 });
 
 #免登录
 Route::group([
-    'prefix'     => config('admin.route.prefix'),
-    'namespace'  => config('admin.route.namespace'),
+    'prefix'    => config('admin.route.prefix'),
+    'namespace' => config('admin.route.namespace'),
 ], function (Router $router) {
-    Route::any("check_report/info", "CheckReportController@info");
-    Route::any("check_report/qr_view", "CheckReportController@qrView");
-    Route::any("check_report/create_rectify_word", "CheckReportController@createRectifyWord");
-    Route::any("check_report/create_hidden_trouble_excel", "CheckReportController@createHiddenTroubleExcel");
+    $router->any("check_report/info", "CheckReportController@info");
+    $router->any("check_report/qr_view", "CheckReportController@qrView");
+    $router->any("check_report/create_rectify_word", "CheckReportController@createRectifyWord");
+    $router->any("check_report/create_hidden_trouble_excel", "CheckReportController@createHiddenTroubleExcel");
 });

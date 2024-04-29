@@ -55,9 +55,9 @@
                                         <div class="weui-cell__bd">
                                             <select class="weui-select fms-select" name="checkResult" id="checkResult"
                                                     placeholder="请选择检查结果" disabled>
-                                                <option value=""></option>
-                                                <option value="合格">合格</option>
-                                                <option value="不合格">不合格</option>
+                                                <option value="0">未知</option>
+                                                <option value="1">合格</option>
+                                                <option value="2">不合格</option>
                                             </select>
                                             <script>$("#checkResult").val('@{{  d.enterprise.checkResult }}')</script>
                                         </div>

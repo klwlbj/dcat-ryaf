@@ -10,10 +10,10 @@
             <div class="weui-tab__panel">
                 <div class="header font-weight weui-flex">
                     <div class="back-icon back-page"><i class="weui-icon-back weui-icon_msg color-white"></i></div>
-                    <div class="weui-flex__item">出租屋-消防检查</div>
-{{--                    <button type="button" class="weui-btn weui-btn_mini weui-btn_warn edit-icon open-popup"--}}
-{{--                            title="新增单位信息(*号为必填)" data-target="enterprise-add">新增--}}
-{{--                    </button>--}}
+                    <div class="weui-flex__item">消防检查</div>
+                    <button type="button" class="weui-btn weui-btn_mini weui-btn_warn edit-icon open-popup"
+                            title="新增单位信息(*号为必填)" data-target="enterprise-add">新增
+                    </button>
                 </div>
                 <div class="weui-search-bar" id="searchBar">
                     <form id="search" aria-haspopup="true" aria-expanded="false" aria-owns="searchResult"
@@ -70,17 +70,17 @@
                         </div>
                     </div>
                     <div class="weui-cell">
-                        <div class="weui-cell__hd"><span class="weui-label">负责人</span></div>
+                        <div class="weui-cell__hd"><span class="weui-label">负责人<i class="color-red">*</i></span></div>
                         <div class="weui-cell__bd">
                             <input type="text" class="weui-input fms-input fms-border" maxlength="15" name="manager"
-                                   placeholder="输入负责人姓名">
+                                   placeholder="输入负责人姓名" required="">
                         </div>
                     </div>
                     <div class="weui-cell">
-                        <div class="weui-cell__hd"><span class="weui-label">联系方式</span></div>
+                        <div class="weui-cell__hd"><span class="weui-label">联系方式<i class="color-red">*</i></span></div>
                         <div class="weui-cell__bd">
                             <input type="text" class="weui-input fms-input fms-border" maxlength="20" name="phone"
-                                   placeholder="输入联系号码">
+                                   placeholder="输入联系号码" required="">
                         </div>
                     </div>
                     <div class="weui-cell">

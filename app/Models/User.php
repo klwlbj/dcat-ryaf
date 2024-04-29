@@ -27,4 +27,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Group::class, 'group_id','id');
     }
+
+    public function checkResults()
+    {
+        return $this->hasMany(CheckResult::class, 'id','check_user_id');
+    }
 }

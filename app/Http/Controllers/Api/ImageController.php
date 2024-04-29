@@ -31,18 +31,24 @@ class ImageController extends Controller
      */
     public function getCollectImgList(Request $request)
     {
-        $firmId = $request->input('uuid');
+        $firmId     = $request->input('uuid');
+        $reportCode = $request->input('reportCode') ?? '';
+
+        if ($reportCode === 'new') {
+            return response()->json();
+        }
 
         $images = CollectImage::where('firm_id', $firmId)
+            ->where('report_code', $reportCode)
             ->select('file_name', 'uuid', 'firm_id', 'file_path', 'check_question_id')
             ->get();
         $data = [];
         foreach ($images as $image) {
             $data[] = [
-                'imgName'        => $image->file_name,
-                'uuid'           => $image->uuid,
-                'enterpriseUuid' => $image->firm_id,
-                'imgUrl'         => url($image->file_path),
+                'imgName'         => $image->file_name,
+                'uuid'            => $image->uuid,
+                'enterpriseUuid'  => $image->firm_id,
+                'imgUrl'          => url($image->file_path),
                 'checkStandardID' => $image->check_question_id,
             ];
         }
@@ -90,7 +96,6 @@ class ImageController extends Controller
         $imageUuid     = Str::uuid(); // 生成唯一标识符
         $directory     = 'public/xf/upload/' . date('Y/m');
 
-        // $file->store($directory,'public');
         $imagePath = $file->storePubliclyAs($directory, $date . $imageUuid . '.' . $fileExtension);
         if (!$imagePath) {
             return response()->json([
@@ -101,10 +106,10 @@ class ImageController extends Controller
 
         // 创建新的图片记录
         $image                    = new CollectImage();
-        $image->file_name         = $date . $imageUuid . '.jpg';
+        $image->file_name         = $date . $imageUuid . '.' . $fileExtension;
         $image->uuid              = $imageUuid;
         $image->file_path         = $directory;
-        $image->file_extension    = $fileExtension; // 假设文件扩展名为jpg
+        $image->file_extension    = $fileExtension;
         $image->firm_id           = $firmId;
         $image->report_code       = $reportCode;
         $image->check_question_id = $checkQuestionId;
@@ -113,7 +118,7 @@ class ImageController extends Controller
         // 返回接口格式数据
         $response = [
             'imgUrl'  => url($directory), // 图片目录URL
-            'imgName' => date('ymdHis') . $imageUuid . '.jpg',
+            'imgName' => date('ymdHis') . $imageUuid . '.' . $fileExtension,
             'msg'     => '图片上传成功',
             'status'  => 200,
             'imgUuid' => $imageUuid,

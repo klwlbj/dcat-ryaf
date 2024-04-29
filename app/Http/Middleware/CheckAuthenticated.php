@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cookie;
 
@@ -28,6 +29,7 @@ class CheckAuthenticated
             app()->instance('system_item_id', $systemItemId);
             app()->instance('user_id', $userId);
             $user = User::find($userId);
+            Auth::setUser($user);
         }
         if (!$user) {
             return $this->responseError($isApi, 'Login Failed');

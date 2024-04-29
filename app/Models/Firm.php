@@ -8,17 +8,21 @@ use Dcat\Admin\Traits\HasDateTimeFormatter;
 
 class Firm extends BaseModel
 {
-    // use SelfProject;
     use HasDateTimeFormatter;
 
     protected $fillable = [
         'name',
         'status',
+        'community',
         'head_man',
+        'check_type',
         'phone',
         'floor',
         'area_quantity',
+        'custom_number',
         'address',
+        'community',
+        'system_item_id',
         'remark',
     ];
 
@@ -54,10 +58,12 @@ class Firm extends BaseModel
         self::STATUS_VACANCY         => '空置',
     ];
 
+    public const CHECK_RESULT_DEFAULT  = 0;
     public const CHECK_RESULT_PASS     = 1;
     public const CHECK_RESULT_NOT_PASS = 2;
 
     public static array $formatCheckResultMaps = [
+        self::CHECK_RESULT_DEFAULT  => '未知',
         self::CHECK_RESULT_PASS     => '合格',
         self::CHECK_RESULT_NOT_PASS => '不合格',
     ];

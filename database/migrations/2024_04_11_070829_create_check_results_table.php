@@ -17,8 +17,11 @@ return new class () extends Migration {
             $table->uuid('report_code')->unique()->comment('检查报告唯一识别码');
             $table->tinyInteger('status')->comment('检查状态')->default(0);
             $table->integer('total_point')->comment('总分')->default(0);
+            $table->integer('check_user_id')->comment('检查人')->default(0);
             $table->integer('deduction_point')->comment('扣分')->default(0);
+            $table->integer('rectify_number')->comment('隐患数')->default(0);
             $table->string('firm_id', 36)->comment('企业id');
+            $table->json('history_check_item')->comment('历史检查项目字段')->nullable();
 
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate()->useCurrent();

@@ -17,7 +17,10 @@ class SelfSystemItem implements Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        $systemItemId = app('system_item_id') ?? '';
-        $builder->where('system_item_id', $systemItemId);
+        $isApi = request()->is('admin/*'); // 后台不过滤
+        if (!$isApi) {
+            $systemItemId = app('system_item_id') ?? '';
+            $builder->where('system_item_id', $systemItemId);
+        }
     }
 }
