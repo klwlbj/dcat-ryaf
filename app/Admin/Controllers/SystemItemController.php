@@ -28,7 +28,10 @@ class SystemItemController extends AdminController
             $grid->column('updated_at')->sortable();
 
             $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
+                // 更改为 panel 布局
+                $filter->panel();
+                $filter->expand();
+                $filter->like('name')->width(4);
             });
             // 禁用详情按钮
             $grid->disableViewButton();

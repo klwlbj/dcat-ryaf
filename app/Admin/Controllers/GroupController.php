@@ -26,7 +26,10 @@ class GroupController extends AdminController
             $grid->paginate(15);
 
             $grid->filter(function (Grid\Filter $filter) {
-                $filter->like('name');
+                // 更改为 panel 布局
+                $filter->panel();
+                $filter->expand();
+                $filter->like('name')->width(3);
             });
         });
     }

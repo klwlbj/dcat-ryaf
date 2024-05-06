@@ -2,13 +2,13 @@
 
 namespace App\Admin\Controllers;
 
-use App\Logic\Excel\HiddenTroubleExcelLogic;
 use App\Logic\ResponseLogic;
-use App\Logic\Word\CheckReportWordLogic;
 use Illuminate\Http\Request;
 use Dcat\Admin\Layout\Content;
 use App\Logic\Admin\CheckReportLogic;
+use App\Logic\Word\CheckReportWordLogic;
 use Illuminate\Support\Facades\Validator;
+use App\Logic\Excel\HiddenTroubleExcelLogic;
 use Dcat\Admin\Http\Controllers\AdminController;
 
 class CheckReportController extends AdminController
@@ -35,28 +35,41 @@ class CheckReportController extends AdminController
         $params = $request->all();
 
         $validate = Validator::make($params, [
-            'id' => 'required',
+            'uuid' => 'required',
         ], [
-            'id.required' => '报告id不能为空',
+            'uuid.required' => '报告编号不能为空',
         ]);
 
-        if($validate->fails()) {
+        if ($validate->fails()) {
             return ResponseLogic::apiErrorResult($validate->errors()->first());
         }
 
         return CheckReportLogic::getInstance()->getDetail($params);
     }
 
-    public function qrView(Request $request){
+    public function qrView(Request $request)
+    {
         return view('admin.checkReport.qr');
     }
 
-    public function createWord(Request $request){
+    public function createWord(Request $request)
+    {
         $params = $request->all();
+
+        $validate = Validator::make($params, [
+            'uuid' => 'required',
+        ], [
+            'uuid.required' => '报告编号不能为空',
+        ]);
+
+        if ($validate->fails()) {
+            return ResponseLogic::apiErrorResult($validate->errors()->first());
+        }
         return CheckReportWordLogic::getInstance()->createWord($params);
     }
 
-    public function createHiddenTroubleExcel(Request $request){
+    public function createHiddenTroubleExcel(Request $request)
+    {
         $params = $request->all();
         return HiddenTroubleExcelLogic::getInstance()->createExcel($params);
     }

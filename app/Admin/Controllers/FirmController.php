@@ -42,12 +42,14 @@ class FirmController extends AdminController
             $grid->disableViewButton();
             // $grid->scrollbarX();
             $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
-                $filter->endWith('custom_number', '编号（后几位）')->ilike();
-                $filter->like('community_name');
-                $filter->equal('status')->select(\App\Models\Firm::$formatStatusMaps);
-                $filter->equal('system_item_id')->select(SystemItem::all()->pluck('name', 'id'));
-                $filter->equal('check_type')->select(\App\Models\Firm::$formatCheckTypeMaps);
+                // 更改为 panel 布局
+                $filter->panel();
+                $filter->expand();
+                $filter->equal('system_item_id')->select(SystemItem::all()->pluck('name', 'id'))->width(4);
+                $filter->endWith('custom_number', '编号（后几位）')->ilike()->width(4);
+                $filter->equal('check_type')->select(\App\Models\Firm::$formatCheckTypeMaps)->width(4);
+                $filter->equal('status')->select(\App\Models\Firm::$formatStatusMaps)->width(4);
+                // $filter->like('community_name')->width(2);
             });
         });
     }

@@ -1,9 +1,11 @@
 <?php
 
+$menuName = '企业档案';
 return [
     'labels'  => [
-        'Firm' => 'Firm',
-        'firm' => 'Firm',
+        'Firm'  => $menuName,
+        'firm'  => $menuName,
+        'firms' => $menuName,
     ],
     'fields'  => [
         'name'           => '单位名称',

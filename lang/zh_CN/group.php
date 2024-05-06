@@ -1,8 +1,10 @@
-<?php 
+<?php
+$menuName ='分组管理';
 return [
     'labels' => [
-        'Group' => 'Group',
-        'group' => 'Group',
+        'Group' => $menuName,
+        'group' => $menuName,
+        'groups' => $menuName,
     ],
     'fields' => [
         'name' => '组名',

@@ -1,10 +1,14 @@
-<?php 
+<?php
+
+$menuName = '区域管理';
+
 return [
-    'labels' => [
-        'Area' => 'Area',
-        'area' => 'Area',
+    'labels'  => [
+        'Area'  => $menuName,
+        'area'  => $menuName,
+        'areas' => $menuName,
     ],
-    'fields' => [
+    'fields'  => [
         'name' => '名称',
     ],
     'options' => [

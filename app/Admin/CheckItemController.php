@@ -40,7 +40,10 @@ class CheckItemController extends AdminController
             $grid->actions([new AddChildCheckContent()]);
 
             $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('check_type')->select(\App\Models\CheckItem::$formatCheckTypeMaps);
+                // 更改为 panel 布局
+                $filter->panel();
+                $filter->expand();
+                $filter->equal('check_type')->select(\App\Models\CheckItem::$formatCheckTypeMaps)->width(3);
             });
         });
     }

@@ -21,7 +21,7 @@ class CheckItemController extends AdminController
     {
         Admin::js('/js/checkItem.js');
         $checkType = request()->query('check_type');
-        return $content->header('树状模型')
+        return $content->header('检查标准细则')
             ->body(function (Row $row) use ($checkType) {
                 $tree = new Tree(\App\Models\CheckItem::with(['checkQuestions']));
 
@@ -33,22 +33,12 @@ class CheckItemController extends AdminController
                 }
 
                 $tree->branch(function ($branch) {
-                    switch ($branch['type']) {
-                        case 1:
-                            $button = "<span class='label' style='background-color: #009587'>检查项目</span><span class='label' style='background-color: #009587'>总分：{$branch['total_score']}分</span><br>{$branch['title']}";
-                            break;
-                        case 2:
-                            $button = "<span class='label' style='background-color: #1e9efe'>检查内容</span><br>{$branch['title']}";
-                            break;
-                        case 3:
-                            $button = "<span class='label' style='background-color: #fdb701'>检查标准</span><span class='label' style='background-color: #fdb701'>扣{$branch['total_score']}分</span><br>{$branch['title']}";
-                            break;
-                        case 4:
-                        default:
-                            $button = "<span class='label' style='background-color: #fd5722'>检查问题</span><br>{$branch['title']}";
-                            break;
-                    }
-                    return $button;
+                    return match ($branch['type']) {
+                        1 => "<span class='label' style='background-color: #009587'>检查项目</span><span class='label' style='background-color: #009587'>总分：{$branch['total_score']}分</span><br>{$branch['title']}",
+                        2 => "<span class='label' style='background-color: #1e9efe'>检查内容</span><br>{$branch['title']}",
+                        3 => "<span class='label' style='background-color: #fdb701'>检查标准</span><span class='label' style='background-color: #fdb701'>扣{$branch['total_score']}分</span><br>{$branch['title']}",
+                        default => "<span class='label' style='background-color: #fd5722'>检查问题</span><br>{$branch['title']}",
+                    };
                 });
                 $tree->actions(function (Actions $actions) {
                     if ($actions->row->type !== 4) {

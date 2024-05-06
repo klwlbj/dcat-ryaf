@@ -20,10 +20,10 @@ class CheckResultController extends AdminController
         return Grid::make(new CheckResult(['firm']), function (Grid $grid) {
             $grid->column('id', '序号')->sortable();
             $grid->column('check_result', '报告详情')->display('报告详情')->link(function () {
-                return admin_url('checkResult/' . $this->report_code);
+                return admin_url('/check_report/detail?uuid=' . $this->report_code);
             });
             $grid->column('check_result_doc', '整改通知书')->display('整改通知书')->link(function () {
-                return admin_url('checkResultDoc/' . $this->report_code);
+                return admin_url('/check_report/create_rectify_word?uuid=' . $this->report_code);
             });
             // $grid->column('report_code');
             $grid->column('status')->using(\App\Models\CheckResult::$formatStatusMaps);
@@ -38,11 +38,14 @@ class CheckResultController extends AdminController
             $grid->column('updated_at', '检查时间')->sortable();
 
             $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('firm.system_item_id', '所属项目')->select(SystemItem::all()->pluck('name', 'id'));
-                $filter->like('firm.name', '企业名称');
-                $filter->like('firm.custom_number', '企业编号');
-                $filter->equal('firm.check_type', '检查类型')->select(Firm::$formatCheckTypeMaps);
-                $filter->equal('firm.status', '检查状态')->select(Firm::$formatStatusMaps);
+                // 更改为 panel 布局
+                $filter->panel();
+                $filter->expand();
+                $filter->equal('firm.system_item_id', '所属项目')->select(SystemItem::all()->pluck('name', 'id'))->width(3);
+                $filter->like('firm.name', '企业名称')->width(3);
+                $filter->like('firm.custom_number', '企业编号')->width(2);
+                $filter->equal('firm.check_type', '检查类型')->select(Firm::$formatCheckTypeMaps)->width(2);
+                $filter->equal('firm.status', '检查状态')->select(Firm::$formatStatusMaps)->width(2);
             });
             $grid->disableCreateButton();
             $grid->disableEditButton();

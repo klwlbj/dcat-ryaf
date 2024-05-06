@@ -1,8 +1,10 @@
-<?php 
+<?php
+$menuName = '系统项目设置';
 return [
     'labels' => [
-        'SystemItem' => 'SystemItem',
-        'system-item' => 'SystemItem',
+        'SystemItem' => $menuName,
+        'system-item' => $menuName,
+        'system_items' => $menuName,
     ],
     'fields' => [
         'name' => '名称',

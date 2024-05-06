@@ -51,11 +51,19 @@
                     align="center"
                     label="检查项目"
                     width="180">
+
+                    <template slot-scope="scope">
+                        @{{ scope.row.project_name }}
+                        <div v-if="scope.row.project_name != '↳'">
+                            <el-tag size="small" style="background-color: #c0c0c0!important;color: white">扣@{{ scope.row.total_score }}分</el-tag>
+                        </div>
+                    </template>
                 </el-table-column>
                 <el-table-column
                     prop="standard"
                     label="检查标准"
                     width="300">
+
 
                 </el-table-column>
                 <el-table-column
@@ -80,7 +88,7 @@
 
                     <template slot-scope="scope">
                         <div v-for="item in scope.row.standard_problem">
-                            @{{ item }}
+                            ◉ @{{ item }}
                         </div>
                     </template>
                 </el-table-column>
@@ -93,7 +101,7 @@
                     <template slot-scope="scope">
                         <div v-for="item in scope.row.measure_list">
                             <div>
-                                @{{item.measure}}
+                                ◉ @{{item.measure}}
                             </div>
                             <div v-if="item.difficulty != ''">
                                 <el-tag size="small" style="background-color: #FF5722!important;color: white">整改:@{{ item.difficulty }}</el-tag>
@@ -150,7 +158,7 @@
 
         },
         created(){
-            this.id = this.getQuery('id');
+            this.uuid = this.getQuery('uuid');
             this.getInfo();
         },
         methods: {
@@ -177,7 +185,7 @@
                     url: '/admin/check_report/info',
                     // 传递参数
                     data: {
-                        id:this.id,
+                        uuid:this.uuid,
                         is_qr:1
                     },
                     responseType: 'json',

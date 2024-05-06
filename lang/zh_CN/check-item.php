@@ -1,8 +1,10 @@
-<?php 
+<?php
+$menuName = '检查标准细则';
 return [
     'labels' => [
-        'CheckItem' => 'CheckItem',
-        'check-item' => 'CheckItem',
+        'CheckItem' => $menuName,
+        'check-item' => $menuName,
+        'check_items' => $menuName,
     ],
     'fields' => [
         'title' => '标题',

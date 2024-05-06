@@ -35,6 +35,6 @@ Route::group([
 ], function (Router $router) {
     $router->any("check_report/info", "CheckReportController@info");
     $router->any("check_report/qr_view", "CheckReportController@qrView");
-    $router->any("check_report/create_rectify_word", "CheckReportController@createRectifyWord");
+    $router->any("check_report/create_rectify_word", "CheckReportController@createWord");
     $router->any("check_report/create_hidden_trouble_excel", "CheckReportController@createHiddenTroubleExcel");
 });

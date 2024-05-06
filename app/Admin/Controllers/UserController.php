@@ -30,7 +30,10 @@ class UserController extends AdminController
             $grid->column('created_at');
 
             $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
+                // 更改为 panel 布局
+                $filter->panel();
+                $filter->expand();
+                $filter->equal('id')->width(3);
             });
         });
     }

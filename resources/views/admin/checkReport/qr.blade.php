@@ -26,7 +26,14 @@
                 <el-descriptions-item label="隐患数" :span="2">@{{ info.hidden_danger_count }}</el-descriptions-item>
                 <el-descriptions-item label="地址" :span="2">@{{ info.address }}</el-descriptions-item>
                 <el-descriptions-item label="采集图片" :span="2">
-                    <div></div>
+                    <div v-if="info.image_list">
+                        <el-image
+                            v-for="item in info.image_list"
+                            v-on:click="imagePreview([item])"
+                            style="width: 100px; height: 100px"
+                            :src="item"
+                            fit="contain"></el-image>
+                    </div>
                 </el-descriptions-item>
             </el-descriptions>
 
@@ -47,6 +54,13 @@
                         align="center"
                         label="检查项目"
                         width="100">
+
+                        <template slot-scope="scope">
+                            @{{ scope.row.project_name }}
+                            <div v-if="scope.row.project_name != '↳'">
+                                <el-tag size="small" style="background-color: #c0c0c0!important;color: white">扣@{{ scope.row.total_score }}分</el-tag>
+                            </div>
+                        </template>
                     </el-table-column>
                     <el-table-column
                         prop="standard"
@@ -73,6 +87,12 @@
                         prop="standard_problem"
                         label="标准问题"
                         width="100">
+
+                        <template slot-scope="scope">
+                            <div v-for="item in scope.row.standard_problem">
+                                ◉ @{{ item }}
+                            </div>
+                        </template>
                     </el-table-column>
 
                     <el-table-column
@@ -81,16 +101,19 @@
                         width="100">
 
                         <template slot-scope="scope">
-                            <div>
-                                @{{scope.row.measure}}
-                            </div>
-                            <div v-if="scope.row.difficulty != ''">
-                                <el-tag size="small" style="background-color: #FF5722!important;color: white">整改:@{{ scope.row.difficulty }}</el-tag>
+                            <div v-for="item in scope.row.measure_list">
+                                <div>
+                                    ◉ @{{item.measure}}
+                                </div>
+                                <div v-if="item.difficulty != ''">
+                                    <el-tag size="small" style="background-color: #FF5722!important;color: white">整改:@{{ item.difficulty }}</el-tag>
+                                </div>
+
+                                <div v-if="item.imageList.length > 0">
+                                    <el-button size="small" style="background-color: #FFB800 !important;color: white" v-on:click="imagePreview(item.imageList)">查看隐患图</el-button>
+                                </div>
                             </div>
 
-                            <div v-if="scope.row.imageList.length > 0">
-                                <el-button size="small" style="background-color: #FFB800 !important;color: white" v-on:click="imagePreview(scope.row.imageList)">查看隐患图</el-button>
-                            </div>
 
 
                         </template>
@@ -132,13 +155,13 @@
             total:0,
             imageFirst:'',
             imageList:[],
-            id:null,
+            uuid:null,
         },
         components: {
 
         },
         created(){
-            this.id = this.getQuery('id');
+            this.uuid = this.getQuery('uuid');
             this.getInfo();
         },
         methods: {
@@ -165,7 +188,7 @@
                     url: '/admin/check_report/info',
                     // 传递参数
                     data: {
-                        id:1
+                        uuid:this.uuid
                     },
                     responseType: 'json',
                     headers: {
