@@ -70,11 +70,14 @@
             <div class="weui-cell">
                 <div class="weui-cell__bd">
                     <select class="weui-select" name="zgnd" id="zgnd">
+                        @{{ d.zgnd }}
                         <option value="容易">容易</option>
-                        <option value="一般">一般</option>
-                        <option value="难">困难</option>
+                        <option value="中等">中等</option>
+                        <option value="困难">困难</option>
                     </select>
-                    <script>$("#zgnd").val('@{{ d.zgnd }}')</script>
+                    <script>
+                        $("#zgnd").val('@{{ d.zgnd }}')
+                    </script>
                 </div>
             </div>
         </div>

@@ -2,21 +2,11 @@
 
 namespace App\Models;
 
-use Dcat\Admin\Traits\HasDateTimeFormatter;
-
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
+use Dcat\Admin\Traits\HasDateTimeFormatter;
 
 class CollectImage extends Model
 {
-	use HasDateTimeFormatter;
+    use HasDateTimeFormatter;
     public $timestamps = false;
-
-    /*protected static function boot()
-    {
-        parent::boot();
-        static::creating(function ($model) {
-            $model->uuid = (string) Str::uuid();
-        });
-    }*/
 }

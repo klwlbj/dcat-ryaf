@@ -6,7 +6,7 @@ use App\Http\Controllers\Api\FirmController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ImageController;
 use App\Http\Controllers\Api\CheckResultController;
-use App\Http\Controllers\Api\CheckStandardController;
+use App\Http\Controllers\Api\CheckItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('getCheckStandard', [CheckStandardController::class, 'getCheckStandard']);
-    Route::post('getCheckTypeEnterpriseList', [CheckStandardController::class, 'getCheckTypeEnterpriseList']);
+    Route::post('getCheckStandard', [CheckItemController::class, 'getCheckStandard']);
+    Route::post('getCheckTypeEnterpriseList', [CheckItemController::class, 'getCheckTypeEnterpriseList']);
 
     Route::post('getEnterpriseList', [FirmController::class, 'getEnterpriseList']);
     Route::post('getCheckStatusList', [FirmController::class, 'getCheckStatusList']);

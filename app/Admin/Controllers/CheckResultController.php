@@ -18,6 +18,8 @@ class CheckResultController extends AdminController
     protected function grid()
     {
         return Grid::make(new CheckResult(['firm']), function (Grid $grid) {
+            // 查询过滤
+            $grid->model()->where('status', '!=', \App\Models\CheckResult::STATUS_UNSAVED);
             $grid->column('id', '序号')->sortable();
             $grid->column('check_result', '报告详情')->display('报告详情')->link(function () {
                 return admin_url('/check_report/detail?uuid=' . $this->report_code);

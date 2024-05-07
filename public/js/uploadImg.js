@@ -114,11 +114,11 @@ function delImg(c, b) {
         dataType: "json",
         success: function (d) {
             if (d.status == 200) {
-                qpOk(d.msg);
+                qpOk(d.message);
                 b.remove();
                 delImgAccess(d.imgName)
             } else {
-                qpError(d.msg)
+                qpError(d.message)
             }
         }
     });

@@ -100,9 +100,9 @@ class HomeController extends Controller
         if (empty($reportCode)) {
             $reportCode = 'new';
         } else {
-            // 重新找reportCode，不以前端传来为准
+            // 重新找最新report_code，不以前端传来为准
             $reportCode = CheckResult::where('firm_id', $uuid)
-                // ->where('status', CheckResult::STATUS_UNSAVED)
+                ->where('status', CheckResult::STATUS_UNSAVED)
                 ->orderBy('created_at', 'desc')
                 ->value('report_code');
         }

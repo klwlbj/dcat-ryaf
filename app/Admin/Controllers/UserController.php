@@ -68,20 +68,15 @@ class UserController extends AdminController
     {
         return Form::make(new User(), function (Form $form) {
             $form->display('id');
-            $form->text('name');
+            $form->text('name')->required();
             $form->email('email', '邮箱');
-            $form->mobile('phone', '手机号')->options(['mask' => '99999999999']);
+            $form->mobile('phone', '手机号')->options(['mask' => '99999999999'])->required();
 
-            // 枚举值
-            $types = [
-                1 => 'xx',
-                2 => 'yy',
-            ];
             $form->select('type', '类型')->options(\App\Models\User::$formatTypeMaps)->required();
             $form->select('group_id', '分组')->options(Group::all()->pluck('name', 'id'))->required();
             $form->select('status', '状态')->options(\App\Models\User::$formatStatusMaps);
             $form->text('job_info');
-            $form->password('password');
+            $form->password('password')->required();
 
             $form->saving(function (Form $form) {
                 if ($form->password && $form->model()->password != $form->password) {

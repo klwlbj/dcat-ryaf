@@ -13,10 +13,10 @@ class UserController extends Controller
 {
     public function login(Request $request)
     {
-        // 验证 todo
         $credentials = $request->validate([
-            'phone'    => ['required'],
-            'password' => ['required'],
+            'phone'     => ['required'],
+            'password'  => ['required'],
+            // 'projectId' => ['required'],
         ]);
 
         $systemItemId = $request->input('projectId');
@@ -42,7 +42,11 @@ class UserController extends Controller
 
     public function changeSystemItemId(Request $request)
     {
-        $systemItemId = $request->input('projectId');
+        $rules = [
+            'projectId'     => 'required|integer',
+        ];
+        $input = $this->validateParams($request, $rules);
+        $systemItemId = $input['projectId'];
         $token        = Cookie::get('auth_token', '');
         $userId       = app('user_id') ?? '';
 

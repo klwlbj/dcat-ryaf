@@ -214,6 +214,7 @@ function collectInfor_images(b) {
 }
 
 function cdJsonUpdate(b, c) {
+    console.log(111)
     var d = {};
     d.isPass = c;
     d.enterpriseUuid = uuid;
@@ -229,7 +230,7 @@ function cdJsonUpdate(b, c) {
     });
     var a = true;
     $.each(cdJson, function (e, f) {
-        if (d.parentIdType4 === f.parentIdType4) {
+        if (d.parentIdType4 == f.parentIdType4) {
             f.isPass = d.isPass;
             a = false;
             return false

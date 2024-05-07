@@ -17,11 +17,11 @@ class ImageController extends Controller
      */
     public function getCollectInfoList()
     {
-        $data = [
+        $data = [[
             'content' => '仅支持jpg,jpeg,png文件,单图，建筑整体正位照片，统一使用横向拍照，内容清晰',
             'name'    => '排查相关图片汇集',
-        ];
-        return response()->json([0 => $data]);
+        ]];
+        return response()->json($data);
     }
 
     /**
@@ -69,9 +69,8 @@ class ImageController extends Controller
         if (!$image) {
             return response()->json(['message' => '图片未找到'], 404);
         }
-
         // 删除文件夹中的图片
-        Storage::disk()->delete('/' . $image->file_path . '/' . $image->filename);
+        (new \App\Logic\Api\CollectImage)->deleteFileIfNotUsed($image);
 
         // 删除数据库中的图片记录
         $image->delete();

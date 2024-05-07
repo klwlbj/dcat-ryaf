@@ -6,6 +6,8 @@ use App\Models\Firm;
 use App\Models\Community;
 use App\Models\SystemItem;
 use Illuminate\Support\Str;
+use App\Logic\Api\CheckItem;
+use App\Logic\Api\FirmLogic;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
@@ -19,8 +21,13 @@ class FirmController extends Controller
      */
     public function getEnterpriseList(Request $request)
     {
-        $checkTypeId = $request->input('typeId');
-        $key         = $request->input('key') ?? '';
+        $rules = [
+            'typeId' => 'required|numeric',
+        ];
+
+        $input       = $this->validateParams($request, $rules);
+        $checkTypeId = $input['typeId'];
+        $key         = $input['key'] ?? '';
 
         $query = Firm::query();
         $data  = $query->where('check_type', $checkTypeId)
@@ -41,26 +48,7 @@ class FirmController extends Controller
      */
     public function getCheckStatusList()
     {
-        return response()->json($this->getCheckStatus());
-    }
-
-    /**
-     * 私有方法，多次调用
-     * @return array
-     */
-    private function getCheckStatus()
-    {
-        $statusList = Firm::$formatStatusMaps;
-        $data       = [];
-        foreach ($statusList as $key => $status) {
-            $data[] = [
-                'id'      => $key,
-                'orderBy' => 0,
-                'uuid'    => '',
-                'name'    => $status,
-            ];
-        }
-        return $data;
+        return response()->json((new FirmLogic())->getCheckStatusList());
     }
 
     /**
@@ -70,8 +58,13 @@ class FirmController extends Controller
      */
     public function getEnterprise(Request $request)
     {
-        $uuid = $request->input('uuid');
-        $firm = Firm::where('uuid', $uuid)
+        $rules = [
+            'uuid' => ['required', 'regex:/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/'],
+        ];
+
+        $input = $this->validateParams($request, $rules);
+        $uuid  = $input['uuid'];
+        $firm  = Firm::where('uuid', $uuid)
             ->select(
                 'custom_number as number',
                 'id',
@@ -93,16 +86,16 @@ class FirmController extends Controller
         $firm->checkTypeName   = Firm::$formatCheckTypeMaps[$firm->checkTypeID];
         $firm->stopCheck       = 1;
         $firm->community       = Community::where('id', $firm->community)->value('name');
-        // $firm->checkResult     = Firm::$formatCheckResultMaps[$firm->check_result];
+
         if (in_array($firm->checkStatusID, [Firm::STATUS_WAIT, Firm::STATUS_CHECKED, Firm::STATUS_REVIEWED])) {
             $firm->stopCheck = 0;
         }
 
         return response()->json([
             'enterprise' => $firm,
-            'ctList'     => CheckStandardController::getCheckType(),
-            'csList'     => $this->getCheckStatus(),
-            'coList'     => $this->getCommunity(),
+            'ctList'     => (new CheckItem())::getCheckTypeList(),
+            'csList'     => (new FirmLogic())->getCheckStatusList(),
+            'coList'     => (new FirmLogic())->getCommunityList(),
         ]);
     }
 
@@ -113,13 +106,27 @@ class FirmController extends Controller
      */
     public function saveEnterprise(Request $request)
     {
-        $uuid = $request->input('uuid', '');
-        // $isCheck = $request->input('isCheck', false);
+        $rules = [
+            'uuid'           => ['nullable', 'regex:/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/'],
+            'community'      => 'required',
+            'enterpriseName' => 'required',
+            'checkStatusID'  => 'required|integer',
+            'manager'        => 'required',
+            'checkResult'    => 'nullable|integer',
+            'phone'          => 'required|integer|digits_between:1,30',
+            'floorNum'       => 'required|integer',
+            'businessArea'   => 'required|integer',
+            'address'        => 'required',
+            'remark'         => 'nullable|string',
+            'checkTypeID'    => 'nullable|integer',
+            '',
+        ];
 
+        $input = $this->validateParams($request, $rules);
+
+        $uuid = $input['uuid'] ?? '';
         $systemItemId = app('system_item_id') ?? 0;
-
-        // todo 参数验证
-        $community = $request->input('community', '');
+        $community = $input['community'];
 
         // 查询 name 是否存在
         $record = Community::where('name', $community)
@@ -133,20 +140,19 @@ class FirmController extends Controller
             $newRecord->name           = $community;
             $newRecord->system_item_id = $systemItemId;
             $newRecord->save();
-
             $communityId = $newRecord->id;
         }
 
         $saveData = [
-            'name'           => $request->input('enterpriseName'),
-            'status'         => $request->input('checkStatusID'),
-            'head_man'       => $request->input('manager'),
-            'check_result'   => $request->input('checkResult'),
-            'phone'          => $request->input('phone'),
-            'floor'          => $request->input('floorNum') ?? 0,
-            'area_quantity'  => $request->input('businessArea') ?? 0,
-            'address'        => $request->input('address'),
-            'remark'         => $request->input('remark', '') ?? '',
+            'name'           => $input['enterpriseName'],
+            'status'         => $input['checkStatusID'],
+            'head_man'       => $input['manager'],
+            'check_result'   => $input['checkResult'] ?? Firm::CHECK_RESULT_DEFAULT,
+            'phone'          => $input['phone'],
+            'floor'          => $input['floorNum'] ?? 0,
+            'area_quantity'  => $input['businessArea'] ?? 0,
+            'address'        => $input['address'],
+            'remark'         => $input['remark'] ?? '',
             'system_item_id' => $systemItemId,
             'community'      => $communityId,
         ];
@@ -154,8 +160,8 @@ class FirmController extends Controller
             $save = Firm::where('uuid', $uuid)
                 ->update($saveData);
         } else {
-            $saveData['check_type']    = $request->input('checkTypeID');
-            $saveData['custom_number'] = Str::random(4) . time();
+            $saveData['check_type']    = $input['checkTypeID'];
+            $saveData['custom_number'] = Str::random(4) . time(); // 随机编号
             $save                      = Firm::create($saveData);
         }
 
@@ -175,12 +181,6 @@ class FirmController extends Controller
 
     public function getCommunityList()
     {
-        return response()->json($this->getCommunity());
-    }
-
-    public function getCommunity()
-    {
-        $systemItemId = app('system_item_id') ?? '';
-        return Community::where('system_item_id', $systemItemId)->pluck('name');
+        return response()->json((new FirmLogic())->getCommunityList());
     }
 }

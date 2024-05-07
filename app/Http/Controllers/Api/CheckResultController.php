@@ -10,6 +10,7 @@ use App\Models\CollectImage;
 use Illuminate\Http\Request;
 use App\Models\CheckQuestion;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,8 +34,8 @@ class CheckResultController extends Controller
             $data[] = [
                 'enterpriseUuid' => $uuid,
                 'isPass'         => 0,
-                'parentIdType3'  => $checkQuestion->check_standard_id,
-                'parentIdType4'  => $checkQuestion->check_question_id,
+                'parentIdType3'  => (int) $checkQuestion->check_standard_id,
+                'parentIdType4'  => (int) $checkQuestion->check_question_id,
                 'question'       => $checkQuestion->question,
                 'rectify'        => $checkQuestion->recitify ?? '',
                 'zgnd'           => CheckQuestion::$formatDifficultyMaps[$checkQuestion->difficulty],
@@ -50,7 +51,13 @@ class CheckResultController extends Controller
      */
     public function getCheckBaseInfo(Request $request)
     {
-        $uuid = $request->input('uuid');
+        $rules = [
+            'uuid' => ['required', 'regex:/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/'],
+        ];
+
+        $input = $this->validateParams($request, $rules);
+
+        $uuid = $input['uuid'];
         $firm = Firm::select(['id', 'name', 'check_type'])
             ->where('uuid', $uuid)
             ->first();
@@ -72,14 +79,22 @@ class CheckResultController extends Controller
      * 保存检查结果
      * @param Request $request
      * @return JsonResponse
+     * @throws \Exception
      */
     public function saveCheckResult(Request $request)
     {
+        $rules = [
+            'uuid'       => ['required', 'regex:/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/'],
+            'reportCode' => 'required',
+        ];
+
+        $input = $this->validateParams($request, $rules);
+
+        // todo check $list
         $list                  = $request->post();
-        $uuid                  = $request->get('uuid');
-        $reportCode            = $request->get('reportCode');
-        $saveCheckQuestionList = [];
-        // todo check
+        $uuid                  = $input['uuid'];
+        $reportCode            = $input['reportCode'];
+        $saveCheckQuestionList = $deleteCheckQuestionIds = [];
 
         $new = false;
         if ($reportCode === 'new') {
@@ -102,31 +117,49 @@ class CheckResultController extends Controller
         $difficulty = array_flip(CheckQuestion::$formatDifficultyMaps);
 
         foreach ($list as $checkQuestion) {
-            $saveCheckQuestionList[] = [
-                'check_result_uuid' => $reportCode,
-                'question'          => $checkQuestion['question'] ?? '',
-                'rectify'           => $checkQuestion['rectify'] ?? '',
-                'firm_id'           => $uuid,
-                'difficulty'        => $difficulty[$checkQuestion['zgnd']] ?? CheckQuestion::DIFFICULTY_EASY,
-                'check_standard_id' => $checkQuestion['parentIdType3'],
-                'check_question_id' => $checkQuestion['parentIdType4'],
-            ];
+            if (!$checkQuestion['isPass']) {
+                $saveCheckQuestionList[] = [
+                    'check_result_uuid' => $reportCode,
+                    'question'          => $checkQuestion['question'] ?? '',
+                    'rectify'           => $checkQuestion['rectify'] ?? '',
+                    'firm_id'           => $uuid,
+                    'difficulty'        => $difficulty[$checkQuestion['zgnd']] ?? CheckQuestion::DIFFICULTY_EASY,
+                    'check_standard_id' => $checkQuestion['parentIdType3'],
+                    'check_question_id' => $checkQuestion['parentIdType4'],
+                ];
+            } else {
+                $deleteCheckQuestionIds[] = $checkQuestion['parentIdType4'];
+            }
         }
-        if ($new) {
-            // todo 事务
-            CheckResult::create([
-                'report_code' => $reportCode,
-                'status'      => CheckResult::STATUS_UNSAVED,
-                'firm_id'     => $uuid,
-                'check_user_id' => Auth::user()->id,
-            ]);
-        } else {
-            CheckQuestion::where('check_result_uuid', $reportCode)
-                ->where('firm_id', $uuid)
-                ->delete();
-            // 清除旧的图片 todo
-        }
-        CheckQuestion::insert($saveCheckQuestionList);
+        DB::transaction(function () use ($new, $reportCode, $uuid, $saveCheckQuestionList, $deleteCheckQuestionIds) {
+            if ($new) {
+                CheckResult::create([
+                    'report_code'   => $reportCode,
+                    'status'        => CheckResult::STATUS_UNSAVED,
+                    'firm_id'       => $uuid,
+                    'check_user_id' => Auth::user()->id,
+                ]);
+            } else {
+                CheckQuestion::where('check_result_uuid', $reportCode)
+                    ->where('firm_id', $uuid)
+                    ->delete();
+
+                // 清除旧的图片
+                $deleteCollectImages = CollectImage::where('report_code', $reportCode)
+                    ->where('firm_id', $uuid)
+                    ->whereIn('check_question_id', $deleteCheckQuestionIds)
+                    ->get();
+
+                // 遍历并逐个删除
+                foreach ($deleteCollectImages as $img) {
+                    // 删除文件夹中的图片
+                    $img->delete();
+                    // 未复用则删除图片
+                    (new \App\Logic\Api\CollectImage())->deleteFileIfNotUsed($img, $reportCode);
+                }
+            }
+            CheckQuestion::insert($saveCheckQuestionList);
+        });
 
         return response()->json([
             "status" => 200,
@@ -138,62 +171,110 @@ class CheckResultController extends Controller
      * 最终生成检查报告
      * @param Request $request
      * @return JsonResponse
+     * @throws \Exception
      */
     public function createReport(Request $request)
     {
-        $uuid       = $request->input('enterpriseUuid');
-        $checkType  = Firm::where('uuid', $uuid)->value('check_type');
-        $rectifyNum = $request->input('rectifyNum');
+        $rules = [
+            'enterpriseUuid' => ['required', 'regex:/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/'],
 
-        // 计算该单位最新的检查记录的得分
-        $checkResult         = CheckResult::where('firm_id', $uuid)->orderBy('id', 'desc')->first();
-        $checkResult->status = $rectifyNum ? CheckResult::STATUS_BAD : CheckResult::STATUS_NORMAL;// 合格or不合格
-        // todo 后端计算分数
-        $checkResult->total_point     = $request->input('getScore');
-        $checkResult->deduction_point = $request->input('loseScore');
-        $checkResult->rectify_number  = $request->input('rectifyNum');
+            'rectifyNum'     => 'required|integer',
+            'getScore'       => 'required|integer',
+            'loseScore'      => 'required|integer',
+        ];
+        $input = $this->validateParams($request, $rules);
 
-        // 保存检查类型到字段里
-        $checkItems = CheckItem::where('check_type', $checkType)
-            ->whereIn('type', [1, 2, 3])
-            ->select(['id', 'title', 'total_score', 'type', 'parent_id'])
-            ->get();
+        DB::transaction(function () use ($input) {
+            $uuid       = $input['enterpriseUuid'];
+            $checkType  = Firm::where('uuid', $uuid)->value('check_type');
+            $rectifyNum = $input['rectifyNum'];
+            // 计算该单位最新的检查记录的得分
+            $checkResult = CheckResult::where('firm_id', $uuid)
+                ->where('status', CheckResult::STATUS_UNSAVED)
+                ->orderBy('id', 'desc')
+                ->first();
+            // 保存检查类型到字段里
+            $checkItems = CheckItem::where('check_type', $checkType)
+                ->whereIn('type', [1, 2, 3])
+                ->select(['id', 'title', 'total_score', 'type', 'parent_id'])
+                ->get();
 
-        //获取出父id的父id
-        $this->addParentParentIdToChildren($checkItems);
-        // 过滤
-        $filteredCollection = $checkItems->filter(function ($item) {
-            return $item['type'] === 1 || $item['type'] === 3;
-        });
-        $checkResult->check_user_id = Auth::user()->id;
+            //获取出父id的父id
+            (new \App\Logic\Api\CheckResult())->addParentParentIdToChildren($checkItems);
+            // 过滤
+            $filteredCollection = $checkItems->filter(function ($item) {
+                return $item['type'] === 1 || $item['type'] === 3;
+            });
+            $checkResult->status = $rectifyNum ? CheckResult::STATUS_BAD : CheckResult::STATUS_NORMAL;// 合格or不合格
+            // 前端计算分数
+            $checkResult->total_point     = $input['getScore'];
+            $checkResult->deduction_point = $input['loseScore'];
+            $checkResult->rectify_number  = $rectifyNum;
 
-        // 检查项目=>检查标准
-        $checkResult->history_check_item = $filteredCollection->toJson();
-        $checkResult->save();
-        return response()->json(['status' => 200, 'msg' => '保存成功']);
-    }
+            $checkResult->check_user_id = Auth::user()->id;
 
-    private function addParentParentIdToChildren(&$data, $parentId = 0, $parentParentId = 0)
-    {
-        foreach ($data as &$item) {
-            if ($item['parent_id'] === $parentId) {
-                $item['parent_parent_id'] = $parentParentId;
+            // 检查项目=>检查标准
+            $checkResult->history_check_item = $filteredCollection->toJson();
+            $checkResult->save();
 
-                // 递归调用，将相应的 parent_parent_id 传递给子节点
-                $this->addParentParentIdToChildren($data, $item['id'], $item['parent_id']);
+            $firm = Firm::where('uuid', $uuid)->first();
+
+            $firm->status       = Firm::STATUS_CHECKED; // todo 已复查
+            $firm->check_result = $rectifyNum ? Firm::CHECK_RESULT_NOT_PASS : Firm::CHECK_RESULT_PASS;
+            $firm->save();
+            // 复制多一份，以供复查，防止影响旧数据
+
+            // 保存数据
+            $newCheckResult                     = $checkResult->replicate();
+            $newCheckResult->status             = CheckResult::STATUS_UNSAVED;
+            $newCheckResult->history_check_item = '';
+            $newCheckResult->total_point        = 0;
+            $newCheckResult->deduction_point    = 0;
+            $newCheckResult->rectify_number     = 0;
+
+            $newCheckResult->save();
+
+            $checkQuestionList = CheckQuestion::where('check_result_uuid', $checkResult->report_code)
+                ->where('firm_id', $uuid)
+                ->get();
+
+            foreach ($checkQuestionList as $checkQuestion) {
+                $newCheckQuestion                    = $checkQuestion->replicate();
+                $newCheckQuestion->check_result_uuid = $newCheckResult->report_code;
+                $newCheckQuestion->save();
             }
-        }
+
+            $collectImageList = CollectImage::where('report_code', $checkResult->report_code)
+                ->where('firm_id', $uuid)
+                ->get();
+
+            foreach ($collectImageList as $collectImage) {
+                $newCollectImage              = $collectImage->replicate();
+                $newCollectImage->report_code = $newCheckResult->report_code;
+                $newCollectImage->uuid        = Str::uuid();
+                $newCollectImage->save();
+            }
+        });
+
+        return response()->json(['status' => 200, 'msg' => '保存成功']);
     }
 
     /**
      * 中止检查
      * @param Request $request
      * @return JsonResponse
+     * @throws \Exception
      */
     public function stopCheck(Request $request)
     {
-        $uuid   = $request->input('uuid');
-        $status = $request->input('status');
+        $rules = [
+            'uuid'   => ['required', 'regex:/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/'],
+            'status' => 'required|integer',
+        ];
+        $input = $this->validateParams($request, $rules);
+
+        $uuid   = $input['uuid'];
+        $status = $input['status'];
 
         $firm = Firm::where('uuid', $uuid)->first();
 

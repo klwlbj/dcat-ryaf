@@ -14,22 +14,6 @@ use App\Models\CheckQuestion;
 
 class CheckReportLogic extends BaseLogic
 {
-    public function getList($params)
-    {
-        $list = [
-            [
-                'id'           => 1,
-                "report"       => '123',
-                "result"       => "不合格",
-                "sn"           => 'XF24042013',
-                "company_name" => '华糖社区华糖街49',
-                'address'      => '华糖社区华糖街49',
-            ],
-        ];
-
-        return ResponseLogic::apiResult(0, 'success', ['list' => $list, 'total' => 1]);
-    }
-
     public function getDetail($params, $isWord = false)
     {
         $uuid        = $params['uuid'];
@@ -75,8 +59,10 @@ class CheckReportLogic extends BaseLogic
             'address'             => $firm->address,
             'image_list'          => $imageList,
         ];
-        $checkQuestions = CheckQuestion::where('firm_id', $checkResult->firm_id)->where('check_result_uuid', $checkResult->report_code)->get();
-        $checkItems     = collect(json_decode($checkResult->history_check_item, JSON_OBJECT_AS_ARRAY));
+        $checkQuestions = CheckQuestion::where('firm_id', $checkResult->firm_id)
+            ->where('check_result_uuid', $checkResult->report_code)
+            ->get();
+        $checkItems = collect(json_decode($checkResult->history_check_item, JSON_OBJECT_AS_ARRAY));
         if ($isWord) {
             $list = $this->handleWordCheckQuestions($checkQuestions, $checkItems);
             return ['list' => $list, 'info' => $info];
@@ -120,8 +106,8 @@ class CheckReportLogic extends BaseLogic
 
         $list = $projectNameList = [];
         // 处理check_type为1和3的节点
-        $l1CheckItems = $checkItems->where('type', 1)->keyBy('id');
-        $l3CheckItems = $checkItems->where('type', 3)->keyBy('id')->sortByDesc('parent_parent_id');
+        $l1CheckItems = $checkItems->where('type', 1)->keyBy('id')->sortBy('id');
+        $l3CheckItems = $checkItems->where('type', 3)->keyBy('id')->sortBy('parent_parent_id');
 
         foreach ($l3CheckItems as $id => $checkItem) {
             $parentParent = $l1CheckItems[$checkItem['parent_parent_id']] ?? [];

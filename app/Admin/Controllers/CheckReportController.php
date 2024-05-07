@@ -23,13 +23,6 @@ class CheckReportController extends AdminController
         return $content->header('报告详情')->body(admin_view('admin.checkReport.detail'));
     }
 
-    public function getList(Request $request): \Illuminate\Http\JsonResponse
-    {
-        $params = $request->all();
-
-        return CheckReportLogic::getInstance()->getList($params);
-    }
-
     public function info(Request $request): \Illuminate\Http\JsonResponse
     {
         $params = $request->all();

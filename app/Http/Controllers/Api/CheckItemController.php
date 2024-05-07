@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 
-class CheckStandardController extends Controller
+class CheckItemController extends Controller
 {
     /**
      * 获取检查标准或检查类型
@@ -22,8 +22,9 @@ class CheckStandardController extends Controller
         $data   = [];
         switch ($action) {
             case 'list':
-                $data = self::getCheckType();
+                $data = (new \App\Logic\Api\CheckItem())->getCheckTypeList();
                 break;
+
             case 'info':
                 $typeId = $request->post('typeId');
                 $l1Data = CheckItem::select([
@@ -104,8 +105,10 @@ class CheckStandardController extends Controller
                     ->concat($l3Data)
                     ->concat($l4Data);
                 break;
+            default:
+                break;
         }
-        return response()->json(['list' => $data]);
+        return response()->json(['list' => $data], 200, [], JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -130,26 +133,5 @@ class CheckStandardController extends Controller
         }
 
         return response()->json($data);
-    }
-
-    public static function getCheckType()
-    {
-        $list       = CheckItem::$formatCheckTypeMaps;
-        $totalScore = CheckItem::whereIn('check_type', array_flip($list))
-            ->where('type', 1)
-            ->selectRaw('SUM(total_score) as total_score, check_type')
-            ->groupBy('check_type')
-            ->pluck('total_score', 'check_type');
-        $data = [];
-
-        foreach ($list as $id => $info) {
-            $data[] = [
-                'id'         => $id,
-                'name'       => $info,
-                'totalScore' => $totalScore[$id] ?? 0,
-            ];
-        }
-
-        return $data;
     }
 }

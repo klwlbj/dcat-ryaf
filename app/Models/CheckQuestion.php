@@ -16,7 +16,7 @@ class CheckQuestion extends Model
 
     public static array $formatDifficultyMaps = [
         self::DIFFICULTY_EASY   => '容易',
-        self::DIFFICULTY_MEDIUM => '一般',
+        self::DIFFICULTY_MEDIUM => '中等',
         self::DIFFICULTY_HARD   => '困难',
     ];
 }

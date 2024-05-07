@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Dcat\Admin\Traits\HasDateTimeFormatter;
+use Illuminate\Support\Str;
 
 class CheckResult extends Model
 {
@@ -32,6 +33,14 @@ class CheckResult extends Model
         self::STATUS_BAD     => '不合格',
         self::STATUS_UNSAVED => '未保存',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            $model->report_code = (string) Str::uuid();
+        });
+    }
 
     public function firm()
     {
