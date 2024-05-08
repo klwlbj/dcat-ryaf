@@ -14,8 +14,8 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'phone'     => ['required'],
-            'password'  => ['required'],
+            'phone'    => ['required'],
+            'password' => ['required'],
             // 'projectId' => ['required'],
         ]);
 
@@ -35,17 +35,18 @@ class UserController extends Controller
             ];
         }
 
-        return back()->withErrors([
-            'phone' => '手机号有误',
-        ]);
+        return [
+            'status' => 400,
+            'msg'    => '帐号密码不匹配',
+        ];
     }
 
     public function changeSystemItemId(Request $request)
     {
         $rules = [
-            'projectId'     => 'required|integer',
+            'projectId' => 'required|integer',
         ];
-        $input = $this->validateParams($request, $rules);
+        $input        = $this->validateParams($request, $rules);
         $systemItemId = $input['projectId'];
         $token        = Cookie::get('auth_token', '');
         $userId       = app('user_id') ?? '';
