@@ -103,6 +103,7 @@ function getCheckStatusList() {
 }
 
 function fms_border(a) {
+    console.log(a)
     if (a == 1) {
         $("form input").attr("disabled", false).addClass("fms-border");
         $("form select").attr("disabled", false).addClass("fms-border");

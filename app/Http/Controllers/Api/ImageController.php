@@ -93,7 +93,7 @@ class ImageController extends Controller
         // $fileName      = $file->getClientOriginalName();
         $fileExtension = $file->getClientOriginalExtension();
         $imageUuid     = Str::uuid(); // 生成唯一标识符
-        $directory     = 'public/xf/upload/' . date('Y/m');
+        $directory     = 'storage/xf/upload/' . date('Y/m');
 
         $imagePath = $file->storePubliclyAs($directory, $date . $imageUuid . '.' . $fileExtension);
         if (!$imagePath) {
