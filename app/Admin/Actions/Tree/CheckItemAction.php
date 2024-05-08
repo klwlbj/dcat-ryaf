@@ -42,10 +42,16 @@ class CheckItemAction extends AbstractTool
     protected function html()
     {
         $list = BaseModel::$formatCheckTypeMaps;
+        $checkType = request()->query('check_type');
         $html = '<div><select style="width: 200px;height: 30px;" id="check_type" name="check_type">';
 
         foreach ($list as $key => $value){
-            $html .= '<option value='.$key.'>'.$value.'</option>';
+            if($checkType == $key){
+                $html .= '<option value='.$key.' selected>'.$value.'</option>';
+            }else{
+                $html .= '<option value='.$key.'>'.$value.'</option>';
+            }
+
         }
 
         $html .= '</select><button style="color:white;width: 80px;height: 30px;border-radius: 2px;border:0;background:#586cb1;margin-left: 10px" id="search_list">搜索</button></div>';
