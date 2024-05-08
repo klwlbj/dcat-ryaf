@@ -150,7 +150,7 @@ function showTemplae() {
     var a = 0;
     $.each(csJson3, function (e, c) {
         a++;
-        b += '<div class="weui-panel__bd"><div class="weui-media-box weui-media-box_text fms-border-b"><div class="weui-cell weui-cell_switch pleft0"><div class="weui-cell__bd color-blue"><span class="color-danger">第 ' + a + " 项检测:</span>" + c.content + '</div><div class="weui-cell__ft question"><input class="weui-switch" type="checkbox" value="' + c.id + '"></div></div></div></div>';
+        b += '<div class="weui-panel__bd"><div class="weui-media-box weui-media-box_text fms-border-b"><div class="weui-cell weui-cell_switch pleft0"><div class="weui-cell__bd color-blue"><span class="color-danger">第 ' + a + " 项检测:</span>" + c.content + '</div><div class="weui-cell__ft question"><input id="switch_' + c.id +'" class="weui-switch" type="checkbox" value="' + c.id + '"></div></div></div></div>';
         b += '<div class="weui-panel__ft fms-bg-gray ngbtn dis" id="ngbtn_' + c.id + '"><a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link"><div class="weui-cell__bd color-danger font-weight">消防隐患:</div><span>▽</span></a></div>';
         b += '<div class="weui-panel__bd ngtext dis" id="ngtext_' + c.id + '"><div class="weui-media-box weui-media-box_text">';
         var d = 0;
@@ -213,8 +213,17 @@ function collectInfor_images(b) {
     $(".weui-uploader__info").text(a + "/" + 50)
 }
 
+function getParentStatus(parentId){
+    var parentCheckbox = $("#switch_" + parentId);
+    console.info("parentId: "+parentId, parentCheckbox.is(":checked"));
+    if(parentCheckbox){
+        return parentCheckbox.is(":checked");
+    }else{
+        return false;
+    }
+}
+
 function cdJsonUpdate(b, c) {
-    console.log(111)
     var d = {};
     d.isPass = c;
     d.enterpriseUuid = uuid;
@@ -291,6 +300,12 @@ function saveFunc() {
     if (cdJson == null || cdJson.length == 0) {
         return false
     }
+    $.each(cdJson, function (key, value) {
+        if(!getParentStatus(value.parentIdType3)){
+            cdJson[key]['isPass'] = 1;
+        }
+    });
+
     console.info("保存隐患信息", cdJson);
     ajaxPostBatch("/api/saveCheckResult?uuid=" + uuid + "&reportCode=" + reportCode, cdJson);
     autoSave = false
