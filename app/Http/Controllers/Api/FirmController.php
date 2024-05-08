@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Firm;
+use App\Models\User;
 use App\Models\Community;
 use App\Models\SystemItem;
 use Illuminate\Support\Str;
@@ -18,6 +19,7 @@ class FirmController extends Controller
      * 获取企业列表
      * @param Request $request
      * @return JsonResponse
+     * @throws \Exception
      */
     public function getEnterpriseList(Request $request)
     {
@@ -124,9 +126,9 @@ class FirmController extends Controller
 
         $input = $this->validateParams($request, $rules);
 
-        $uuid = $input['uuid'] ?? '';
+        $uuid         = $input['uuid'] ?? '';
         $systemItemId = app('system_item_id') ?? 0;
-        $community = $input['community'];
+        $community    = $input['community'];
 
         // 查询 name 是否存在
         $record = Community::where('name', $community)
@@ -182,5 +184,55 @@ class FirmController extends Controller
     public function getCommunityList()
     {
         return response()->json((new FirmLogic())->getCommunityList());
+    }
+
+    /**
+     * 获取所有企业列表
+     * @param Request $request
+     * @return JsonResponse
+     * @throws \Exception
+     */
+    public function getBaseInfo(Request $request)
+    {
+        $rules = [
+            'act' => 'required|string',
+        ];
+
+        $input = $this->validateParams($request, $rules);
+        $key   = $input['key'] ?? '';
+        $act   = $input['act'] ?? '';
+        switch ($act) {
+            case 'enterprise':
+                $query = Firm::query();
+                $data  = $query->where(function ($query) use ($key) {
+                    if (!empty($key)) {
+                        $query->where('name', 'like', '%' . $key . '%');
+                    }
+                })
+                    ->select('id as uuid', 'custom_number as number', 'uuid', 'id', 'name as enterpriseName', 'address', 'phone', 'status', 'check_type', 'community', 'system_item_id', 'head_man as manager', 'floor as floorNum', 'area_quantity as businessArea', 'remark')
+                    ->get()
+                    ->map(function ($firm) {
+                        $firm->checkStatusName = Firm::$formatStatusMaps[$firm->status] ?? '空';
+                        $firm->checkTypeName   = Firm::$formatCheckTypeMaps[$firm->check_type] ?? '空';
+                        $firm->projectName     = SystemItem::where('id', $firm->system_item_id)->value('name') ?? '空';
+                        $firm->community       = Community::where('id', $firm->community)->value('name') ?? '空';
+                        return $firm;
+                    });
+
+                break;
+            case 'admin':
+            default:
+                $query = User::query();
+
+                $data = $query->where(function ($query) use ($key) {
+                    if (!empty($key)) {
+                        $query->where('name', 'like', '%' . $key . '%');
+                    }
+                })->select('name as fullName', 'job_info as jobInfo', 'updated_at as lastTime', 'phone', 'email', 'id as uuid')
+                    ->get();
+                break;
+        }
+
+        return response()->json(['list' => $data]);
     }
 }

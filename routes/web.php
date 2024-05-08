@@ -34,6 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/web/collectInfo', [HomeController::class, 'collectInfo']);
     Route::get('/web/logout', [HomeController::class, 'logout']);
     Route::get('/web/checkDetail/check', [HomeController::class, 'checkDetail']);
+    Route::get('/web/checkResult', [HomeController::class, 'checkResult']);
+    Route::get('/web/userCheckResult', [HomeController::class, 'userCheckResult']);
 });
 Route::get('/public/xf/upload/{year}/{month}/{filename}', function ($year, $month, $filename) {
     // $path = public_path($directory . '/' . $filename);

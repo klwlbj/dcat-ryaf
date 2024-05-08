@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Firm;
+use App\Models\User;
 use App\Models\CheckItem;
 use App\Models\CheckResult;
 use Illuminate\Support\Str;
@@ -281,5 +282,52 @@ class CheckResultController extends Controller
         $firm->status = $status;
         $firm->save();
         return response()->json(['status' => 200, 'msg' => '操作成功']);
+    }
+
+    public function findUserCheckResult(Request $request)
+    {
+        $date = $request->input('reportTime') ?? '';
+
+        $checkResults = CheckResult::select('firm_id', 'check_user_id')
+                ->distinct()
+                ->with('user')
+                ->where('status', '!=', CheckResult::STATUS_UNSAVED)
+                ->when($date, function ($query) use ($date) {
+                    return $query->whereBetween('updated_at', [$date . ' 00:00:00', $date . ' 23:59:59']);
+                })
+                ->get();
+        $data = [];
+        foreach ($checkResults as $checkResult) {
+            $data[$checkResult->user->id] = [
+                // 'checkNum'  => $checkResult->user()->check_results_count,
+                'checkUser' => $checkResult->user->phone,
+                'fullName'  => $checkResult->user->name,
+            ];
+            $data[$checkResult->user->id]['checkNum'] = !isset($data[$checkResult->user->id]['checkNum']) ? 1 : $data[$checkResult->user->id]['checkNum'] + 1;
+        }
+        return response()->json(array_values($data));
+    }
+
+    public function findUserCheckEnterprise(Request $request)
+    {
+        $checkUserPhone = $request->input('checkUser');
+        $user           = User::where('phone', $checkUserPhone)->first();
+
+        $checkResults = CheckResult::select('firm_id', 'updated_at')
+            ->distinct()
+            ->with('firm')
+            ->where('check_user_id', $user->id)
+            ->get();
+
+        $data = [];
+        foreach ($checkResults as $checkResult) {
+            $data[] = [
+                'checkNum'       => 0,
+                'enterpriseName' => $checkResult->firm->name,
+                'enterpriseUuid' => $checkResult->firm_id,
+                'reportTime'     => strtotime($checkResult->updated_at) * 1000,
+            ];
+        }
+        return response()->json($data);
     }
 }

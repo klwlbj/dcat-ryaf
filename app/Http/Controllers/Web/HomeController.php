@@ -69,6 +69,18 @@ class HomeController extends Controller
         return view('web/login');
     }
 
+    public function checkResult()
+    {
+        return view('web/checkResult');
+    }
+
+    public function userCheckResult(Request $request)
+    {
+        $phone = $request->get('checkUser');
+        $reportTime = $request->get('reportTime');
+        return view('web/userCheckResult', ['phone'=>  $phone, 'reportTime' => $reportTime]);
+    }
+
     /**
      * 用户退出登录
      *

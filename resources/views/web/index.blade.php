@@ -37,7 +37,7 @@
                     </div>
                     <div class="weui-flex__item">
                         <div class="placeholder">
-                            <a href="../checkResult/index">
+                            <a href="/web/checkResult">
                                 <img src="{{ asset('pic/shu.png') }}" width="100%"/>
                             </a>
                         </div>

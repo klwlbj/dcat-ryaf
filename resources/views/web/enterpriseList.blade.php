@@ -10,7 +10,7 @@
             <div class="weui-tab__panel">
                 <div class="header font-weight weui-flex">
                     <div class="back-icon back-page"><i class="weui-icon-back weui-icon_msg color-white"></i></div>
-                    <div class="weui-flex__item">消防检查</div>
+                    <div class="weui-flex__item"><span id="typeName"></span> 消防检查</div>
                     <button type="button" class="weui-btn weui-btn_mini weui-btn_warn edit-icon open-popup"
                             title="新增单位信息(*号为必填)" data-target="enterprise-add">新增
                     </button>
@@ -70,14 +70,16 @@
                         </div>
                     </div>
                     <div class="weui-cell">
-                        <div class="weui-cell__hd"><span class="weui-label">负责人<i class="color-red">*</i></span></div>
+                        <div class="weui-cell__hd"><span class="weui-label">负责人<i class="color-red">*</i></span>
+                        </div>
                         <div class="weui-cell__bd">
                             <input type="text" class="weui-input fms-input fms-border" maxlength="15" name="manager"
                                    placeholder="输入负责人姓名" required="">
                         </div>
                     </div>
                     <div class="weui-cell">
-                        <div class="weui-cell__hd"><span class="weui-label">联系方式<i class="color-red">*</i></span></div>
+                        <div class="weui-cell__hd"><span class="weui-label">联系方式<i class="color-red">*</i></span>
+                        </div>
                         <div class="weui-cell__bd">
                             <input type="text" class="weui-input fms-input fms-border" maxlength="20" name="phone"
                                    placeholder="输入联系号码" required="">
@@ -163,7 +165,12 @@
     </div>
 </div>
 <!--end-->
-<script>const typeId = '{{$typeId}}';</script>
+<script>
+    const typeId = '{{$typeId}}';
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('typeName');
+    $('#typeName').text(name);
+</script>
 <script src="{{ asset('js/enterpriseList.js') }}" charset="utf-8"></script>
 <script src="{{ asset('js/addEnterprise.js') }}" charset="utf-8"></script>
 </body>

@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\FirmController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ImageController;
-use App\Http\Controllers\Api\CheckResultController;
 use App\Http\Controllers\Api\CheckItemController;
+use App\Http\Controllers\Api\CheckResultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('getEnterprise', [FirmController::class, 'getEnterprise']);
     Route::post('saveEnterprise', [FirmController::class, 'saveEnterprise']);
     Route::post('getCommunityList', [FirmController::class, 'getCommunityList']);
+    Route::post('getBaseInfo', [FirmController::class, 'getBaseInfo']);
 
     Route::post('getCollectInfoList', [ImageController::class, 'getCollectInfoList']);
     Route::post('getCollectImgList', [ImageController::class, 'getCollectImgList']);
@@ -43,11 +44,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('saveCheckResult', [CheckResultController::class, 'saveCheckResult']);
     Route::post('createReport', [CheckResultController::class, 'createReport']);
     Route::post('stopCheck', [CheckResultController::class, 'stopCheck']);
+    Route::post('findUserCheckResult', [CheckResultController::class, 'findUserCheckResult']);
+    Route::post('findUserCheckEnterprise', [CheckResultController::class, 'findUserCheckEnterprise']);
 
     Route::post('changeSystemItemId', [UserController::class, 'changeSystemItemId']);
 });
 
 Route::post('/getProjectList', [FirmController::class, 'getProjectList']);
-Route::get('/toDecrypt/{string}', [\App\Http\Controllers\LiuRuiController::class, 'toDecrypt']);
 
 Route::post('/login', [UserController::class, 'login'])->middleware('web')->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);

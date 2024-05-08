@@ -30,6 +30,6 @@ class User extends Authenticatable
 
     public function checkResults()
     {
-        return $this->hasMany(CheckResult::class, 'id','check_user_id');
+        return $this->hasMany(CheckResult::class, 'check_user_id','id');
     }
 }

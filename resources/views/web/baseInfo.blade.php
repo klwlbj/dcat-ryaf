@@ -50,10 +50,10 @@
                                 @{{# layui.each(d.list, function(index, item){ }}
                                 <div class="weui-cell weui-cell_access open-popup" uuid="@{{ item.uuid }}"
                                      title="单位信息详情" data-target="enterprise-show">
-<span class="weui-cell__bd">
-<span>@{{ item.enterpriseName }}</span>
-<div class="weui-cell__desc">@{{ item.address }}</div>
-</span>
+                                    <span class="weui-cell__bd">
+                                    <span>@{{ item.enterpriseName }}</span>
+                                    <div class="weui-cell__desc">@{{ item.address }}</div>
+                                    </span>
                                     <span class="weui-cell__ft">@{{ item.number }}</span>
                                 </div>
                                 @{{# }); }}
@@ -104,11 +104,7 @@
                 <div class="weui-cell">
                     <div class="weui-cell__hd"><span class="weui-label font-weight">联系方式</span></div>
                     <div class="weui-cell__bd">
-                        @{{# if(d.phoneFull.length == 11){ }}
-                        <a href="tel:@{{ d.phoneFull }}">@{{ d.phone }}</a>
-                        @{{# } else { }}
-                        @{{ d.phone }}
-                        @{{# } }}
+                        <a href="tel:@{{ d.phone }}">@{{ d.phone }}</a>
                     </div>
                 </div>
                 <div class="weui-cell">
@@ -151,33 +147,29 @@
                 <div class="weui-cell">
                     <div class="weui-cell__hd"><span class="weui-label font-weight">联系方式</span></div>
                     <div class="weui-cell__bd">
-                        @{{# if(d.phoneFull.length === 11){ }}
-                        <a href="tel:@{{ d.phoneFull }}">@{{ d.phone }}</a>
-                        @{{# } else { }}
-                        @{{ d.phone }}
-                        @{{# } }}
+                        <a href="tel:@{{ d.phone }}">@{{ d.phone }}</a>
                     </div>
                 </div>
                 <div class="weui-cell">
                     <div class="weui-cell__hd"><span class="weui-label font-weight">岗位信息</span></div>
                     <div class="weui-cell__bd">@{{ d.jobInfo }}</div>
                 </div>
-                <div class="weui-cell">
+                {{--<div class="weui-cell">
                     <div class="weui-cell__hd"><span class="weui-label font-weight">账户类型</span></div>
                     <div class="weui-cell__bd">@{{ d.userType }}</div>
-                </div>
-                <div class="weui-cell">
+                </div>--}}
+                {{--<div class="weui-cell">
                     <div class="weui-cell__hd"><span class="weui-label font-weight">账户分组</span></div>
                     <div class="weui-cell__bd">@{{ d.userGroup }}</div>
-                </div>
+                </div>--}}
                 <div class="weui-cell">
                     <div class="weui-cell__hd"><span class="weui-label font-weight">邮箱</span></div>
                     <div class="weui-cell__bd">@{{ d.email }}</div>
                 </div>
-                <div class="weui-cell">
+                {{--<div class="weui-cell">
                     <div class="weui-cell__hd"><span class="weui-label font-weight">Q Q</span></div>
                     <div class="weui-cell__bd">@{{ d.qq }}</div>
-                </div>
+                </div>--}}
             </div>
         </div>
     </div>
@@ -290,7 +282,7 @@
     </div>
 </div>
 <!--end-->
-<script src="https://cdn.qiping.cn/fcms/mobile/js/baseInfo.min.js" charset="utf-8"></script>
-<script src="https://cdn.qiping.cn/fcms/mobile/js/addEnterprise.min.js" charset="utf-8"></script>
+<script src="{{ asset('js/baseInfo.js') }}" charset="utf-8"></script>
+<script src="{{ asset('js/addEnterprise.js') }}" charset="utf-8"></script>
 </body>
 </html>

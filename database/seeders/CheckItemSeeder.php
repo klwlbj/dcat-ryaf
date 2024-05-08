@@ -14164,8 +14164,6 @@ class CheckItemSeeder extends Seeder
     "uuid": "7ecf4b5cc151442a9407eca8127fb79f",
     "zgnd": "容易"
   }
-
-
         ]';
         $csList     = json_decode($json, JSON_OBJECT_AS_ARRAY);
         $checkItems = [];
