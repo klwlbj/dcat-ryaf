@@ -52,9 +52,9 @@ layui.use("laytpl", function () {
         var f = null;
         var b = {};
         var d = $.trim($("#searchInput").val());
-        if (d === "") {
-            return false
-        }
+        // if (d === "") {
+        //     return false
+        // }
         if (navTag === "enterprise") {
             c = enterpriseListTpl;
             f = enterpriseListDOM;

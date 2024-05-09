@@ -93,7 +93,8 @@ class ImageController extends Controller
         // $fileName      = $file->getClientOriginalName();
         $fileExtension = $file->getClientOriginalExtension();
         $imageUuid     = Str::uuid(); // 生成唯一标识符
-        $directory     = 'storage/xf/upload/' . date('Y/m');
+        $directory     = 'public/xf/upload/' . date('Y/m');
+        $webDirectory     = 'storage/xf/upload/' . date('Y/m');
 
         $imagePath = $file->storePubliclyAs($directory, $date . $imageUuid . '.' . $fileExtension);
         if (!$imagePath) {
@@ -107,7 +108,7 @@ class ImageController extends Controller
         $image                    = new CollectImage();
         $image->file_name         = $date . $imageUuid . '.' . $fileExtension;
         $image->uuid              = $imageUuid;
-        $image->file_path         = $directory;
+        $image->file_path         = $webDirectory;
         $image->file_extension    = $fileExtension;
         $image->firm_id           = $firmId;
         $image->report_code       = $reportCode;
@@ -116,7 +117,7 @@ class ImageController extends Controller
 
         // 返回接口格式数据
         $response = [
-            'imgUrl'  => url($directory), // 图片目录URL
+            'imgUrl'  => url($webDirectory), // 图片目录URL
             'imgName' => date('ymdHis') . $imageUuid . '.' . $fileExtension,
             'msg'     => '图片上传成功',
             'status'  => 200,

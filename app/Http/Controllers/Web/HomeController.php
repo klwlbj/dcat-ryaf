@@ -109,14 +109,12 @@ class HomeController extends Controller
     {
         $uuid       = $request->get('uuid');
         $reportCode = $request->get('reportCode');
-        if (empty($reportCode)) {
-            $reportCode = 'new';
-        } else {
+        if ($reportCode != 'new') {
             // 重新找最新report_code，不以前端传来为准
             $reportCode = CheckResult::where('firm_id', $uuid)
                 ->where('status', CheckResult::STATUS_UNSAVED)
                 ->orderBy('created_at', 'desc')
-                ->value('report_code');
+                ->value('report_code') ?? 'new';
         }
         return view('web/checkDetail', ['uuid' => $uuid, 'reportCode' => $reportCode]);
     }

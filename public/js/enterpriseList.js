@@ -10,9 +10,9 @@ $(function () {
     });
     $("#search").submit(function (c) {
         var b = $.trim($("#searchInput").val());
-        if (b === "") {
-            return false
-        }
+        // if (b === "") {
+        //     return false
+        // }
         var a = ajaxGet("/api/getEnterpriseList", {typeId: typeId, key: b}, false, "post");
         layui.use("laytpl", function () {
             layui.laytpl(enterpriseListTpl).render(a, function (d) {
