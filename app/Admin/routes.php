@@ -35,6 +35,6 @@ Route::group([
 ], function (Router $router) {
     $router->post("check_report/info", [CheckReportController::class, "info"]);
     $router->post("check_report/qr_view", [CheckReportController::class, "qrView"]);
-    $router->post("check_report/create_rectify_word", [CheckReportController::class, "createWord"]);
-    $router->post("check_report/create_hidden_trouble_excel", [CheckReportController::class, "createHiddenTroubleExcel"]);
+    $router->any("check_report/create_rectify_word", [CheckReportController::class, "createWord"]);
+    $router->any("check_report/create_hidden_trouble_excel", [CheckReportController::class, "createHiddenTroubleExcel"]);
 });
