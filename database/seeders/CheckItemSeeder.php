@@ -11876,7 +11876,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "id": 1191,
     "orderBy": 1,
@@ -11887,7 +11887,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "e694263a8165465b9fe07a21d9d1dbe5"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "id": 1206,
     "orderBy": 1,
@@ -11898,7 +11898,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "b97b7937a90e49909406ec978fd4cbb7"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "id": 1213,
     "orderBy": 1,
@@ -11909,7 +11909,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "677ba41af16b4c4bafe5b23b0c370e05"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "id": 1238,
     "orderBy": 1,
@@ -11920,7 +11920,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "c3a34f698470435a8f61189edc15b7ab"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "室外设置",
     "id": 1192,
@@ -11930,7 +11930,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "d7999dc5dfe247528f1ad866d67f191c"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "室内设置",
     "id": 1199,
@@ -11940,7 +11940,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "8aa498234ba642609b953ca0c7aa8196"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "不应占用消防车通道、消防救援场地和耕地",
     "id": 1193,
@@ -11951,7 +11951,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "5bbb3a9325314d6c897793d306647032"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "不应影响室外消防设施的正常使用",
     "id": 1197,
@@ -11963,7 +11963,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "占用消防车通道",
     "id": 1194,
@@ -11976,7 +11976,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "占用消消防救援场地",
     "id": 1195,
@@ -11989,7 +11989,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "占用耕地",
     "id": 1196,
@@ -12002,7 +12002,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "影响室外消防设施的正常使用",
     "id": 1198,
@@ -12014,7 +12014,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "应采用实体墙与其他功能场所分隔设置",
     "id": 1200,
@@ -12025,7 +12025,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "758f3cf34cf64d629a4eb1558f64d1e4"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "不应占用、 堵塞安全出口和疏散通道",
     "id": 1202,
@@ -12036,7 +12036,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "1c355aaa13c84ce2abf5d04d216f949f"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "不应影响室内消防设施的正常使用",
     "id": 1204,
@@ -12048,7 +12048,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "未采用实体墙与其他功能场所分隔设置",
     "id": 1201,
@@ -12061,7 +12061,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "占用、 堵塞安全出口和疏散通道",
     "id": 1203,
@@ -12074,7 +12074,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "影响室内消防设施的正常使用",
     "id": 1205,
@@ -12086,7 +12086,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "与建筑贴邻建设的电动自行车停放充电场所",
     "id": 1207,
@@ -12096,7 +12096,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "55edc6dec1984c8e8549171db691d4eb"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "附设在建筑内的电动自行车停放充电场所",
     "id": 1210,
@@ -12106,7 +12106,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "a4c08aae37e747e6aabd438b53548b5d"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "应采用不开设门、窗、洞口的防火墙分隔",
     "id": 1208,
@@ -12118,7 +12118,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "未采用不开设门、窗、洞口的防火墙分隔",
     "id": 1209,
@@ -12130,7 +12130,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "应采用实体墙和不燃性楼板与其他部位隔开",
     "id": 1211,
@@ -12142,7 +12142,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "未采用实体墙和不燃性楼板与其他部位隔开",
     "id": 1212,
@@ -12154,7 +12154,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "消防软管卷盘",
     "id": 1214,
@@ -12164,7 +12164,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "eb003b2288504412ab05c692805eda7e"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "灭火器及过滤式消防自救呼吸器",
     "id": 1217,
@@ -12174,7 +12174,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "a74f097534a24366aa34d35f15328375"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "自动灭火设施",
     "id": 1220,
@@ -12184,7 +12184,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "f3dcb478802643f5ae256f6ee5739454"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "火灾自动报警系统",
     "id": 1225,
@@ -12194,7 +12194,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "1018f9f11934475d9a3618f25babd809"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "视频监控",
     "id": 1230,
@@ -12204,7 +12204,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "a6ddb713cf3c40e4b800ab3dc71a2035"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "宣传板块",
     "id": 1235,
@@ -12214,7 +12214,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "a2cc10c1329945cba4550ac8b53a0e84"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "场所应设置消防软管卷盘或轻便消防水龙",
     "id": 1215,
@@ -12226,7 +12226,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "场所未设置消防软管卷盘或轻便消防水龙",
     "id": 1216,
@@ -12238,7 +12238,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车停放充电场所应在疏散门附近增设不少于2具 25kg以上ABC干粉推车灭火器及过滤式消防自救呼吸器",
     "id": 1218,
@@ -12250,7 +12250,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车停放充电场所未在疏散门附近增设不少于2具 25kg以上ABC干粉推车灭火器及过滤式消防自救呼吸器",
     "id": 1219,
@@ -12262,7 +12262,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "所在建筑设置有自动喷水灭火系统的，应按照有关消防技术标准要求设置自动喷水灭火系统",
     "id": 1221,
@@ -12273,7 +12273,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "5a42ff4d0371438693c81484606b24fd"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "所在建筑未设置自动喷水灭火系统或独立建造的， 应安装简易喷淋系统；当生活用水管网水压满足不小于0.1MPa（1公斤）时，可直接供水",
     "id": 1223,
@@ -12285,7 +12285,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "所在建筑设置有自动喷水灭火系统，但不符合有关消防技术标准要求",
     "id": 1222,
@@ -12298,7 +12298,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "所在建筑未设置自动喷水灭火系统或独立建造的， 未安装简易喷淋系统",
     "id": 1224,
@@ -12310,7 +12310,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "所在建筑设置有火灾自动报警系统的，电动自行车库应按照要求设置火灾自动报警系统",
     "id": 1226,
@@ -12321,7 +12321,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "68ed33f326cb4d2e8e3c22a3c313be1a"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "所在建筑未设置火灾自动报警系统或独立建造的， 应安装具备声报警功能的联网型独立感烟探测器",
     "id": 1228,
@@ -12333,7 +12333,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "所在建筑设置有火灾自动报警系统的，电动自行车库未按照要求设置火灾自动报警系统",
     "id": 1227,
@@ -12346,7 +12346,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "所在建筑未设置火灾自动报警系统或独立建造的，未安装具备声报警功能的联网型独立感烟探测器",
     "id": 1229,
@@ -12358,7 +12358,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车停放充电场所视频监控系统摄像头布置， 应确保无监控盲区，图像应能在值班室或管理者手机端实时显示",
     "id": 1231,
@@ -12369,7 +12369,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "b4d563d0acf94a2c92290bc97e51b07c"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "视频应具备储存、查询、回放功能，图像应储存在值班室、控制室等场所硬盘或云端服务",
     "id": 1233,
@@ -12381,7 +12381,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车停放充电场所视频监控系统摄像头布置， 有监控盲区，图像不能在值班室或管理者手机端实时显示",
     "id": 1232,
@@ -12394,7 +12394,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "视频未具备储存、查询、回放功能，图像不能储存在值班室、控制室等场所硬盘或云端服务",
     "id": 1234,
@@ -12406,7 +12406,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车停放充电场所要加强针对性消防宣传教育，通过图文并茂的方式讲清电动自行车火灾危害、火灾成因和存放、充电要求，电动自行车特别是自行改装电路的电动自行车、电池已超过使用年限的电动自行车的火灾危险性；同时，告知正确的电动车停放、充电方式",
     "id": 1236,
@@ -12418,7 +12418,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车停放充电场所未针对性进行消防宣传教育，未通过图文并茂的方式讲清电动自行车火灾危害、火灾成因和存放、充电要求，电动自行车特别是自行改装电路的电动自行车、电池已超过使用年限的电动自行车的火灾危险性；同时，未告知正确的电动车停放、充电方式",
     "id": 1237,
@@ -12430,7 +12430,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车停放充电场所运营方",
     "id": 1239,
@@ -12440,7 +12440,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "f104df9cd7ab485eb11bf8e070c7aaa4"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "要明确电动自行车停放充电场所责任单位，管理单位",
     "id": 1242,
@@ -12450,7 +12450,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "db22c1efa17a4cdab38c285a752b7763"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车充电管理",
     "id": 1245,
@@ -12460,7 +12460,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "57d01af143e24e06ae11d468f11662c0"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车停放充电场所的管理",
     "id": 1248,
@@ -12470,7 +12470,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "db7a531bccaa4744a5aa2680023f02d8"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "必须为电动自行车智能充电站、智能电控插座、智慧用电终端购买保险",
     "id": 1240,
@@ -12482,7 +12482,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "未给电动自行车智能充电站、智能电控插座、智慧用电终端购买保险",
     "id": 1241,
@@ -12494,7 +12494,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "应建立日常管理和防火巡查检查制度，在电动自行车停放充电场所应设置明显标识，明确专人负责",
     "id": 1243,
@@ -12506,7 +12506,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "未建立日常管理和防火巡查检查制度，在电动自行车停放充电场所未设置明显标识，明确专人负责",
     "id": 1244,
@@ -12518,7 +12518,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车充电时，电源适配器宜放置在地面上，不得放置在电动自行车坐垫、防寒围挡等可燃物上，并确保通风、 散热",
     "id": 1246,
@@ -12530,7 +12530,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "电动自行车充电时，直接放置在电动自行车坐垫、防寒围挡等可燃物上",
     "id": 1247,
@@ -12542,7 +12542,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "要根据实际需求建设电动自行车停放充电场所，不得盲目扩大建设面积，严禁擅自改变电动自行车停放充电场所使用性质，挪作他用",
     "id": 1249,
@@ -12554,7 +12554,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 8,
+    "checkTypeId": 7,
     "checkTypeName": "电动自行车停放充电场所建设",
     "content": "盲目扩大建设面积，擅自改变电动自行车停放充电场所使用性质，挪作他用",
     "id": 1250,
@@ -12566,7 +12566,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "id": 1052,
     "orderBy": 1,
@@ -12577,7 +12577,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "8cfe28f71fb04fe7b16b692e9cde95b5"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "id": 1061,
     "orderBy": 1,
@@ -12588,7 +12588,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "2e681f1c84a940679b994f2c6502b3d6"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "id": 1119,
     "orderBy": 1,
@@ -12599,7 +12599,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "ba6478ea9a9c469d984d15d24d6af5ac"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "id": 1142,
     "orderBy": 1,
@@ -12610,7 +12610,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "9417c3f5c0374c569d9d9dd0e4729a20"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "id": 1157,
     "orderBy": 1,
@@ -12621,7 +12621,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "75984ade2469461f937d3b62f8c93bc8"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "id": 1165,
     "orderBy": 1,
@@ -12632,7 +12632,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "0e7d8746e5e148a8ae47b24658d09e96"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "id": 1171,
     "orderBy": 1,
@@ -12643,7 +12643,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "15adbf4bb9df47e697dc58401df67eff"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "是否建立逐级消防安全责任制，明确单位消防安全管理人员",
     "id": 1053,
@@ -12653,7 +12653,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "8052d15baf614cc2be1ed61194b558bd"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "是否制定符合本单位实际的消防安全制度",
     "id": 1054,
@@ -12663,7 +12663,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "37ffa764f4aa45f6ba9e385aba9a0636"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未明确单位消防安全管理人员，扣5分",
     "id": 1055,
@@ -12674,7 +12674,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "8efa3bd9c16d4b9e998ca0ead1ddf8a8"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未明确各级消防安全责任人及工作职责，扣5分",
     "id": 1056,
@@ -12685,7 +12685,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "63e7910f23e745d4b73fbab2872ee606"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未建立或健全本单位消防安全制度，扣5分",
     "id": 1059,
@@ -12697,7 +12697,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未明确单位消防安全管理人员",
     "id": 1057,
@@ -12710,7 +12710,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未明确各级消防安全责任人及工作职责",
     "id": 1058,
@@ -12723,7 +12723,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未建立或健全本单位消防安全制度",
     "id": 1060,
@@ -12735,7 +12735,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "容易"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "总平面布局、灭火救援设施是否符合要求",
     "id": 1062,
@@ -12745,7 +12745,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "125ba3c840fd45bdadcc2553f8a56cba"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "耐火等级、防火分区、平面布置是否符合要求",
     "id": 1071,
@@ -12755,7 +12755,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "8c098971086942b294833fd5ebe81d99"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "室内装修是否符合规范要求",
     "id": 1072,
@@ -12765,7 +12765,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "55de28e5c973473b8a5937dab9fd9917"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时用房的防火设计是否符合要求",
     "id": 1073,
@@ -12775,7 +12775,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "d7dd974931cc4817aa940fe383d2f7aa"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "安全疏散设施及管理是否符合要求",
     "id": 1074,
@@ -12785,7 +12785,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "df2feb83c607488288f9b1f4e8eeff7a"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未设置临时消防车道，存在之一扣5分，共5分，扣完为止",
     "id": 1063,
@@ -12796,7 +12796,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "765dc3136ef94172b34d350ebcc1842f"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未设置回车场，扣5分",
     "id": 1064,
@@ -12807,7 +12807,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "7a283e0594d64ba1af310fe107de12ba"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未设置临时消防救援场地，扣5分",
     "id": 1065,
@@ -12818,7 +12818,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "5f3819b6d07f496bab5eec3bb7388d80"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时消防车道的设置不符合要求，存在之一扣5分，共10分，扣完为止",
     "id": 1066,
@@ -12829,7 +12829,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "0794f3440fbf47d68005e1b19d3626b0"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "回车场的设置不符合要求，扣5分",
     "id": 1067,
@@ -12840,7 +12840,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "656689e5acf64bd4b04ca16586d16855"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时消防救援场地的设置不符合要求，存在之一扣5分，共10分，扣完为止",
     "id": 1068,
@@ -12851,7 +12851,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "036b8f01fb614281b66f5bdd1b0ca5ed"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "存在防火间距被占用或不足，扣5分",
     "id": 1069,
@@ -12862,7 +12862,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "7fed4092057d4bc2919e5796663f80e8"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "存在堵塞或占用临时消防车道、回车场、临时消防救援场地，存在之一扣5分，共5分，扣完为止",
     "id": 1090,
@@ -12874,7 +12874,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "施工现场内未设置临时消防车道\r\n",
     "id": 1075,
@@ -12887,7 +12887,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "超过10栋且为成组布置的临时用房未设置环形临时消防车道",
     "id": 1076,
@@ -12900,7 +12900,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "设置环形车道确有困难时,未设置回车场",
     "id": 1077,
@@ -12913,7 +12913,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "设置环形车道确有困难时，未设置临时消防救援场地",
     "id": 1078,
@@ -12926,7 +12926,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时消防车道与临时用房的距离小于5m，或者大于40m\r\n",
     "id": 1079,
@@ -12939,7 +12939,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时消防车道的净宽度或净空高度小于4m\r\n",
     "id": 1080,
@@ -12952,7 +12952,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时消防车道的右侧未设置消防车行进路线指示标识\r\n",
     "id": 1081,
@@ -12965,7 +12965,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时消防车道路基、路面及其下部设施不能承受消防车通行压力及工作荷载",
     "id": 1082,
@@ -12978,7 +12978,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未在消防车道尽头设置尺寸不小于12m×12m的回车场",
     "id": 1083,
@@ -12991,7 +12991,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时消防救援场地未在在建工程装饰装修阶段设置\r\n",
     "id": 1087,
@@ -13004,7 +13004,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时消防救援场地未设置在成组布置的临时用房场地的长边一侧及在建工程的长边一侧\r\n",
     "id": 1088,
@@ -13017,7 +13017,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时消防救援场地宽度不满足消防车正常操作要求且小于6m,与在建工程外脚手架的净距小于2m,且超过6m",
     "id": 1089,
@@ -13030,7 +13030,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "存在防火间距被占用或不足",
     "id": 1091,
@@ -13043,7 +13043,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "建筑耐火等级不符合规范要求",
     "id": 1093,
@@ -13055,7 +13055,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "困难"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "建筑的耐火等级、防火分隔，扣5分",
     "id": 1070,
@@ -13066,7 +13066,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "432e2ae81c3b48e0a68c149e12be9896"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "防火分区或防火分隔设施,存在之一扣5分，共10分，扣完为止",
     "id": 1084,
@@ -13077,7 +13077,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "80fcc3bb90924cc5be648f514f321edc"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "人员密集场所，使用易燃材料，不符合消防技术标准，扣5分",
     "id": 1085,
@@ -13088,7 +13088,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "14ae08a6c7644b469a1aa809bde089b5"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "宿舍、办公用房的防火设计是否符合要求，存在之一扣5分，共10分，扣完为止",
     "id": 1086,
@@ -13099,7 +13099,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "f6870add704c4583b5853ccd31876fb7"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "疏散通道、安全出口数量不足，扣5分",
     "id": 1107,
@@ -13110,7 +13110,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "a21205bbb3e1492aa26e32dbe6a13dd2"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "疏散通道、安全出口的其他设置不符合消防技术标准，扣5分",
     "id": 1108,
@@ -13121,7 +13121,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "f3012e8412214e559e3341ee6529bf10"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "占用、堵塞、封闭疏散通道、安全出口，扣5分",
     "id": 1110,
@@ -13132,7 +13132,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "88ac424eddea4e03bfc2302caf18ca54"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未在明显位置设置安全疏散指示图，扣5分",
     "id": 1111,
@@ -13144,7 +13144,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "擅自改变防火分区或防火分区的设置不符合规范要求\r\n",
     "id": 1094,
@@ -13157,7 +13157,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "拆除或改变防火分隔设施\r\n",
     "id": 1095,
@@ -13170,7 +13170,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "防火分隔设施不能正常运行的（如损坏、被阻挡等）",
     "id": 1096,
@@ -13183,7 +13183,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "人员密集场所室内装修使用易燃材料",
     "id": 1097,
@@ -13196,7 +13196,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "建筑构件的燃烧性能等级不符合要求\r\n",
     "id": 1098,
@@ -13209,7 +13209,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "建筑层数超过3层或每层建筑面积大于300㎡\r\n",
     "id": 1099,
@@ -13222,7 +13222,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "层数为3层或每层建筑面积大于200㎡ 时，未设置不少于2部疏散楼梯或房间疏散门至疏散楼梯的最大距离大于25m\r\n",
     "id": 1100,
@@ -13235,7 +13235,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "单面布置用房时，疏散走道的净宽度小于1.0米；双面布置用房时，疏散走道的净宽度小于1.5m\r\n",
     "id": 1101,
@@ -13248,7 +13248,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "疏散楼梯的净宽度小于疏散走道的净宽度\r\n",
     "id": 1102,
@@ -13261,7 +13261,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "宿舍房间的建筑面积大于30㎡，其它房间的建筑面积大于100㎡\r\n",
     "id": 1103,
@@ -13274,7 +13274,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "房间内任一点至最近疏散门的距离大于15m ，房门的净宽度小于0.8m，房间建筑面积超过50㎡时，房门的净宽度小于1.2m\r\n",
     "id": 1104,
@@ -13287,7 +13287,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "发电机房、变配电房、厨房操作间、锅炉房、可燃材料库房及易燃易爆危险品库房及其他的防火设计存在以下情况：\r\n1）层数大于1 层，建筑面积大于200㎡； \r\n2）可燃材料库房单个房间的建筑面积超过 30㎡；3)易爆危险品库房单个房间的建筑面积超过 20㎡ ； \r\n4）宿舍、办公用房与厨房操作间、锅炉房、变配电房等组合建造。\r\n5）会议室、文化娱乐室等人员密集的房间未设置在临时用房的第一层。\r\n",
     "id": 1105,
@@ -13300,7 +13300,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "隔墙未从楼地面基层隔断至顶板基层底面",
     "id": 1106,
@@ -13313,7 +13313,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "存在堵塞或占用临时消防车道、回车场、临时消防救援场地\t",
     "id": 1092,
@@ -13326,7 +13326,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "疏散通道、安全出口数量不足\t",
     "id": 1109,
@@ -13339,7 +13339,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "疏散距离不满足要求\r\n",
     "id": 1112,
@@ -13352,7 +13352,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "楼梯间设置烧水间、可燃材料储藏室、甲、乙、丙类液体管道、可燃气体管道等\r\n",
     "id": 1113,
@@ -13365,7 +13365,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "疏散门没有朝疏散方向开启\r\n",
     "id": 1114,
@@ -13378,7 +13378,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "疏散门采用卷帘门、推拉门、转门等，未设置平开门\r\n",
     "id": 1115,
@@ -13391,7 +13391,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "疏散通道、安全出口的其他设置不符合消防技术标准",
     "id": 1116,
@@ -13404,7 +13404,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "占用、堵塞、封闭疏散通道、安全出口",
     "id": 1117,
@@ -13417,7 +13417,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未在明显位置设置安全疏散指示图\t",
     "id": 1118,
@@ -13429,7 +13429,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "容易"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "是否按要求配置灭火器及灭火器是否完好有效",
     "id": 1120,
@@ -13439,7 +13439,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "6814b2ff36934183ab9ae00221692c84"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "是否按要求设置临时消防给水系统",
     "id": 1130,
@@ -13449,7 +13449,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "77d50c49b46246c2b6524e033e6b3243"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "消防设施是否完备好用",
     "id": 1136,
@@ -13459,7 +13459,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "5a5c2ee661e640c6b1519f5de4b14716"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "灭火器的最低配置标准不符合要求，扣5分",
     "id": 1121,
@@ -13470,7 +13470,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "a65db605feda419fb7cb62d91af35f9f"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "灭火器的配置数量不符合要求，扣5分",
     "id": 1122,
@@ -13481,7 +13481,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "be9487077175445eb0165a4bb1b39486"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "灭火器最大保护距离不符合要求，扣5分",
     "id": 1123,
@@ -13492,7 +13492,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "9235739d5d894c269c6afeb52804aa6c"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "灭火器是否完好有效，扣5分",
     "id": 1124,
@@ -13504,7 +13504,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "灭火器的配置不符合最低配置标准\t",
     "id": 1126,
@@ -13517,7 +13517,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "灭火器的配置数量未按照《建筑灭火器配置设计规范》（GB50140）经计算确定，且每个场所的灭火器数量少于2具\t",
     "id": 1127,
@@ -13530,7 +13530,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "办公用房、宿舍的灭火器最大保护距离大于25m",
     "id": 1128,
@@ -13543,7 +13543,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "灭火器无法正常运作或使用",
     "id": 1129,
@@ -13555,7 +13555,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "容易"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "是否按要求设置临时消防给水系统，扣5分",
     "id": 1131,
@@ -13566,7 +13566,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "5a1eed73e4834c049f8cde5f0c545900"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "消防栓的使用是否符合流量要求，存在之一扣5分，共5分，扣完为止",
     "id": 1133,
@@ -13578,7 +13578,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时用房建筑面积之和大于1000㎡时，未设置临时室外消防给水系统\t",
     "id": 1132,
@@ -13591,7 +13591,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时用房的建筑面积之和大于1000㎡，小于等于≤5000㎡时，消火栓用水量小于10L/s，每支水枪最小流量小于5L/s\r\n",
     "id": 1134,
@@ -13604,7 +13604,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "临时用房的建筑面积之和大于5000㎡时，消火栓用水量小于15L/s，每支水枪最小流量不小于5L/s",
     "id": 1135,
@@ -13616,7 +13616,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "消防栓的其他设置不符合消防技术标准，每发现一项扣5分，共5分扣完为止",
     "id": 1137,
@@ -13627,7 +13627,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "b5b8f0c703ba49978100ed490eb740b3"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "消防设施被遮挡、圈占、埋压的，每发现一处扣5分，共5分扣完为止",
     "id": 1138,
@@ -13639,7 +13639,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "部分室内消火栓箱配件缺失\r\n",
     "id": 1139,
@@ -13652,7 +13652,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "消火栓静压为零或故障，消火栓系统无水",
     "id": 1140,
@@ -13665,7 +13665,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "消防设施被遮挡、圈占、埋压",
     "id": 1141,
@@ -13677,7 +13677,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "中等"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "电气防火是否符合要求",
     "id": 1143,
@@ -13687,7 +13687,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "467a72a17ae84336b35ecb743ca64f07"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "用火、动火是否符合要求",
     "id": 1144,
@@ -13697,7 +13697,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "d196a81934f043bca58eaae495e3a6bc"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "电气线路敷设、电气设备使用不规范，存在之一扣5分，共10分，扣完为止",
     "id": 1145,
@@ -13708,7 +13708,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "6557183eb3794839a527750680727d46"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "发现违规使用明火、易燃易爆危险物品，扣10分",
     "id": 1146,
@@ -13720,7 +13720,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "电器设备超负荷使用\r\n",
     "id": 1147,
@@ -13733,7 +13733,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "用铜丝、铁丝等代替保险丝\r\n",
     "id": 1148,
@@ -13746,7 +13746,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "电热炉、电加热器、电暖器、电饭锅、电熨斗、电热毯等电热器具使用后未采取拔出电源插销等切断电源的措施\r\n",
     "id": 1149,
@@ -13759,7 +13759,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "对产生高温或使用明火的设备，未限制周围可燃物或使用期间未设专人监护\r\n",
     "id": 1150,
@@ -13772,7 +13772,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未安装新型防短路、防过载、防电弧断路保护开关并选用合格电气产品\r\n",
     "id": 1151,
@@ -13785,7 +13785,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "用电线路未根据国家电气技术标准，采取穿金属管、封闭式金属线槽或者绝缘阻燃PVC电工套管保护措施\r\n",
     "id": 1152,
@@ -13798,7 +13798,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "强电线路未按规定使用阻燃电缆或电气线路违规使用易燃电线电缆\r\n",
     "id": 1153,
@@ -13811,7 +13811,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "开关、电闸、配电箱未使用符合国家市场准入电气产品\r\n",
     "id": 1154,
@@ -13824,7 +13824,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "存在其他不符合广东省地方标准《建筑电气防火检测技术规程》（DBJ/T 15—123—2018）具体要求的问题",
     "id": 1155,
@@ -13837,7 +13837,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "发现违规使用明火、易燃易爆危险物品",
     "id": 1156,
@@ -13849,7 +13849,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "容易"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "是否每日开展防火巡查，每月开展至少一次防火检查。公众聚集场所营业期间防火巡查每两小时至少一次，医院、养老院、寄宿制的学校、托儿所、幼儿园应当开展每日不少于2次的夜间防火巡查。",
     "id": 1158,
@@ -13859,7 +13859,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "648750da5eb6419982048a664d8e98e9"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未按要求每日组织开展每日防火巡查，扣2分",
     "id": 1159,
@@ -13870,7 +13870,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "d37b58f07ef34ef485b9787c448d56ad"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未按要求每月组织开展防火检查，扣3分",
     "id": 1160,
@@ -13881,7 +13881,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "82bfc3b7bc39476fa595c84cd0d10269"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "防火巡查、检查记录不齐全或填写不规范，扣2分",
     "id": 1161,
@@ -13893,7 +13893,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未按要求每日组织开展每日防火巡查",
     "id": 1162,
@@ -13906,7 +13906,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未按要求每月组织开展防火检查",
     "id": 1163,
@@ -13919,7 +13919,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "防火巡查、检查记录不齐全或填写不规范",
     "id": 1164,
@@ -13931,7 +13931,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "容易"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "是否制定灭火和应急疏散预案，并定期开展演练",
     "id": 1166,
@@ -13941,7 +13941,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "c480acc34322496aacea667948101d1b"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "单位未制定预案并组织演练，扣3分",
     "id": 1167,
@@ -13952,7 +13952,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "994811fb7f674a188a5af873127ba90b"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "单位已制定预案，但未定期组织演练，扣2分",
     "id": 1168,
@@ -13964,7 +13964,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "单位未制定预案并组织演练",
     "id": 1169,
@@ -13977,7 +13977,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "单位已制定预案，但未定期组织演练",
     "id": 1170,
@@ -13989,7 +13989,7 @@ class CheckItemSeeder extends Seeder
     "zgnd": "容易"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "是否开展经常性消防安全宣传工作",
     "id": 1172,
@@ -13999,7 +13999,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "b9c67737863743df890bd71fbff9b858"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "是否组织员工每年至少开展一次消防培训（人员密集场所每半年至少一次），新上岗的员工开展岗前消防培训",
     "id": 1173,
@@ -14009,7 +14009,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "ddfa6628589342aeb224108cdb57e6e8"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "人员密集场所是否在场所内张贴《关于人员密集场所加强火灾防范的通告》",
     "id": 1174,
@@ -14019,7 +14019,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "182b94a78038430b88fd0ec35d5056ac"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未开展经常性消防安全宣传，扣2分",
     "id": 1175,
@@ -14030,7 +14030,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "a0023645f41e4f16b7a0c84c86c4e156"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未定期组织员工开展消防培训，扣3分",
     "id": 1176,
@@ -14041,7 +14041,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "f04d2da43c0e43c9ac875fb8d52c9f54"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "员工不能正确回答以下问题，存在之一扣2分，共4分，扣完为止",
     "id": 1177,
@@ -14052,7 +14052,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "b6b10f80b69145dcaed6e79f7dca5361"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "员工不熟悉本岗位消防安全职责，每1名扣1分，共2分，扣完为止",
     "id": 1178,
@@ -14063,7 +14063,7 @@ class CheckItemSeeder extends Seeder
     "uuid": "f7ec4cb860d0444780de02a758ae6acc"
   },
   {
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未按要求张贴《关于人员密集场所加强火灾防范的通告》，扣1分",
     "id": 1179,
@@ -14075,7 +14075,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未开展经常性消防安全宣传",
     "id": 1180,
@@ -14088,7 +14088,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未定期组织员工开展消防培训",
     "id": 1181,
@@ -14101,7 +14101,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "发生火灾后如何报警",
     "id": 1182,
@@ -14114,7 +14114,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "发生火灾后如何进行扑救",
     "id": 1183,
@@ -14127,7 +14127,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "如何在火灾中逃生和疏散",
     "id": 1184,
@@ -14140,7 +14140,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "员工不熟悉本岗位消防安全职责",
     "id": 1185,
@@ -14153,7 +14153,7 @@ class CheckItemSeeder extends Seeder
   },
   {
     "checkMethod": "现场查看",
-    "checkTypeId": 7,
+    "checkTypeId": 8,
     "checkTypeName": "单位安全生产排查",
     "content": "未按要求张贴《关于人员密集场所加强火灾防范的通告》",
     "id": 1186,
@@ -14163,7 +14163,1450 @@ class CheckItemSeeder extends Seeder
     "type": 4,
     "uuid": "7ecf4b5cc151442a9407eca8127fb79f",
     "zgnd": "容易"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "id": 1294,
+    "orderBy": 1,
+    "parentId": 0,
+    "title": "一、电气线路安全隐患排查及检测",
+    "totalScore": 40,
+    "type": 1,
+    "uuid": "89e7ce7a119b454b998394c362e30214"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "id": 1365,
+    "orderBy": 1,
+    "parentId": 0,
+    "title": "二、用气安全隐患排查及检测",
+    "totalScore": 30,
+    "type": 1,
+    "uuid": "be3347fb2fae41018b32ab58a177241a"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "id": 1388,
+    "orderBy": 1,
+    "parentId": 0,
+    "title": "三、消防安全隐患排查及检测",
+    "totalScore": 30,
+    "type": 1,
+    "uuid": "99507460f0dc472fae5c089d25623f8d"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气线路安全隐患排查及检测",
+    "id": 1295,
+    "orderBy": 1,
+    "parentId": 1294,
+    "type": 2,
+    "uuid": "e4c30944be0b489c87e37f56134f4129"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "排查居民楼内是否存在电力线路乱拉乱接现象",
+    "id": 1296,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "60c6e26e39d74fedb8de9a750dbcc837"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "排查电箱、电表及开关箱是否存在破损，锈蚀现象",
+    "id": 1298,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "9b130623acbe4b8aa7dd05005aa22420"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "排查居民楼内是否存在线头裸露，强弱电缠绕、电线未套管、线路直接附着在可燃材料上",
+    "id": 1300,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "e4f00f4ece6d4d859693039e2dc56e3a"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "检测住户内部插座高度是否符合规范，插座是否存在烧蚀痕迹",
+    "id": 1302,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "06948ecb6c0240d49f36a38fe2e17dc0"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "用户插座有无PE线连接",
+    "id": 1304,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "fced0cf294dd4db58e81270c14eec889"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "插座回路是否安装漏电保护装置，热水器是否安装漏电保护装置，漏电保护装置动作时间是否选择合理，是否能可靠动作",
+    "id": 1306,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "e9416efb2d984e9382fb57d738beb1f2"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "对于厨房、浴室等潮湿场所，是否安装带保护外壳的插座及开关",
+    "id": 1308,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "11fe5389a5344a6782c8bf156b3e4534"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "居民用电设备是否达标、老旧、残旧",
+    "id": 1310,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "7a5860bd64854b2ebec645162447cef7"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气系统的带电设备红外诊断结果是否合格",
+    "id": 1312,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "3a6d3cebd96e4e6d8f3d842508aa2892"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气系统的接地电阻检测结果是否合格",
+    "id": 1314,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "702a3f0fa17645cd870585aa9afc353e"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气系统的剩余电流动作保护装置检测是否合格",
+    "id": 1316,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "95929ccbbc174734a2642f3917d03559"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气系统的绝缘电阻检测是否合格",
+    "id": 1318,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "60887a7b6a584cb49b59671fcefcbe48"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "变配电系统建筑接线端子的安装是否符合要求",
+    "id": 1320,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "fc4c8e761f89407ea8eb3a318c1fcd04"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "室内低压配电线路的配线情况，动力及照明配电箱、开关插座的安装是否符合要求",
+    "id": 1322,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "c9d6b28a8f1f4be1a44143a91ca5abee"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "室内线路的敷设是否符合要求",
+    "id": 1324,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "c25678253429418388e72160f60daf86"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气设备接地和等电位联结是否符合要求",
+    "id": 1326,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "c2d8c078ea074b259c43d74f80e3c01f"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "《南山区城中村电气火灾综合治理工作方案》中的其他排查要求是否合格",
+    "id": 1328,
+    "orderBy": 1,
+    "parentId": 1295,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "a975157599af4e43be7227e857acce56"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "排查居民楼内存在电力线路乱拉乱接现象",
+    "id": 1297,
+    "orderBy": 1,
+    "parentId": 1296,
+    "rectifyContent": "严禁电力线路乱拉乱接",
+    "type": 4,
+    "uuid": "03eb12e953ec4dcdb4f0b46ae5aef7e4",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "排查电箱、电表及开关箱存在破损，锈蚀现象",
+    "id": 1299,
+    "orderBy": 1,
+    "parentId": 1298,
+    "rectifyContent": "维修或更换电箱、电表及开关箱",
+    "type": 4,
+    "uuid": "8ab5d8e85abe40b5a31795907721ae18",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "排查居民楼内存在线头裸露，强弱电缠绕、电线未套管、线路直接附着在可燃材料上",
+    "id": 1301,
+    "orderBy": 1,
+    "parentId": 1300,
+    "rectifyContent": "严禁线头裸露、强弱电缠绕、线路直接附着在可燃材料上，电线需套管保护",
+    "type": 4,
+    "uuid": "e5b3c2217635404ea340234065b4fe86",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "检测住户内部插座高度不符合规范，插座存在烧蚀痕迹",
+    "id": 1303,
+    "orderBy": 1,
+    "parentId": 1302,
+    "rectifyContent": "按照规范要求，重新调整插座高度，对烧蚀插座进行维护",
+    "type": 4,
+    "uuid": "4055e9df049b49c8afd8e894360b60a2",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "用户插座无PE线连接",
+    "id": 1305,
+    "orderBy": 1,
+    "parentId": 1304,
+    "rectifyContent": "对插座加装PE线连接",
+    "type": 4,
+    "uuid": "762a697a759942598d9d847d7956eb48",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "插座回路未安装漏电保护装置，热水器未安装漏电保护装置，漏电保护装置动作时间选择不合理，不能可靠动作",
+    "id": 1307,
+    "orderBy": 1,
+    "parentId": 1306,
+    "rectifyContent": "插座回路安装漏电保护装置，热水器安装漏电保护装置，漏电保护装置动作时间选择应合理",
+    "type": 4,
+    "uuid": "f627a1f964644bdb9326f2d3fefea0f3",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "对于厨房、浴室等潮湿场所，未安装带保护外壳的插座及开关",
+    "id": 1309,
+    "orderBy": 1,
+    "parentId": 1308,
+    "rectifyContent": "安装带保护外壳的插座及开关",
+    "type": 4,
+    "uuid": "6937bd38bc0f40f09508f088762e358f",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "居民用电设备不达标、老旧、残旧",
+    "id": 1311,
+    "orderBy": 1,
+    "parentId": 1310,
+    "rectifyContent": "对不达标、老旧、残旧的用电设备进行更换",
+    "type": 4,
+    "uuid": "58e706caf69f447d85e77dcc23dcdbae",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气系统的带电设备红外诊断结果不合格",
+    "id": 1313,
+    "orderBy": 1,
+    "parentId": 1312,
+    "rectifyContent": "请专业人员对电气系统的带电设备进行维修",
+    "type": 4,
+    "uuid": "efec5250d8264c6fb003a27dee6b42bb",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气系统的接地电阻检测结果不合格",
+    "id": 1315,
+    "orderBy": 1,
+    "parentId": 1314,
+    "rectifyContent": "请专业人员对电气系统的接地电阻进行维修",
+    "type": 4,
+    "uuid": "f875495834c04e8985e56236df21c904",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气系统的剩余电流动作保护装置检测不合格",
+    "id": 1317,
+    "orderBy": 1,
+    "parentId": 1316,
+    "rectifyContent": "请专业人员对电气系统的剩余电流动作保护装置进行维修",
+    "type": 4,
+    "uuid": "ce7aeb4188b04daca542de8ef5fa6e8e",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气系统的绝缘电阻检测不合格",
+    "id": 1319,
+    "orderBy": 1,
+    "parentId": 1318,
+    "rectifyContent": "请专业人员对电气系统的绝缘电阻进行维修",
+    "type": 4,
+    "uuid": "33b378b020084a66bb5da0657824a4a9",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "变配电系统建筑接线端子的安装不符合要求",
+    "id": 1321,
+    "orderBy": 1,
+    "parentId": 1320,
+    "rectifyContent": "按照规范要求安装变配电系统建筑接线端子",
+    "type": 4,
+    "uuid": "07c83e83980548ca8663c8c3922735d1",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "室内低压配电线路的配线情况，动力及照明配电箱、开关插座的安装不符合要求",
+    "id": 1323,
+    "orderBy": 1,
+    "parentId": 1322,
+    "rectifyContent": "按照规范要求安装室内低压配电线路的配线情况，动力及照明配电箱、开关插座",
+    "type": 4,
+    "uuid": "19f2bbbfee7847f3a248d93e58cb6fc5",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "室内线路的敷设不符合要求",
+    "id": 1325,
+    "orderBy": 1,
+    "parentId": 1324,
+    "rectifyContent": "室内线路按照要求重新敷设",
+    "type": 4,
+    "uuid": "6228e1218edf406980c0d11a303d81e7",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气设备接地和等电位联结不符合要求",
+    "id": 1327,
+    "orderBy": 1,
+    "parentId": 1326,
+    "rectifyContent": "按照要求进行整改",
+    "type": 4,
+    "uuid": "2c9fd0b7664a474882e62de6c3459140",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电动车或电瓶在室内充电",
+    "id": 1329,
+    "orderBy": 1,
+    "parentId": 1328,
+    "rectifyContent": "加强管理，严禁电动车或电瓶在室内充电",
+    "type": 4,
+    "uuid": "1cf66d7397034cf69308b859c96256d0",
+    "zgnd": "中等"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "用气安全隐患排查及检测",
+    "id": 1366,
+    "orderBy": 1,
+    "parentId": 1365,
+    "type": 2,
+    "uuid": "0107d4e3a60a46369c68a3b962399398"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "检查燃气设备（燃气灶、热水器、燃气瓶等）使用场所是否满足安全的通风条件，是否使用直排式热水器",
+    "id": 1367,
+    "orderBy": 1,
+    "parentId": 1366,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "bd34e28d262b43c58dedbd61803d2851"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "燃气具、燃气瓶是否完好，是否在质保期内，质量、安放场所及使用是否符合国家标准要求的情况",
+    "id": 1370,
+    "orderBy": 1,
+    "parentId": 1366,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "f3e30ad97e5d49df93282d1ebc7f8bcb"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "燃气管道是否缺少必要的安全设施，存在安全隐患",
+    "id": 1374,
+    "orderBy": 1,
+    "parentId": 1366,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "469ac3390e004b048338fff28559be11"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "管线是否破损、残旧和老化等情况",
+    "id": 1376,
+    "orderBy": 1,
+    "parentId": 1366,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "74c813b76e744f93a4b91bb8c4948b40"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "是否漏气，是否存在燃气泄漏现象",
+    "id": 1378,
+    "orderBy": 1,
+    "parentId": 1366,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "f22e50271bdd4aa4accf9482dece2072"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "居民室内燃气管线安置是否可靠合理",
+    "id": 1380,
+    "orderBy": 1,
+    "parentId": 1366,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "cb9f5625e3b64abdbc1fe66b974f8f15"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "燃气具及燃气瓶等周边是否存在易燃物等火灾隐患",
+    "id": 1382,
+    "orderBy": 1,
+    "parentId": 1366,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "4fbcd3dd56544aaeb13955d65e79225a"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "燃气具、燃气瓶、阀门、热水器等燃气设施的检查与保养情况的评价",
+    "id": 1384,
+    "orderBy": 1,
+    "parentId": 1366,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "f2f3f4a450e54d4ea709b01c74e612a1"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "是否使用未经国家批准经营的、无证的，无合法固定经营场所，不抽残液、气体含量不纯、气瓶检验不规范的，无永久钢印、钢瓶“身份证”、证件、单据的，有严重安全隐患的钢瓶来源不明的煤气（俗称：黑煤气）",
+    "id": 1386,
+    "orderBy": 1,
+    "parentId": 1366,
+    "totalScore": 5,
+    "type": 3,
+    "uuid": "4b88951be04343068098ce6273dad453"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "燃气设备（燃气灶、热水器、燃气瓶等）使用场所不满足安全的通风条件",
+    "id": 1368,
+    "orderBy": 1,
+    "parentId": 1367,
+    "rectifyContent": "燃气设备（燃气灶、热水器、燃气瓶等）使用场所要满足安全的通风条件",
+    "type": 4,
+    "uuid": "d942f1865dd842de9ebd0b5a81d463c7",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "使用直排式热水器",
+    "id": 1369,
+    "orderBy": 1,
+    "parentId": 1367,
+    "rectifyContent": "严禁使用直排式热水器",
+    "type": 4,
+    "uuid": "5124fa2ae6c945c1840a76b60f5826dc",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "燃气具、燃气瓶不完好",
+    "id": 1371,
+    "orderBy": 1,
+    "parentId": 1370,
+    "rectifyContent": "燃气具、燃气瓶应完好",
+    "type": 4,
+    "uuid": "c1794148e7ef42d19e531cc282c27c87",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "燃气具、燃气瓶不在质保期内",
+    "id": 1372,
+    "orderBy": 1,
+    "parentId": 1370,
+    "rectifyContent": "燃气具、燃气瓶应在质保期内",
+    "type": 4,
+    "uuid": "d7bda11e054848109a29b00a421ef65c",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "质量、安放场所及使用不符合国家标准要求的情况",
+    "id": 1373,
+    "orderBy": 1,
+    "parentId": 1370,
+    "rectifyContent": "质量、安放场所及使用应符合国家标准要求的情况",
+    "type": 4,
+    "uuid": "b674558d06184a6193550c871b294552",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "燃气管道缺少必要的安全设施，存在安全隐患",
+    "id": 1375,
+    "orderBy": 1,
+    "parentId": 1374,
+    "rectifyContent": "燃气管道增加必要的安全设施，保障安全可靠",
+    "type": 4,
+    "uuid": "7b5458f5b8ac4348a160a256453dd51e",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "管线存在破损、残旧和老化等情况",
+    "id": 1377,
+    "orderBy": 1,
+    "parentId": 1376,
+    "rectifyContent": "及时更换合格的管线",
+    "type": 4,
+    "uuid": "f761981c29de47cc829d8956e3069783",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "存在燃气泄漏现象",
+    "id": 1379,
+    "orderBy": 1,
+    "parentId": 1378,
+    "rectifyContent": "及早发现，及时处理",
+    "type": 4,
+    "uuid": "9d5268045ffe42178ae1ca7e2d63317a",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "居民室内燃气管线安置不可靠合理",
+    "id": 1381,
+    "orderBy": 1,
+    "parentId": 1380,
+    "rectifyContent": "居民室内燃气管线安置应可靠合理",
+    "type": 4,
+    "uuid": "6428211672a548a1a94461dc5f470fbf",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "燃气具及燃气瓶等周边存在易燃物等火灾隐患",
+    "id": 1383,
+    "orderBy": 1,
+    "parentId": 1382,
+    "rectifyContent": "清除燃气具及燃气瓶等周边的易燃物等火灾隐患",
+    "type": 4,
+    "uuid": "82cd81a5c4a9413cb14a07e6fde0206a",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "自述评价",
+    "id": 1385,
+    "orderBy": 1,
+    "parentId": 1384,
+    "rectifyContent": "自述评价存在问题对应的整改建议",
+    "type": 4,
+    "uuid": "601c34c5bb6d4e85b9c7d9fb31e199d3",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "使用黑煤气",
+    "id": 1387,
+    "orderBy": 1,
+    "parentId": 1386,
+    "rectifyContent": "严禁使用黑煤气",
+    "type": 4,
+    "uuid": "2322137f205d4cb8a8bdf05940597757",
+    "zgnd": "中等"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "消防安全隐患排查及检测",
+    "id": 1389,
+    "orderBy": 1,
+    "parentId": 1388,
+    "type": 2,
+    "uuid": "56c57233819b4519bebc71dcae6b6b66"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "消防设施配备是否足够以及完好情况，具体要求：灭火器、应急灯、消火栓、消防水带及其他消防设施是否按规范要求设置，是否存在老化、损坏的情况，能否正常使用",
+    "id": 1390,
+    "orderBy": 1,
+    "parentId": 1389,
+    "totalScore": 10,
+    "type": 3,
+    "uuid": "13a7e5f4a6684114a206bfd4a36aad95"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气线路敷设是否符合消防安全要求",
+    "id": 1409,
+    "orderBy": 1,
+    "parentId": 1389,
+    "totalScore": 10,
+    "type": 3,
+    "uuid": "1bf3175353ad4a869bb43d19dec44483"
+  },
+  {
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "疏散通道设置是否合理，是否保持畅通",
+    "id": 1411,
+    "orderBy": 1,
+    "parentId": 1389,
+    "totalScore": 10,
+    "type": 3,
+    "uuid": "d7f508c1d49d44c6bb614234e08db7a6"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "未按照要求配备灭火器",
+    "id": 1391,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照要求配备灭火器",
+    "type": 4,
+    "uuid": "376ceac494d04f54b51022e23e6ca0b7",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "灭火器压力不足或破损",
+    "id": 1392,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "重装或更换灭火器",
+    "type": 4,
+    "uuid": "393d91dcd5f149aa8a9bf412e94e7198",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "未按照要求设置应急灯",
+    "id": 1393,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照要求设置应急灯",
+    "type": 4,
+    "uuid": "c0b8e9ca72f84c22afc6320b3f34bcd1",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "应急灯的安装不符合规范要求",
+    "id": 1394,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照规范要求安装应急灯",
+    "type": 4,
+    "uuid": "9365081c620c4fd48322791fe4e79632",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "应急灯未通电或损坏",
+    "id": 1395,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "对应急灯检查通电并维修或更换",
+    "type": 4,
+    "uuid": "b8fd24e104bb4a3eb5856e68ee467b11",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "未按照要求设置消火栓",
+    "id": 1396,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照要求设置消火栓",
+    "type": 4,
+    "uuid": "5eeebddee7d241ed949a952a29cfa9cb",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "消火栓水压不足、部件破损等",
+    "id": 1397,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "应保障稳定的正常水压，及时对部件破损进行维修或更换",
+    "type": 4,
+    "uuid": "f7f03180f79143b69ded69571b844923",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "消防水带存在老化、损坏的情况",
+    "id": 1398,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "更换合格的消防水带",
+    "type": 4,
+    "uuid": "238373ab9a034f188b8c0b54a9c214dd",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "未按照要求设置疏散指示标志",
+    "id": 1399,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照要求设置疏散指示标志",
+    "type": 4,
+    "uuid": "d05ab99706734ccd9e794c38a9026092",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "疏散指示标志的安装不符合规范要求",
+    "id": 1400,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照规范要求安装疏散指示标志",
+    "type": 4,
+    "uuid": "55958e8f151d441883c6d4f0374650e4",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "疏散指示标志未通电或损坏",
+    "id": 1401,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "对疏散指示标志检查通电并维修或更换",
+    "type": 4,
+    "uuid": "f5f6eb760390467089801ebc9f9c36e0",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "未按照要求设置感烟火灾探测器",
+    "id": 1402,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照要求设置感烟火灾探测器",
+    "type": 4,
+    "uuid": "8325daa3cff544c8b0784ecfa7bb58cb",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "感烟火灾探测器的安装不符合要求",
+    "id": 1403,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照规范要求安装感烟火灾探测器",
+    "type": 4,
+    "uuid": "03161702106d4e22a8c874d28c1c84b4",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "感烟火灾探测器损坏不能正常使用",
+    "id": 1404,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "更换新的感烟火灾探测器",
+    "type": 4,
+    "uuid": "67a1bf64ebfd4ab0963fd83d64e7608c",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "未按照要求设置简易喷淋",
+    "id": 1405,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照要求设置简易喷淋",
+    "type": 4,
+    "uuid": "3674956ca9cf49a1a67d012be63de523",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "简易喷淋不能正常使用",
+    "id": 1406,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "及时对简易喷淋进行检查维修",
+    "type": 4,
+    "uuid": "1d776254aa054396ad2d12cff4813d0e",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "未按照要求设置喷淋系统",
+    "id": 1407,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "按照要求设置喷淋系统",
+    "type": 4,
+    "uuid": "188dcb9fbfe3407d96809904718953ec",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "喷淋系统不能正常使用",
+    "id": 1408,
+    "orderBy": 1,
+    "parentId": 1390,
+    "rectifyContent": "及时对喷淋系统进行检查维修",
+    "type": 4,
+    "uuid": "ce417d034f3142cda7a167f4af775ebb",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "电气线路敷设不符合消防安全要求",
+    "id": 1410,
+    "orderBy": 1,
+    "parentId": 1409,
+    "rectifyContent": "电气线路敷设应符合消防安全要求",
+    "type": 4,
+    "uuid": "56305b2e61f743e0a6f8e24c5e8d1c65",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+     "checkTypeId": 9,
+    "checkTypeName": "电气线路用气消防安全隐患排查及检测",
+    "content": "疏散通道、安全出口存在堵塞、占用、锁闭",
+    "id": 1412,
+    "orderBy": 1,
+    "parentId": 1411,
+    "rectifyContent": "清除障碍物，保证疏散通道不被堵塞或占用、安全出口不锁闭",
+    "type": 4,
+    "uuid": "59498cb605634a51b1fe80df143428f9",
+    "zgnd": "中等"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "id": 1330,
+    "orderBy": 1,
+    "parentId": 0,
+    "title": "用气安全隐患排查及检测",
+    "totalScore": 0,
+    "type": 1,
+    "uuid": "d2722557eecc44cbaecd67c8f5a1282f"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "用气安全隐患排查及检测",
+    "id": 1331,
+    "orderBy": 1,
+    "parentId": 1330,
+    "type": 2,
+    "uuid": "ecb1f45dfe2c41c195bbda22c4fdea0f"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "检查燃气设备（燃气灶、热水器、燃气瓶等）使用场所是否满足安全的通风条件，是否使用直排式热水器",
+    "id": 1332,
+    "orderBy": 1,
+    "parentId": 1331,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "2ef19baf19054c3d9f7875d35d32959a"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "燃气具、燃气瓶是否完好，是否在质保期内，质量、安放场所及使用是否符合国家标准要求的情况",
+    "id": 1335,
+    "orderBy": 1,
+    "parentId": 1331,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "9d4fded29b114fffa3e85f05096291bc"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "燃气管道是否缺少必要的安全设施，存在安全隐患",
+    "id": 1339,
+    "orderBy": 1,
+    "parentId": 1331,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "56413661830d437f9711fa7142f9c0d3"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "管线是否破损、残旧和老化等情况",
+    "id": 1341,
+    "orderBy": 1,
+    "parentId": 1331,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "6373c21e67364f0eb6cc2e85f9974733"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "是否漏气，是否存在燃气泄漏现象",
+    "id": 1343,
+    "orderBy": 1,
+    "parentId": 1331,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "3b4b6ffa06bd45a185280e0ff777bda1"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "居民室内燃气管线安置是否可靠合理",
+    "id": 1345,
+    "orderBy": 1,
+    "parentId": 1331,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "40d4baf576c948cf98d8d2dc09c84910"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "燃气具及燃气瓶等周边是否存在易燃物等火灾隐患",
+    "id": 1347,
+    "orderBy": 1,
+    "parentId": 1331,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "708d750220ed4cd8841afb66afeb0339"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "燃气具、燃气瓶、阀门、热水器等燃气设施的检查与保养情况的评价",
+    "id": 1349,
+    "orderBy": 1,
+    "parentId": 1331,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "fb529a948c0140de84c2565a43d41128"
+  },
+  {
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "是否使用未经国家批准经营的、无证的，无合法固定经营场所，不抽残液、气体含量不纯、气瓶检验不规范的，无永久钢印、钢瓶“身份证”、证件、单据的，有严重安全隐患的钢瓶来源不明的煤气（俗称：黑煤气）",
+    "id": 1351,
+    "orderBy": 1,
+    "parentId": 1331,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "ff948fe2a1b34b5e902b574b6c8d0d11"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "燃气设备（燃气灶、热水器、燃气瓶等）使用场所不满足安全的通风条件",
+    "id": 1333,
+    "orderBy": 1,
+    "parentId": 1332,
+    "rectifyContent": "燃气设备（燃气灶、热水器、燃气瓶等）使用场所要满足安全的通风条件",
+    "type": 4,
+    "uuid": "71f5fd0b9eac48fea6db120268cde244",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "使用直排式热水器",
+    "id": 1334,
+    "orderBy": 1,
+    "parentId": 1332,
+    "rectifyContent": "严禁使用直排式热水器",
+    "type": 4,
+    "uuid": "fa31543521ab42a5aca0f10fd381741f",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "燃气具、燃气瓶不完好",
+    "id": 1336,
+    "orderBy": 1,
+    "parentId": 1335,
+    "rectifyContent": "燃气具、燃气瓶应完好",
+    "type": 4,
+    "uuid": "bdf3fbb8d5034d5db81b77152a638836",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "燃气具、燃气瓶不在质保期内",
+    "id": 1337,
+    "orderBy": 1,
+    "parentId": 1335,
+    "rectifyContent": "燃气具、燃气瓶应在质保期内",
+    "type": 4,
+    "uuid": "9a789a354fe64cd2a3fac49dbb885ce4",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "质量、安放场所及使用不符合国家标准要求的情况",
+    "id": 1338,
+    "orderBy": 1,
+    "parentId": 1335,
+    "rectifyContent": "质量、安放场所及使用应符合国家标准要求的情况",
+    "type": 4,
+    "uuid": "e8a4789dcbaf4ef5b3561846376b40ca",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "燃气管道缺少必要的安全设施，存在安全隐患",
+    "id": 1340,
+    "orderBy": 1,
+    "parentId": 1339,
+    "rectifyContent": "燃气管道增加必要的安全设施，保障安全可靠",
+    "type": 4,
+    "uuid": "5887bec731bd4f598bb4ed15a5cf4ddb",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "管线存在破损、残旧和老化等情况",
+    "id": 1342,
+    "orderBy": 1,
+    "parentId": 1341,
+    "rectifyContent": "及时更换合格的管线",
+    "type": 4,
+    "uuid": "3d00376d5906489f8f9e0cb2ddac5c28",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "存在燃气泄漏现象",
+    "id": 1344,
+    "orderBy": 1,
+    "parentId": 1343,
+    "rectifyContent": "及早发现，及时处理",
+    "type": 4,
+    "uuid": "857b6c6ada0e4639ac8b3e915a3175ff",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "居民室内燃气管线安置不可靠合理",
+    "id": 1346,
+    "orderBy": 1,
+    "parentId": 1345,
+    "rectifyContent": "居民室内燃气管线安置应可靠合理",
+    "type": 4,
+    "uuid": "5fb36a5d16b74ee5b63adfcc54748aca",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "燃气具及燃气瓶等周边存在易燃物等火灾隐患",
+    "id": 1348,
+    "orderBy": 1,
+    "parentId": 1347,
+    "rectifyContent": "清除燃气具及燃气瓶等周边的易燃物等火灾隐患",
+    "type": 4,
+    "uuid": "99953d6acea54fbdb8b538d694e37dec",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "自述评价",
+    "id": 1350,
+    "orderBy": 1,
+    "parentId": 1349,
+    "rectifyContent": "自述评价存在问题对应的整改建议",
+    "type": 4,
+    "uuid": "c502c6da66324e1493926c5260a02522",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 10,
+    "checkTypeName": "用气安全隐患排查及检测",
+    "content": "使用黑煤气",
+    "id": 1352,
+    "orderBy": 1,
+    "parentId": 1351,
+    "rectifyContent": "严禁使用黑煤气",
+    "type": 4,
+    "uuid": "c96377ab4d5b4d5d94fc8596e387cf6a",
+    "zgnd": "中等"
+  },
+  {
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "id": 1353,
+    "orderBy": 1,
+    "parentId": 0,
+    "title": "消防安全隐患排查及检测内容",
+    "totalScore": 0,
+    "type": 1,
+    "uuid": "05cd392a2195497492066d57b081ac7f"
+  },
+  {
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "消防安全隐患排查及检测内容",
+    "id": 1354,
+    "orderBy": 1,
+    "parentId": 1353,
+    "type": 2,
+    "uuid": "606dd3f6382f4c23b34d4a993d83eab7"
+  },
+  {
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "消防设施配备是否足够以及完好情况，具体要求：灭火器、应急灯、消火栓、消防水带及其他消防设施是否按规范要求设置，是否存在老化、损坏的情况，能否正常使用",
+    "id": 1355,
+    "orderBy": 1,
+    "parentId": 1354,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "d49c4b6ea96b4fc992f8d992264d5b6a"
+  },
+  {
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "电气线路敷设是否符合消防安全要求",
+    "id": 1361,
+    "orderBy": 1,
+    "parentId": 1354,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "d78b6c7d6b5d4ef4914c4b50cd9d483e"
+  },
+  {
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "疏散通道设置是否合理，是否保持畅通",
+    "id": 1363,
+    "orderBy": 1,
+    "parentId": 1354,
+    "totalScore": 0,
+    "type": 3,
+    "uuid": "0e30429145da4ad484bdbb732e2621d7"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "灭火器的设置不符合要求",
+    "id": 1356,
+    "orderBy": 1,
+    "parentId": 1355,
+    "rectifyContent": "按照规范要求设置灭火器",
+    "type": 4,
+    "uuid": "b654e6cfda914337bcd92c85f3f74b98",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "应急灯的设置不符合要求",
+    "id": 1357,
+    "orderBy": 1,
+    "parentId": 1355,
+    "rectifyContent": "按照规范要求设置灭火器应急灯",
+    "type": 4,
+    "uuid": "9caca575749b45a2aae04f20871f4b65",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "消火栓的设置不符合要求",
+    "id": 1358,
+    "orderBy": 1,
+    "parentId": 1355,
+    "rectifyContent": "按照规范要求设置灭火器消火栓",
+    "type": 4,
+    "uuid": "a67288d415444d9f98a37ac084339441",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "消防水带的设置不符合要求",
+    "id": 1359,
+    "orderBy": 1,
+    "parentId": 1355,
+    "rectifyContent": "按照规范要求设置灭火器消防水带",
+    "type": 4,
+    "uuid": "4c0d6984bb5444349276d850193be480",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "消防水带存在老化、损坏的情况",
+    "id": 1360,
+    "orderBy": 1,
+    "parentId": 1355,
+    "rectifyContent": "更换合格的消防水带",
+    "type": 4,
+    "uuid": "cdc15d1bf4ac47418fef8b296b0c8cb4",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "电气线路敷设不符合消防安全要求",
+    "id": 1362,
+    "orderBy": 1,
+    "parentId": 1361,
+    "rectifyContent": "电气线路敷设应符合消防安全要求",
+    "type": 4,
+    "uuid": "cfad2921bad84b27b31784babab9491c",
+    "zgnd": "中等"
+  },
+  {
+    "checkMethod": "现场查看",
+    "checkTypeId": 11,
+    "checkTypeName": "消防安全隐患排查及检测",
+    "content": "疏散通道、安全出口存在堵塞、占用、锁闭",
+    "id": 1364,
+    "orderBy": 1,
+    "parentId": 1363,
+    "rectifyContent": "清除障碍物，保证疏散通道不被堵塞或占用、安全出口不锁闭",
+    "type": 4,
+    "uuid": "5c0fa6a9dcd54ebf9a72fb9a2a334bd1",
+    "zgnd": "中等"
   }
+
+
+
         ]';
         $csList     = json_decode($json, JSON_OBJECT_AS_ARRAY);
         $checkItems = [];

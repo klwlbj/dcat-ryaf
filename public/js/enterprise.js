@@ -3,7 +3,7 @@ var laytpl;
 const enterpriseJson = ajaxGet("/api/getEnterprise", {uuid: uuid}, false, "post");
 $(function () {
     $(document).on("click", "#newCheckBtn", function () {
-        window.location.href = "/web/checkDetail/check?uuid=" + uuid
+        window.location.href = "/web/checkDetail/check?uuid=" + uuid + "&reportCode=new"
     });
     $(document).on("click", "#reCheckBtn", function () {
         window.location.href = "/web/checkDetail/check?uuid=" + uuid + "&reportCode=" + reportCode
@@ -103,6 +103,7 @@ function getCheckStatusList() {
 }
 
 function fms_border(a) {
+    console.log(a)
     if (a == 1) {
         $("form input").attr("disabled", false).addClass("fms-border");
         $("form select").attr("disabled", false).addClass("fms-border");

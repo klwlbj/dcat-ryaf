@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/web/checkResult', [HomeController::class, 'checkResult']);
     Route::get('/web/userCheckResult', [HomeController::class, 'userCheckResult']);
 });
-Route::get('/public/xf/upload/{year}/{month}/{filename}', function ($year, $month, $filename) {
+/*Route::get('/public/xf/upload/{year}/{month}/{filename}', function ($year, $month, $filename) {
     // $path = public_path($directory . '/' . $filename);
 
     $path = Storage::disk('public')->path('xf/upload/' . $year . '/' . $month . '/' . $filename);
@@ -52,5 +52,5 @@ Route::get('/public/xf/upload/{year}/{month}/{filename}', function ($year, $mont
         return $response;
     }
     abort(404);
-});
+});*/
 Route::get('/web/login', [HomeController::class, 'login']);

@@ -21,7 +21,7 @@
                         <div class="weui-search-bar__box">
                             <i class="weui-icon-search"></i>
                             <input type="search" aria-controls="searchResult" class="weui-search-bar__input"
-                                   id="searchInput" placeholder="输入关键词再按回车确定" required="">
+                                   id="searchInput" placeholder="输入关键词再按回车确定">
                             <a href="javascript:" role="button" title="清除" class="weui-icon-clear" id="searchClear"
                                wah-hotarea="touchend"></a>
                         </div>
