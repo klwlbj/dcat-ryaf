@@ -33,8 +33,8 @@ Route::group([
     'prefix'    => config('admin.route.prefix'),
     'namespace' => config('admin.route.namespace'),
 ], function (Router $router) {
-    $router->post("check_report/info", [CheckReportController::class, "info"]);
-    $router->post("check_report/qr_view", [CheckReportController::class, "qrView"]);
+    $router->any("check_report/info", [CheckReportController::class, "info"]);
+    $router->any("check_report/qr_view", [CheckReportController::class, "qrView"]);
     $router->any("check_report/create_rectify_word", [CheckReportController::class, "createWord"]);
     $router->any("check_report/create_hidden_trouble_excel", [CheckReportController::class, "createHiddenTroubleExcel"]);
 });
