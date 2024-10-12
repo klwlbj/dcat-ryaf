@@ -98,7 +98,7 @@ class CheckReportLogic extends BaseLogic
             $standardProblem[$checkQuestion['check_standard_id']][] = $checkQuestion['question'];
             $imageList                                              = $reportImageList[$checkQuestion['check_question_id']] ?? collect([]);
             $measureList[$checkQuestion['check_standard_id']][]     = [
-                'measure'    => $checkQuestion['question'],
+                'measure'    => $checkQuestion['rectify'],
                 'difficulty' => CheckItem::$formatDifficultyMaps[$checkQuestion['difficulty']] ?? '',
                 'imageList'  => $imageList->pluck('url'),
             ];
