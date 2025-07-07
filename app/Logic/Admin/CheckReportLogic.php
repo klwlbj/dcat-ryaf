@@ -70,7 +70,7 @@ class CheckReportLogic extends BaseLogic
         $list = $this->handleAdminCheckQuestions($checkQuestions, $checkItems, $reportImageList);
 
         if (!empty($params['is_qr'])) {
-            $qrCodeUrl          = QrCodeLogic::getInstance()->createQrCodeByUrl('http://' . request()->getHost() . '/admin/report/qr_view?uuid=' . $params['uuid'], 'check_report_' . $params['uuid'] . '.png');
+            $qrCodeUrl          = QrCodeLogic::getInstance()->createQrCodeByUrl('http://' . request()->getHost() . '/admin/check_report/qr_view?uuid=' . $params['uuid'], 'check_report_' . $params['uuid'] . '.png');
             $info['qrcode_url'] = $qrCodeUrl;
         } else {
             $info['qrcode_url'] = '';
